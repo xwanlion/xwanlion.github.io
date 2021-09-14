@@ -88,23 +88,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>市面上有很多的待办应用, 用于帮助人们记录和跟踪自己需要完成的任务, 但我觉得这些应用要不太简单, 要不就是没有自己需要的功能, 要不就是注重隐私不足, 像 ticktick, microsoft to do, any.do, todoist 等等, 自己都试用过, 但都不满意, 所以决定自己开发一个 to do list 应用, 就取名叫 todoline++, 现将功能列出如下, 希望你们喜欢！</p>
-<!--
-# 1. 待办项目, 待办项目包括
-### 1.1 期限任务(deadline task): 
-1.1.1) 任务不会自动完成, 除非用户标记为已完成
-1.1.2) 可以指明截止时间
-1.1.3) 可以设定预计花费时间
-1.1.4) 需要通知
-    
-### 1.2 周期性任务(cyclical task): 
-1.1.1) 任务不会自动完成, 除非用户标记为已完成
-1.2.2) 需要指明提醒时间
-提醒时间可以设定某个时间, 也可以设定为某个任务之后(之前).
-
-1.2.3) 可以设定提醒周期, 如果不设定, 只需要提醒一次
-1.2.4) 可以设定预计花费时间
-1.2.5) 需要通知显示
-1.2.6) 提醒选项有:
+<h1 id="1-待办项目-待办项目包括"><a href="#1-待办项目-待办项目包括" class="headerlink" title="1. 待办项目, 待办项目包括"></a>1. 待办项目, 待办项目包括</h1><h3 id="1-1-期限任务-deadline-task"><a href="#1-1-期限任务-deadline-task" class="headerlink" title="1.1 期限任务(deadline task):"></a>1.1 期限任务(deadline task):</h3><p>1.1.1) 任务不会自动完成, 除非用户标记为已完成<br>1.1.2) 可以指明截止时间<br>1.1.3) 可以设定预计花费时间<br>1.1.4) 需要通知</p>
+<h3 id="1-2-周期性任务-cyclical-task"><a href="#1-2-周期性任务-cyclical-task" class="headerlink" title="1.2 周期性任务(cyclical task):"></a>1.2 周期性任务(cyclical task):</h3><p>1.1.1) 任务不会自动完成, 除非用户标记为已完成<br>1.2.2) 需要指明提醒时间<br>提醒时间可以设定某个时间, 也可以设定为某个任务之后(之前).</p>
+<p>1.2.3) 可以设定提醒周期, 如果不设定, 只需要提醒一次<br>1.2.4) 可以设定预计花费时间<br>1.2.5) 需要通知显示<br>1.2.6) 提醒选项有:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">当天（9:00）</span><br><span class="line">前一天（9:00）</span><br><span class="line">前两天（9:00）</span><br><span class="line">前三天（9:00）</span><br><span class="line">自定义时段: </span><br><span class="line">A) 设定某一天的某一时段 </span><br><span class="line">B) 设定周几的某个时段</span><br><span class="line">C) 某个任务之后(之前)x小时</span><br></pre></td></tr></table></figure>
 <p>1.2.7) 周期设定的选项有:<br>不重复<br>每天<br>每周工作日(every weekday Mon-Fri)<br>周末<br>每月（4 天）<br>每月（第一个周六）<br>每年（9.4）<br>自定义</p>
 <h3 id="1-3-习惯-habit"><a href="#1-3-习惯-habit" class="headerlink" title="1.3 习惯(habit)"></a>1.3 习惯(habit)</h3><p>1.3.1) 任务会自动完成<br>21 次后提示习惯逐步形成, 60 次后提示习惯得到加强, 并提示不再提醒, 但可以再次开启<br>1.3.2) 需要指明提醒时间<br>提醒时询问是否完成习惯: 是， 否， 延后<br>1.3.3) 可以设定提醒周期, 如果不设定, 默认每天提醒一次<br>1.3.4) 可以设定预计花费时间    </p>
@@ -125,7 +111,7 @@
 <h1 id="8-标签-tags-or-label"><a href="#8-标签-tags-or-label" class="headerlink" title="8. 标签(tags or label)"></a>8. 标签(tags or label)</h1><p>任务可以设定标签, 设定标签后, 用户可以自行在菜单栏中添加菜单, 以方便用户按照自己的设定的方式来显示。</p>
 <h1 id="9-同步-sync"><a href="#9-同步-sync" class="headerlink" title="9. 同步(sync)"></a>9. 同步(sync)</h1><p>9.1) 多台设备间可以通过局域网同步, 只需加入相同的wifi网络即可<br>9.2) 同步之前需要匹配两台设备, 就像蓝牙一样来匹配<br>9.3) 开启匹配开关后才能匹配, 关闭后不能匹配<br>9.4）匹配成功后就可以自动同步, 不管匹配开关是否开启<br>9.5) 匹配成功后将对方的设备IP地址显示出来</p>
 <h1 id="10-导入导出-import-export"><a href="#10-导入导出-import-export" class="headerlink" title="10. 导入导出(import/export)"></a>10. 导入导出(import/export)</h1><p>可以自动从 todoist, any.do 自动导入数据, 也可以推送数据到该软件, 同时可以导出到文件中</p>
-<h1 id="11-今天的任务和收集箱-today-and-inbox"><a href="#11-今天的任务和收集箱-today-and-inbox" class="headerlink" title="11. 今天的任务和收集箱(today and inbox)"></a>11. 今天的任务和收集箱(today and inbox)</h1><p>录入的项目, 自动保存到收集箱, 系统自动跟据任务的截至日期和花费的时间自动将待办移动到今天的任务中<br>–&gt;</p>
+<h1 id="11-今天的任务和收集箱-today-and-inbox"><a href="#11-今天的任务和收集箱-today-and-inbox" class="headerlink" title="11. 今天的任务和收集箱(today and inbox)"></a>11. 今天的任务和收集箱(today and inbox)</h1><p>录入的项目, 自动保存到收集箱, 系统自动跟据任务的截至日期和花费的时间自动将待办移动到今天的任务中</p>
 
       
     </div>
