@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>如何在同一台 windows 系统中配置两个 github 帐号? - wanlion</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="有时候我们需要在同一台 windows 系统中使用多个 github 帐号, 原因呢, 各种各样, 有公私分开帐号的原因, 也有多个项目需要多个 github  帐号的情况, 今天, 我将根据自己的经历, 来说说在同一台电脑中如何配置配置和使用多个帐号, 不过有点搞笑的是, 我自己都还没有成功过, 而且由于自己的折腾,  其他软件比如 IDE 软件依赖的 github 帐号还出现了问题, 导致更新">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何在同一台 windows 系统中配置两个 github 帐号?">
+<meta property="og:url" content="https://xwanlion.github.io/20211017/%E5%A6%82%E4%BD%95%E5%9C%A8%E5%90%8C%E4%B8%80%E5%8F%B0-windows-%E7%B3%BB%E7%BB%9F%E4%B8%AD%E9%85%8D%E7%BD%AE%E4%B8%A4%E4%B8%AA-github-%E5%B8%90%E5%8F%B7/index.html">
+<meta property="og:site_name" content="wanlion">
+<meta property="og:description" content="有时候我们需要在同一台 windows 系统中使用多个 github 帐号, 原因呢, 各种各样, 有公私分开帐号的原因, 也有多个项目需要多个 github  帐号的情况, 今天, 我将根据自己的经历, 来说说在同一台电脑中如何配置配置和使用多个帐号, 不过有点搞笑的是, 我自己都还没有成功过, 而且由于自己的折腾,  其他软件比如 IDE 软件依赖的 github 帐号还出现了问题, 导致更新">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-10-17T02:57:57.000Z">
+<meta property="article:modified_time" content="2021-10-17T04:41:00.650Z">
+<meta property="article:author" content="wanlion">
+<meta property="article:tag" content="github">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <!-- blair add baidu tongji start... @2017.10.03 -->
+<!-- blair add baidu tongji end ! @2017.10.03 -->
+
+<header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo" href="/"></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://xwanlion.github.io"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+    <br>
+    <section id="main" class="outer"><article id="post-如何在同一台-windows-系统中配置两个-github-帐号" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      如何在同一台 windows 系统中配置两个 github 帐号?
+      <small class=article-detail-date-index>&nbsp; 2021-10-17</small>
+    </h1>
+  
+
+
+        <div class=page-title></div>
+        <br>
+      </header>
+    
+    <div class="article-meta">
+      <!--<a href="/20211017/%E5%A6%82%E4%BD%95%E5%9C%A8%E5%90%8C%E4%B8%80%E5%8F%B0-windows-%E7%B3%BB%E7%BB%9F%E4%B8%AD%E9%85%8D%E7%BD%AE%E4%B8%A4%E4%B8%AA-github-%E5%B8%90%E5%8F%B7/" class="article-date">
+  <time datetime="2021-10-17T02:57:57.000Z" itemprop="datePublished">2021-10-17</time>
+</a>-->
+      <!-- 
+--><!-- by blair 160724 -->
+      <!-- by blair
+      
+      -->
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>有时候我们需要在同一台 windows 系统中使用多个 github 帐号, 原因呢, 各种各样, 有公私分开帐号的原因, 也有多个项目需要多个 github  帐号的情况, 今天, 我将根据自己的经历, 来说说在同一台电脑中如何配置配置和使用多个帐号, 不过有点搞笑的是, 我自己都还没有成功过, 而且由于自己的折腾,  其他软件比如 IDE 软件依赖的 github 帐号还出现了问题, 导致更新和 clone 项目代码都出现了问题。</p>
+<span id="more"></span>
+<p>好吧, 你就当作听我讲一个故事, 如果你愿意听的话, 我保证, 后续我会更新, 把这个问题解释清楚。</p>
+<h1 id="步骤一-生成两对公私匙文件"><a href="#步骤一-生成两对公私匙文件" class="headerlink" title="步骤一: 生成两对公私匙文件"></a>步骤一: 生成两对公私匙文件</h1><h3 id="为什么需要生成公私私匙文件"><a href="#为什么需要生成公私私匙文件" class="headerlink" title="为什么需要生成公私私匙文件?"></a>为什么需要生成公私私匙文件?</h3><p>其实问这个问题就等于是在问? 我为什么要使用 SSH?<br>SSH 是数据传输的安全协议, 使用 SSH 能够保证信息传输安全可靠, github 使用他来保证数据传输安全可靠。</p>
+<h3 id="如何生成公私私匙文件"><a href="#如何生成公私私匙文件" class="headerlink" title="如何生成公私私匙文件?"></a>如何生成公私私匙文件?</h3><p>公匙和私匙文件生成后一般放在 C:/users/xxx/.ssh 目录下, 这里的 xxx 是指当前系统用户名, 需要注意的是, 目录名称 ssh 前面有一个点, 使用下面的 cmd 命令可以生成公私匙文件</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;xxxx@yyyy.com&quot;</span><br></pre></td></tr></table></figure>
+
+<p>上面的命令中 <a href="mailto:&#120;&#120;&#120;&#120;&#64;&#121;&#121;&#x79;&#121;&#46;&#99;&#111;&#x6d;">&#120;&#120;&#120;&#120;&#64;&#121;&#121;&#x79;&#121;&#46;&#99;&#111;&#x6d;</a> 是邮箱名称, 你可以替换为自己的邮箱。</p>
+<p>命令执行后, 你会看到两个文件, 名称相同, 其中有一个后缀名为 .pub, 这是公匙文件, 剩下的就是私匙文件。<br>这样的话, 我们就已经生成了一对公私匙文件, 剩下的另外一对公私匙文件按照这个方法来执行就可以。</p>
+<p>需要注意:<br>1） 生成第二个公私匙文件的时候, 名称不能跟第一对相同。<br>2) 该命令添加 –global 参数后, 就会把该公私匙文件配置成全局, 这样的话, 每次连接 github 的时候, 就会自动使用该公私匙文件, 这是使用多个 github 帐号需要忌讳的地方。</p>
+<h1 id="步骤二-让电脑识别两对公私匙文件"><a href="#步骤二-让电脑识别两对公私匙文件" class="headerlink" title="步骤二: 让电脑识别两对公私匙文件"></a>步骤二: 让电脑识别两对公私匙文件</h1><p>如果密匙文件设置成全局, github 就能够识别, 在没有配置全局密匙文件的情况下, github, 也是系统, 他们只能识别 id_rsa 这个文件名的密匙文件, 要让他识别所有密匙文件, 需要我们做额外的配置。</p>
+<p>在 .ssh 目录下新建一个 config 文件, 没有扩展名, 然后修改他的内容为:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># default xwanlion</span><br><span class="line">Host xwanlion.github.io</span><br><span class="line">HostName github.com</span><br><span class="line">IdentityFile C:\\Users\\xxxxx\\.ssh\\id_rsafile</span><br><span class="line">User git</span><br></pre></td></tr></table></figure>
+<p>上面的内容配置了一对公私匙文件, 对应一个 github 帐号, 其中<br>1） Host 我们可以随意填写。<br>2) HostName 远程仓库地址<br>3) IdentityFile 对应的 .ssh 目录下的公私匙文件地址, 注意不要填写扩展名, id_rsafile 就是文件名<br>4) User 登录的用户名</p>
+<p>另外一对公私匙文件再继续追加即可。</p>
+<h1 id="步骤三-将公匙文件中的内容复制到-github-com-的帐号中"><a href="#步骤三-将公匙文件中的内容复制到-github-com-的帐号中" class="headerlink" title="步骤三: 将公匙文件中的内容复制到 github.com 的帐号中"></a>步骤三: 将公匙文件中的内容复制到 github.com 的帐号中</h1><p>操作步骤如下(仅凭记忆填写, 不准确):<br>登录 github.com –&gt; setting –&gt; deployer –&gt; new xxx –&gt; 将.pub 文件中的内容复制到 github 中 –&gt; 提交</p>
+<p>提交后可以通过这个 cmd 命令来检查本地和 github 是否连接成功: </p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com -i ~/.ssh/xxx</span><br></pre></td></tr></table></figure>
+<p>xxx 是公匙文件名, 没有扩展名。</p>
+<h1 id="步骤四-进入各个项目文件夹-本地-修改帐号密码和远程仓库地址"><a href="#步骤四-进入各个项目文件夹-本地-修改帐号密码和远程仓库地址" class="headerlink" title="步骤四: 进入各个项目文件夹(本地), 修改帐号密码和远程仓库地址"></a>步骤四: 进入各个项目文件夹(本地), 修改帐号密码和远程仓库地址</h1><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config user.name &quot;xxx&quot;</span><br><span class="line">git config user.email &quot;xxx@mail.com&quot;</span><br><span class="line">git remote add origin git@xwanlion.github.io:xwanlion.github.io/xwanlion.github.io.git</span><br></pre></td></tr></table></figure>
+<p>上面的命令中, 远程仓库地址的格式如下:<br>git remote add origin git@home:home/example.git</p>
+<p>其中: </p>
+<ol>
+<li>home 就是上面步骤二中 Host 的值</li>
+<li>example.git 对应自己的仓库地址</li>
+</ol>
+<p>按照网上的说法, 通过上面的步骤后, 就可以正常使用, 但很遗憾, 我依然报错, 无法正常使用</p>
+<h1 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h1><h3 id="1）-unable-to-access-OpenSSL-SSL-read-Connection-was-reset-errno-10054"><a href="#1）-unable-to-access-OpenSSL-SSL-read-Connection-was-reset-errno-10054" class="headerlink" title="1） unable to access  OpenSSL SSL_read: Connection was reset, errno 10054"></a>1） unable to access  OpenSSL SSL_read: Connection was reset, errno 10054</h3><p>有可能是网络原因, 我自己试过其他办法, 但无法解决这个问题</p>
+<h3 id="2-Support-for-password-authentication-was-removed-on-August-13-2021-Please-use-a-personal-access-token-instead…"><a href="#2-Support-for-password-authentication-was-removed-on-August-13-2021-Please-use-a-personal-access-token-instead…" class="headerlink" title="2) Support for password authentication was removed on August 13, 2021. Please use a personal access token instead…"></a>2) Support for password authentication was removed on August 13, 2021. Please use a personal access token instead…</h3><p>github 已经不支持使用帐号密码的方式传输数据, 只能使用 access token  的方式, access token 可以在 github.com 的帐号中生成, 使用 access token 来连接的仓库地址应该是下面这个样子:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://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@github.com/xwanlion/xwanlion.github.io.git</span><br></pre></td></tr></table></figure>
+<p>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 就是 access token.</p>
+<h3 id="3-ssh-config-line-1-Bad-configuration-option-357-273-277"><a href="#3-ssh-config-line-1-Bad-configuration-option-357-273-277" class="headerlink" title="3) /.ssh/config: line 1: Bad configuration option: \357\273\277#"></a>3) /.ssh/config: line 1: Bad configuration option: \357\273\277#</h3><p>出现这个原因, 是因为文件内容出现BOM字符引起, 我使用 notepad++ 转码成无 bom 格式即可。</p>
+
+      
+     <!-- by blair add this if sentence at 20160725 -->
+      <br>
+      
+<div id="bottom-donation-section">
+<span style="font-size: 1.0em; padding:0em 1em 0.5em 1em; margin: 0 auto;">
+  <strong style="vertical-align: top;">分享到:</strong>
+    <div class="j_handlclick"  style="background: url(/images/logos/share_facebook_icon.jpg);background-size: contain;display: inline-block; width:50px; height:50px" href="https://www.facebook.com/sharer/sharer.php?u=" target="_blank">
+    </div>
+    <div class="j_handlclick"  style="background: url(/images/logos/share_twitter_icon.jpg);background-size: contain;display: inline-block; width:50px; height:50px" href="https://twitter.com/intent/tweet?url=" target="_blank">
+    </div>
+    <div class="j_handlclick"  style="background: url(/images/logos/share_line_icon.jpg);background-size: contain;display: inline-block; width:50px; height:50px" href="https://www.addtoany.com/add_to/line?linkurl=" target="_blank">
+    </div>
+    <div class="j_handlclick"  style="background: url(/images/logos/share_wechat_icon.jpg);background-size: contain;display: inline-block; width:50px; height:50px" href="https://api.addthis.com/oexchange/0.8/forward/wechat/offer?url=" target="_blank">
+    </div>
+  <br>  
+  <br>  
+  &nbsp;&nbsp;如果您觉得这篇文章对您的学习很有帮助, 请您也分享它, 让它能再次帮助到更多的需要学习的人.
+您的<a href="/support/"><strong>支持</strong></a>将鼓励我继续创作 !
+  <br>  
+
+</span>
+<!--
+<h3 id="bottom-donation-title">支持 让文章变得更优质</h3>
+<div>
+<a id="bottom-donation-button" href="/support">点我 赞助 作者</a>
+</div>
+-->
+</div>
+<div class="well">
+  <!--
+  原创文章，转载请注明： 转载自<a target="_blank" rel="noopener" href="http://52binge.github.io"> Blair Chan's Blog</a>，作者：
+  <a href="/about">Blair Chan</a> <br>
+  -->
+  本文基于<a target="_blank" title="Creative Commons Attribution 4.0 international License" href="https://creativecommons.org/licenses/by-nc/4.0/">署名4.0国际许可协议</a>发布，转载请保留本文署名和文章链接。 如您有任何授权方面的协商，请邮件联系我。
+</div>
+ <!-- by blair add 160724-->
+    
+    </div>
+    
+      <div class="article-toc">
+        <h3>Contents</h3>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%B8%80-%E7%94%9F%E6%88%90%E4%B8%A4%E5%AF%B9%E5%85%AC%E7%A7%81%E5%8C%99%E6%96%87%E4%BB%B6"><span class="toc-text">步骤一: 生成两对公私匙文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E7%94%9F%E6%88%90%E5%85%AC%E7%A7%81%E7%A7%81%E5%8C%99%E6%96%87%E4%BB%B6"><span class="toc-text">为什么需要生成公私私匙文件?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E7%94%9F%E6%88%90%E5%85%AC%E7%A7%81%E7%A7%81%E5%8C%99%E6%96%87%E4%BB%B6"><span class="toc-text">如何生成公私私匙文件?</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%BA%8C-%E8%AE%A9%E7%94%B5%E8%84%91%E8%AF%86%E5%88%AB%E4%B8%A4%E5%AF%B9%E5%85%AC%E7%A7%81%E5%8C%99%E6%96%87%E4%BB%B6"><span class="toc-text">步骤二: 让电脑识别两对公私匙文件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%B8%89-%E5%B0%86%E5%85%AC%E5%8C%99%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E5%86%85%E5%AE%B9%E5%A4%8D%E5%88%B6%E5%88%B0-github-com-%E7%9A%84%E5%B8%90%E5%8F%B7%E4%B8%AD"><span class="toc-text">步骤三: 将公匙文件中的内容复制到 github.com 的帐号中</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E5%9B%9B-%E8%BF%9B%E5%85%A5%E5%90%84%E4%B8%AA%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E5%A4%B9-%E6%9C%AC%E5%9C%B0-%E4%BF%AE%E6%94%B9%E5%B8%90%E5%8F%B7%E5%AF%86%E7%A0%81%E5%92%8C%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%9C%B0%E5%9D%80"><span class="toc-text">步骤四: 进入各个项目文件夹(本地), 修改帐号密码和远程仓库地址</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-text">遇到的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%EF%BC%89-unable-to-access-OpenSSL-SSL-read-Connection-was-reset-errno-10054"><span class="toc-text">1） unable to access  OpenSSL SSL_read: Connection was reset, errno 10054</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Support-for-password-authentication-was-removed-on-August-13-2021-Please-use-a-personal-access-token-instead%E2%80%A6"><span class="toc-text">2) Support for password authentication was removed on August 13, 2021. Please use a personal access token instead…</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-ssh-config-line-1-Bad-configuration-option-357-273-277"><span class="toc-text">3) &#x2F;.ssh&#x2F;config: line 1: Bad configuration option: \357\273\277#</span></a></li></ol></li></ol></li></ol>
+      </div>
+    
+    
+      <footer class="article-footer">
+        <!-- <div class="well" style="width:100px; height:30px;"></div>  by blair-->
+        
+ <!-- by blair add 160724-->
+        <!--
+        <div style="width:100px; height:30px;"></div> by blair add 160724
+        -->
+        
+  <div class="article-tag">
+    <a class="article-tag-none-link" href="/tags/github/" rel="tag">github</a>
+  </div>
+
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/20211017/flutter-%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E7%B3%BB%E5%88%97%E4%B9%8B%E4%B8%80/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">flutter 开发问题系列之一&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 wanlion&nbsp;
+    </div>
+  </div>
+</footer>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+      displayMath: [ ['$$','$$']],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
+</script>
+
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+  </div>
+</body>
+</html>
