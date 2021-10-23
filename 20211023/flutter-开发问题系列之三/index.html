@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>flutter-开发问题系列之三 - wanlion</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="这是 todoline++ 项目开发过程中遇到的问题系列, 记录下来供大家参考。本篇记录一些异常!">
+<meta property="og:type" content="article">
+<meta property="og:title" content="flutter-开发问题系列之三">
+<meta property="og:url" content="https://xwanlion.github.io/20211023/flutter-%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E7%B3%BB%E5%88%97%E4%B9%8B%E4%B8%89/index.html">
+<meta property="og:site_name" content="wanlion">
+<meta property="og:description" content="这是 todoline++ 项目开发过程中遇到的问题系列, 记录下来供大家参考。本篇记录一些异常!">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-10-23T04:07:21.000Z">
+<meta property="article:modified_time" content="2021-10-23T04:10:08.439Z">
+<meta property="article:author" content="wanlion">
+<meta property="article:tag" content="flutter">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <!-- blair add baidu tongji start... @2017.10.03 -->
+<!-- blair add baidu tongji end ! @2017.10.03 -->
+
+<header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo" href="/"></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://xwanlion.github.io"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+    <br>
+    <section id="main" class="outer"><article id="post-flutter-开发问题系列之三" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      flutter-开发问题系列之三
+      <small class=article-detail-date-index>&nbsp; 2021-10-23</small>
+    </h1>
+  
+
+
+        <div class=page-title></div>
+        <br>
+      </header>
+    
+    <div class="article-meta">
+      <!--<a href="/20211023/flutter-%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E7%B3%BB%E5%88%97%E4%B9%8B%E4%B8%89/" class="article-date">
+  <time datetime="2021-10-23T04:07:21.000Z" itemprop="datePublished">2021-10-23</time>
+</a>-->
+      <!-- 
+--><!-- by blair 160724 -->
+      <!-- by blair
+      
+      -->
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这是 todoline++ 项目开发过程中遇到的问题系列, 记录下来供大家参考。<br>本篇记录一些异常!</p>
+<span id="more"></span>
+<h1 id="01-A-value-of-type-‘Null’-can’t-be-assigned-to-a-parameter-of-type-‘String’-in-a-const-constructor"><a href="#01-A-value-of-type-‘Null’-can’t-be-assigned-to-a-parameter-of-type-‘String’-in-a-const-constructor" class="headerlink" title="01) A value of type ‘Null’ can’t be assigned to a parameter of type ‘String’ in a const constructor."></a>01) A value of type ‘Null’ can’t be assigned to a parameter of type ‘String’ in a const constructor.</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Container(</span><br><span class="line">  alignment: <span class="keyword">const</span> Alignment(<span class="number">0</span>, <span class="number">0</span>),</span><br><span class="line">  child: TextButton(</span><br><span class="line">	child: <span class="keyword">const</span> Text(</span><br><span class="line">		datetime,</span><br><span class="line">		style: TextStyle(fontSize: <span class="number">12</span>)</span><br><span class="line">	),</span><br><span class="line">	onPressed: onChangeDateTime</span><br><span class="line">  )</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>dart 语言定义变量的时候, 在数据类型加问好(?), 就表示允许该变量为 null, 否则不允许变量为 null, 如果一个变量为 null, 就不能把它赋值给不允许为 null 的变量</p>
+<p>经过测试, 把 Text 前面的 const 去掉就不会报错了, 为什么是这样呢?<br>因为加入 const 了以后, 这个组件就是常量了, 二这个组件中的第一个参数接收 datetime 的时候, 它就不能为 null 了, 但是 datetime 本身有可能为 null, 所以报错。</p>
+<p>解决这个报错, 把 datetime 定义成常量值就可以了！</p>
+<h1 id="02-Cannot-run-with-sound-null-safety-because-the-following-dependencies-don’t-support-null-safety-package-intl"><a href="#02-Cannot-run-with-sound-null-safety-because-the-following-dependencies-don’t-support-null-safety-package-intl" class="headerlink" title="02) Cannot run with sound null safety, because the following dependencies don’t support null safety: - package:intl"></a>02) Cannot run with sound null safety, because the following dependencies don’t support null safety: - package:intl</h1><p>什么是 null safety, 字面意思是空安全, 具体没有详细了解, 有兴趣的可以通过下面的地址来了解, 这里特别提醒下, 引入依赖包的时候需要注意是不是 null safety, 否则他就会报这个错误。</p>
+<p>A) stackoverflow.com/questions/64917744/cannot-run-with-sound-null-safety-because-dependencies-dont-support-null-safety</p>
+<p>B) dart.dev/null-safety/unsound-null-safety</p>
+<h1 id="03-A-value-of-type-‘String-’-can’t-be-assigned-to-a-variable-of-type-‘String’"><a href="#03-A-value-of-type-‘String-’-can’t-be-assigned-to-a-variable-of-type-‘String’" class="headerlink" title="03) A value of type ‘String?’ can’t be assigned to a variable of type ‘String’"></a>03) A value of type ‘String?’ can’t be assigned to a variable of type ‘String’</h1><p>原因: 这是因为 dart 语言定义变量时, 如果在数据类型后面加了问好(?), 表示这个变量允许为 null, 如果不加, 就不允许为 null, 对变量进行赋值时， 如果某个变量可以为 null, 但是把它赋值给了不为 null 的变量, 就会发生这个错误。 </p>
+<p>解决办法: 要么确保两个变量都为 null, 或者都不为 null.</p>
+<h1 id="04-Name-source-files-using-lowercase-with-underscores"><a href="#04-Name-source-files-using-lowercase-with-underscores" class="headerlink" title="04) Name source files using lowercase_with_underscores."></a>04) Name source files using <code>lowercase_with_underscores</code>.</h1><p>原因: dart 语言希望文件名采用小写, 并且使用下横线来分割单词, 为什么是小写? 因为dart语言面向多平台的操作系统, 有些系统大小写敏感, 有些则不是, 这样编译出来的文件, 就会导致引用出现问题, 为了统一, 均采用小写和下横线。</p>
+<p>注意: 是文件名采用小写加下横线, 不是类名或者函数名</p>
+<p>来源: blog.csdn.net/zhumengzj/article/details/79356040</p>
+<h1 id="05-Try-using-the-‘BigInt’-class-if-you-need-an-integer-larger-than-9223372036854775807-or-less-than-9-223-372-036-854-775-808"><a href="#05-Try-using-the-‘BigInt’-class-if-you-need-an-integer-larger-than-9223372036854775807-or-less-than-9-223-372-036-854-775-808" class="headerlink" title="05) Try using the ‘BigInt’ class if you need an integer larger than 9223372036854775807 or less than -9,223,372,036,854,775,808."></a>05) Try using the ‘BigInt’ class if you need an integer larger than 9223372036854775807 or less than -9,223,372,036,854,775,808.</h1><p>原因: 定义 int 类型的数据, 赋值的最大值是 19 位数, 超过则需要使用其他数据类型来代替。</p>
+<h1 id="06-Undefined-name-‘-FloorTodoLineDatabase’"><a href="#06-Undefined-name-‘-FloorTodoLineDatabase’" class="headerlink" title="06) Undefined name ‘$FloorTodoLineDatabase’"></a>06) Undefined name ‘$FloorTodoLineDatabase’</h1><p>说明: 使用 floor ORM 框架的时候, 使用抽象类来声明数据库类, floor 自动根据这个抽象类来生成数据库类的代码, 引用数据库类的时候, 就根据下面的格式来使用书写数据库类:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$Floor + 数据库抽象类名称</span><br></pre></td></tr></table></figure>
+<p>原因: $FloorTodoLineDatabase 这个写法正确, 但是没有引入 ‘TodoLineDatabase.dart’ , 也就是抽象类的类名, 就会发生这个错误。</p>
+<h1 id="07-A-value-of-type-‘TodoLineDatabase’-can’t-be-returned-from-an-async-function-with-return-type-Future-lt-Database-gt"><a href="#07-A-value-of-type-‘TodoLineDatabase’-can’t-be-returned-from-an-async-function-with-return-type-Future-lt-Database-gt" class="headerlink" title="07) A value of type ‘TodoLineDatabase’ can’t be returned from an async function with return type Future&lt;Database&gt;"></a>07) A value of type ‘TodoLineDatabase’ can’t be returned from an async function with return type Future&lt;Database&gt;</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">DatabaseFactory</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> Future&lt;Database&gt; generateDatabase() <span class="keyword">async</span> &#123;</span><br><span class="line">	<span class="keyword">final</span> _database = <span class="keyword">await</span> $FloorTodoLineDatabase.databaseBuilder(<span class="string">&#x27;todo_line_plus.db&#x27;</span>).build();</span><br><span class="line">	<span class="keyword">return</span> _database;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>返回值不应该是 Future&lt;Database&gt;, 而应该是 Future&lt;T&gt;, T 是我们自己定义的数据库类名，也就是本文 06) 里面说的数据库抽象类类名, 于是我们把它修改成:</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">DatabaseFactory</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> Future&lt;TodoLineDatabase&gt; generateDatabase() <span class="keyword">async</span> &#123;</span><br><span class="line">	<span class="keyword">final</span> _database = <span class="keyword">await</span> $FloorTodoLineDatabase.databaseBuilder(<span class="string">&#x27;todo_line_plus.db&#x27;</span>).build();</span><br><span class="line">	<span class="keyword">return</span> _database;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意: 有时候我们在网上苦苦搜索问题的答案, 一直找不到, 怎么办? 阅读源代码是最好的方式, 本问题是在阅读源代码后才知道使用 Future&lt;T&gt; 而不是 Future&lt;Database&gt;</p>
+<h1 id="08-Unhandled-Exception-LateInitializationError-Field-‘database’-has-not-been-initialized"><a href="#08-Unhandled-Exception-LateInitializationError-Field-‘database’-has-not-been-initialized" class="headerlink" title="08) Unhandled Exception: LateInitializationError: Field ‘database’ has not been initialized"></a>08) Unhandled Exception: LateInitializationError: Field ‘database’ has not been initialized</h1><p>dart 中, 使用 late 来修饰的变量, 都是延迟加载, 任何变量, 都需要初始化才可以使用, 延迟加载的变量, 需要在调用变量之前初始化, 不要在准备使用时才开始初始化, 本问题的出现, 是因为 database 是 floor 的数据库类, 初始化是异步初始化, 更需要在使用的前步骤中进行初始化。</p>
+<h1 id="09-Functions-marked-‘async’-must-have-a-return-type-assignable-to-‘Future’"><a href="#09-Functions-marked-‘async’-must-have-a-return-type-assignable-to-‘Future’" class="headerlink" title="09) Functions marked ‘async’ must have a return type assignable to ‘Future’"></a>09) Functions marked ‘async’ must have a return type assignable to ‘Future’</h1><p>async 函数返回值应该是 Future&lt;T&gt;, 而不应该是 T</p>
+<h1 id="10-Cannot-find-declaration-to-go-to"><a href="#10-Cannot-find-declaration-to-go-to" class="headerlink" title="10) Cannot find declaration to go to"></a>10) Cannot find declaration to go to</h1><p>说明: android studio 点击类名的时候， 无法查看该类的源代码</p>
+<p>原因: 未知</p>
+<p>解决办法: 把项目代码从项目空间中移走, 然后在 android studio 中重新创建项目, 名称相同, 再把代码移多来, 问题解决。<br>android studio 版本: artic fox 2020.3.1 patch 2<br>winddow 10</p>
+<h1 id="11-No-pubspec-yaml-file-found"><a href="#11-No-pubspec-yaml-file-found" class="headerlink" title="11) No pubspec.yaml file found."></a>11) No pubspec.yaml file found.</h1><p>原因: flutter run 这个命令应该运行在项目的跟目录下</p>
+<h1 id="12-Column-type-is-not-supported-for-dynamic"><a href="#12-Column-type-is-not-supported-for-dynamic" class="headerlink" title="12) Column type is not supported for dynamic"></a>12) Column type is not supported for dynamic</h1><p>说明: 运行 flutter packages pub run build_runner build 报错</p>
+<p>原因: User 的构造函数 User(this.id, this.name, email);  email 所对应的变量也是 email, 其声明为 final, final 变量只能赋值一次, 因此必须在构建类的时候初始化, 但由于没有初始化, 所以报错, 本来想让构造函数中的参数 email 对应类中的变量 email, 但由于少写了 this. 所以, 报错.</p>
+<p>解决方法: email 写 this. 最终写法: User(this.id, this.name, this.email);</p>
+<h1 id="13-Queries-returning-streams-of-single-elements-might-emit-null-Make-the-method-return-a-Stream-of-a-nullable-type-e-g-Stream-lt-Person-gt"><a href="#13-Queries-returning-streams-of-single-elements-might-emit-null-Make-the-method-return-a-Stream-of-a-nullable-type-e-g-Stream-lt-Person-gt" class="headerlink" title="13) Queries returning streams of single elements might emit null. Make the method return a Stream of a nullable type e.g. Stream&lt;Person?&gt;."></a>13) Queries returning streams of single elements might emit null. Make the method return a Stream of a nullable type e.g. Stream&lt;Person?&gt;.</h1><p>原因: sqlite 的 ORM 框架 floor, dao 类中, 查询语句需要考虑返回值是 null 的情况, Stream&lt;Person?&gt; 允许返回值是 null, Stream&lt;Person&gt; 不允许返回值是 null</p>
+<p>解决办法: 使用 Stream&lt;Person?&gt; 来声明返回值</p>
+<h1 id="14-WARNING-source-gen-combining-builder-on-lib-dao-TodoLineDatabase-dart"><a href="#14-WARNING-source-gen-combining-builder-on-lib-dao-TodoLineDatabase-dart" class="headerlink" title="14 [WARNING] source_gen:combining_builder on lib/dao/TodoLineDatabase.dart:"></a>14 [WARNING] source_gen:combining_builder on lib/dao/TodoLineDatabase.dart:</h1><p>TodoLineDatabase.g.dart must be included as a part directive in the input library with:</p>
+<p>TodoLineDatabase.dart 类中必须引入 TodoLineDatabase.g.dart 类, 而且必须是通过 part 来引入</p>
+<h1 id="15-Error-when-reading-‘lib-dao-database-g-dart’-系统找不到指定的文件。"><a href="#15-Error-when-reading-‘lib-dao-database-g-dart’-系统找不到指定的文件。" class="headerlink" title="15 Error when reading ‘lib/dao/database.g.dart’: 系统找不到指定的文件。"></a>15 Error when reading ‘lib/dao/database.g.dart’: 系统找不到指定的文件。</h1><p>引入的时候, database.g.dart 这个文件名称不是随便填写的, 这是 floor 生成的文件, floor 会自动根据我们定义的抽象类的文件名称来生成, 抽象类文件的定义类似</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Database</span>(version: <span class="number">1</span>, entities: [User])</span><br><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">TodoLineDatabase</span> <span class="keyword">extends</span> <span class="title">FloorDatabase</span> </span>&#123;</span><br><span class="line">  UserDao <span class="keyword">get</span> userDao;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>根据上面的类名称, floor 生成的 dart 文件应该是 ‘TodoLineDatabase.g.dart’, 所以引入的时候应该根据填写这个文件名称。   </p>
+
+      
+     <!-- by blair add this if sentence at 20160725 -->
+      <br>
+      
+<div id="bottom-donation-section">
+<span style="font-size: 1.0em; padding:0em 1em 0.5em 1em; margin: 0 auto;">
+  <strong style="vertical-align: top;">分享到:</strong>
+    <div class="j_handlclick"  style="background: url(/images/logos/share_facebook_icon.jpg);background-size: contain;display: inline-block; width:50px; height:50px" href="https://www.facebook.com/sharer/sharer.php?u=" target="_blank">
+    </div>
+    <div class="j_handlclick"  style="background: url(/images/logos/share_twitter_icon.jpg);background-size: contain;display: inline-block; width:50px; height:50px" href="https://twitter.com/intent/tweet?url=" target="_blank">
+    </div>
+    <div class="j_handlclick"  style="background: url(/images/logos/share_line_icon.jpg);background-size: contain;display: inline-block; width:50px; height:50px" href="https://www.addtoany.com/add_to/line?linkurl=" target="_blank">
+    </div>
+    <div class="j_handlclick"  style="background: url(/images/logos/share_wechat_icon.jpg);background-size: contain;display: inline-block; width:50px; height:50px" href="https://api.addthis.com/oexchange/0.8/forward/wechat/offer?url=" target="_blank">
+    </div>
+  <br>  
+  <br>  
+  &nbsp;&nbsp;如果您觉得这篇文章对您的学习很有帮助, 请您也分享它, 让它能再次帮助到更多的需要学习的人.
+您的<a href="/support/"><strong>支持</strong></a>将鼓励我继续创作 !
+  <br>  
+
+</span>
+<!--
+<h3 id="bottom-donation-title">支持 让文章变得更优质</h3>
+<div>
+<a id="bottom-donation-button" href="/support">点我 赞助 作者</a>
+</div>
+-->
+</div>
+<div class="well">
+  <!--
+  原创文章，转载请注明： 转载自<a target="_blank" rel="noopener" href="http://52binge.github.io"> Blair Chan's Blog</a>，作者：
+  <a href="/about">Blair Chan</a> <br>
+  -->
+  本文基于<a target="_blank" title="Creative Commons Attribution 4.0 international License" href="https://creativecommons.org/licenses/by-nc/4.0/">署名4.0国际许可协议</a>发布，转载请保留本文署名和文章链接。 如您有任何授权方面的协商，请邮件联系我。
+</div>
+ <!-- by blair add 160724-->
+    
+    </div>
+    
+      <div class="article-toc">
+        <h3>Contents</h3>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#01-A-value-of-type-%E2%80%98Null%E2%80%99-can%E2%80%99t-be-assigned-to-a-parameter-of-type-%E2%80%98String%E2%80%99-in-a-const-constructor"><span class="toc-text">01) A value of type ‘Null’ can’t be assigned to a parameter of type ‘String’ in a const constructor.</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#02-Cannot-run-with-sound-null-safety-because-the-following-dependencies-don%E2%80%99t-support-null-safety-package-intl"><span class="toc-text">02) Cannot run with sound null safety, because the following dependencies don’t support null safety: - package:intl</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#03-A-value-of-type-%E2%80%98String-%E2%80%99-can%E2%80%99t-be-assigned-to-a-variable-of-type-%E2%80%98String%E2%80%99"><span class="toc-text">03) A value of type ‘String?’ can’t be assigned to a variable of type ‘String’</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#04-Name-source-files-using-lowercase-with-underscores"><span class="toc-text">04) Name source files using lowercase_with_underscores.</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#05-Try-using-the-%E2%80%98BigInt%E2%80%99-class-if-you-need-an-integer-larger-than-9223372036854775807-or-less-than-9-223-372-036-854-775-808"><span class="toc-text">05) Try using the ‘BigInt’ class if you need an integer larger than 9223372036854775807 or less than -9,223,372,036,854,775,808.</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#06-Undefined-name-%E2%80%98-FloorTodoLineDatabase%E2%80%99"><span class="toc-text">06) Undefined name ‘$FloorTodoLineDatabase’</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#07-A-value-of-type-%E2%80%98TodoLineDatabase%E2%80%99-can%E2%80%99t-be-returned-from-an-async-function-with-return-type-Future-lt-Database-gt"><span class="toc-text">07) A value of type ‘TodoLineDatabase’ can’t be returned from an async function with return type Future&lt;Database&gt;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#08-Unhandled-Exception-LateInitializationError-Field-%E2%80%98database%E2%80%99-has-not-been-initialized"><span class="toc-text">08) Unhandled Exception: LateInitializationError: Field ‘database’ has not been initialized</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#09-Functions-marked-%E2%80%98async%E2%80%99-must-have-a-return-type-assignable-to-%E2%80%98Future%E2%80%99"><span class="toc-text">09) Functions marked ‘async’ must have a return type assignable to ‘Future’</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#10-Cannot-find-declaration-to-go-to"><span class="toc-text">10) Cannot find declaration to go to</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#11-No-pubspec-yaml-file-found"><span class="toc-text">11) No pubspec.yaml file found.</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#12-Column-type-is-not-supported-for-dynamic"><span class="toc-text">12) Column type is not supported for dynamic</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#13-Queries-returning-streams-of-single-elements-might-emit-null-Make-the-method-return-a-Stream-of-a-nullable-type-e-g-Stream-lt-Person-gt"><span class="toc-text">13) Queries returning streams of single elements might emit null. Make the method return a Stream of a nullable type e.g. Stream&lt;Person?&gt;.</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#14-WARNING-source-gen-combining-builder-on-lib-dao-TodoLineDatabase-dart"><span class="toc-text">14 [WARNING] source_gen:combining_builder on lib&#x2F;dao&#x2F;TodoLineDatabase.dart:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#15-Error-when-reading-%E2%80%98lib-dao-database-g-dart%E2%80%99-%E7%B3%BB%E7%BB%9F%E6%89%BE%E4%B8%8D%E5%88%B0%E6%8C%87%E5%AE%9A%E7%9A%84%E6%96%87%E4%BB%B6%E3%80%82"><span class="toc-text">15 Error when reading ‘lib&#x2F;dao&#x2F;database.g.dart’: 系统找不到指定的文件。</span></a></li></ol>
+      </div>
+    
+    
+      <footer class="article-footer">
+        <!-- <div class="well" style="width:100px; height:30px;"></div>  by blair-->
+        
+ <!-- by blair add 160724-->
+        <!--
+        <div style="width:100px; height:30px;"></div> by blair add 160724
+        -->
+        
+  <div class="article-tag">
+    <a class="article-tag-none-link" href="/tags/flutter/" rel="tag">flutter</a>
+  </div>
+
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/20211023/flutter-%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E7%B3%BB%E5%88%97%E4%B9%8B%E4%BA%8C/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">flutter-开发问题系列之二&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 wanlion&nbsp;
+    </div>
+  </div>
+</footer>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+      displayMath: [ ['$$','$$']],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
+</script>
+
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+  </div>
+</body>
+</html>
