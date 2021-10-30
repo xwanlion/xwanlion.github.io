@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>flutter-开发问题系列之五 - wanlion</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="这是 todoline++ 项目开发过程中遇到的问题系列, 记录下来供大家参考。本篇记录一些疑问">
+<meta property="og:type" content="article">
+<meta property="og:title" content="flutter-开发问题系列之五">
+<meta property="og:url" content="https://xwanlion.github.io/20211030/flutter-%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E7%B3%BB%E5%88%97%E4%B9%8B%E4%BA%94/index.html">
+<meta property="og:site_name" content="wanlion">
+<meta property="og:description" content="这是 todoline++ 项目开发过程中遇到的问题系列, 记录下来供大家参考。本篇记录一些疑问">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-10-30T02:21:21.000Z">
+<meta property="article:modified_time" content="2021-10-30T02:36:09.192Z">
+<meta property="article:author" content="wanlion">
+<meta property="article:tag" content="flutter">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <!-- blair add baidu tongji start... @2017.10.03 -->
+<!-- blair add baidu tongji end ! @2017.10.03 -->
+
+<header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo" href="/"></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://xwanlion.github.io"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+    <br>
+    <section id="main" class="outer"><article id="post-flutter-开发问题系列之五" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      flutter-开发问题系列之五
+      <small class=article-detail-date-index>&nbsp; 2021-10-30</small>
+    </h1>
+  
+
+
+        <div class=page-title></div>
+        <br>
+      </header>
+    
+    <div class="article-meta">
+      <!--<a href="/20211030/flutter-%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E7%B3%BB%E5%88%97%E4%B9%8B%E4%BA%94/" class="article-date">
+  <time datetime="2021-10-30T02:21:21.000Z" itemprop="datePublished">2021-10-30</time>
+</a>-->
+      <!-- 
+--><!-- by blair 160724 -->
+      <!-- by blair
+      
+      -->
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这是 todoline++ 项目开发过程中遇到的问题系列, 记录下来供大家参考。<br>本篇记录一些疑问</p>
+<span id="more"></span>
+<p>todoline++ 官网请看这里: <a target="_blank" rel="noopener" href="https://todoline-plus-plus.github.io/">https://todoline-plus-plus.github.io/</a></p>
+<h1 id="1-flutter-中的-drawer-组件-通过-hoverColor-可以改变鼠标经过时的背景色-但是无法改变他的字体颜色-怎么办"><a href="#1-flutter-中的-drawer-组件-通过-hoverColor-可以改变鼠标经过时的背景色-但是无法改变他的字体颜色-怎么办" class="headerlink" title="1 flutter 中的 drawer 组件, 通过 hoverColor 可以改变鼠标经过时的背景色, 但是无法改变他的字体颜色, 怎么办?"></a>1 flutter 中的 drawer 组件, 通过 hoverColor 可以改变鼠标经过时的背景色, 但是无法改变他的字体颜色, 怎么办?</h1><p>目前(2021-10-30)还没有办法解决这个问题</p>
+<h1 id="2-实体类使用驼峰命名法-sqlite-表字段名称会区分大小写吗"><a href="#2-实体类使用驼峰命名法-sqlite-表字段名称会区分大小写吗" class="headerlink" title="2 实体类使用驼峰命名法, sqlite 表字段名称会区分大小写吗?"></a>2 实体类使用驼峰命名法, sqlite 表字段名称会区分大小写吗?</h1><h6 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h6><p>项目使用 sqlite 来存储数据, 使用 floor 来做映射, floor 会自动根据实体类来生成数据表。</p>
+<h6 id="疑问"><a href="#疑问" class="headerlink" title="疑问"></a>疑问</h6><p>如果实体类的成员变量采用驼峰命名法, 映射成数据表后, 如果数据库不区分大小写，会不会报错?</p>
+<h6 id="答案"><a href="#答案" class="headerlink" title="答案"></a>答案</h6><p>sqlite 默认对大小写敏感, 如果不想区分大小写, 需要配置, 与之相反的是, mysql 默认对大小写不敏感, 如果需要对大小写敏感, 需要配置。</p>
+<p>所以, 答案是:可以.</p>
+<h6 id="来源"><a href="#来源" class="headerlink" title="来源:"></a>来源:</h6><p>cnblogs.com/zhuawang/archive/2013/01/15/2861566.html</p>
+<h1 id="3-sqlite-可以使用枚举类型吗"><a href="#3-sqlite-可以使用枚举类型吗" class="headerlink" title="3 sqlite 可以使用枚举类型吗?"></a>3 sqlite 可以使用枚举类型吗?</h1><h6 id="答案-1"><a href="#答案-1" class="headerlink" title="答案"></a>答案</h6><p>sqlite 没有枚举类型, 只有最基本的 null, integer, real, TEXT, BLOB, 但可以使用 TEXT 和 CHECK 来限制他的值, 这就等同于枚举类型。 由于考虑到这种方式效率不是很高, 所以我使用 int 来代替, 再在代码中进行转换。</p>
+<h6 id="来源-1"><a href="#来源-1" class="headerlink" title="来源:"></a>来源:</h6><p>stackoverflow.com/questions/5299267/how-to-create-enum-type-in-sqlite</p>
+<h1 id="4-dart-语言-int-如何转换为-enum"><a href="#4-dart-语言-int-如何转换为-enum" class="headerlink" title="4 dart 语言, int 如何转换为 enum?"></a>4 dart 语言, int 如何转换为 enum?</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> Sex&#123;</span><br><span class="line">male,</span><br><span class="line">female</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> idx = <span class="number">1</span>;</span><br><span class="line"><span class="built_in">print</span>(Sex.values[idx]); <span class="comment">// female</span></span><br></pre></td></tr></table></figure>
+
+<p>stackoverflow.com/questions/51190035/flutter-dart-convert-int-to-enum</p>
+<h1 id="5-sqlite-的基本数据类型并没有-boolean-数据类型-但是如果我的实体类成员变量是-bool-类型-通过-floor-框架自动映射-保存在数据库里面的是什么类型呢-我该如何查询呢？"><a href="#5-sqlite-的基本数据类型并没有-boolean-数据类型-但是如果我的实体类成员变量是-bool-类型-通过-floor-框架自动映射-保存在数据库里面的是什么类型呢-我该如何查询呢？" class="headerlink" title="5 sqlite 的基本数据类型并没有 boolean 数据类型, 但是如果我的实体类成员变量是 bool 类型, 通过 floor 框架自动映射, 保存在数据库里面的是什么类型呢? 我该如何查询呢？"></a>5 sqlite 的基本数据类型并没有 boolean 数据类型, 但是如果我的实体类成员变量是 bool 类型, 通过 floor 框架自动映射, 保存在数据库里面的是什么类型呢? 我该如何查询呢？</h1><h6 id="答案-2"><a href="#答案-2" class="headerlink" title="答案:"></a>答案:</h6><p>保存在数据库里面是 integer 类型, 这是大多数数据库的处理方式, sqlite 还支持查询语句中直接使用 true 和 false 值:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> <span class="keyword">table</span> <span class="keyword">where</span> col <span class="operator">=</span> <span class="literal">true</span>;</span><br></pre></td></tr></table></figure>
+<h6 id="来源-2"><a href="#来源-2" class="headerlink" title="来源:"></a>来源:</h6><p>blog.csdn.net/weixin_45488228/article/details/104377915</p>
+<h1 id="6-sqlite-如何获取系统时间戳？"><a href="#6-sqlite-如何获取系统时间戳？" class="headerlink" title="6 sqlite 如何获取系统时间戳？"></a>6 sqlite 如何获取系统时间戳？</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> strftime(<span class="string">&#x27;%s&#x27;</span>,<span class="string">&#x27;now&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<p>但是我发现, sqlite 的系统时间戳只有 10 位数, 而 dart 语言或者 js 获取的系统时间戳是 13 位数, 怎么回事?</p>
+<h1 id="7-flutter-如何隐藏控件"><a href="#7-flutter-如何隐藏控件" class="headerlink" title="7 flutter 如何隐藏控件?"></a>7 flutter 如何隐藏控件?</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Visibility(</span><br><span class="line">  visible: <span class="keyword">false</span>,</span><br><span class="line">  child: Text(</span><br><span class="line">	dateTime.day.toString(),</span><br><span class="line">	style: defaultTextStyle,</span><br><span class="line">  )</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h6 id="来源-3"><a href="#来源-3" class="headerlink" title="来源:"></a>来源:</h6><p>blog.csdn.net/haha223545/article/details/102796137</p>
+<h1 id="8-flutter-日期选择器中-CupertinoDatePicker-需要结合-showModalBottomSheet-来显示"><a href="#8-flutter-日期选择器中-CupertinoDatePicker-需要结合-showModalBottomSheet-来显示" class="headerlink" title="8 flutter 日期选择器中, CupertinoDatePicker 需要结合 showModalBottomSheet 来显示"></a>8 flutter 日期选择器中, CupertinoDatePicker 需要结合 showModalBottomSheet 来显示</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">showModalBottomSheet(</span><br><span class="line">  context: context,</span><br><span class="line">  builder: (context) &#123;</span><br><span class="line">	<span class="keyword">return</span> CupertinoDatePicker(</span><br><span class="line">	  onDateTimeChanged: (<span class="built_in">DateTime</span> value) &#123;</span><br><span class="line">		setState(() &#123;</span><br><span class="line">		  _datetime = value;</span><br><span class="line">		&#125;);</span><br><span class="line">	  &#125;,</span><br><span class="line">	  initialDateTime: _datetime,</span><br><span class="line">	  mode: CupertinoDatePickerMode.date,</span><br><span class="line">	  maximumYear: <span class="number">2300</span>,</span><br><span class="line">	  minimumYear: <span class="number">2021</span>,</span><br><span class="line">	);</span><br><span class="line">  &#125;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h6 id="注意"><a href="#注意" class="headerlink" title="注意:"></a>注意:</h6><p>CupertinoDatePicker 可以正常在 android 中运行, 但是在 windows 中无法选择。</p>
+<h1 id="9-想定制化一个日期选择器-该用哪个最好"><a href="#9-想定制化一个日期选择器-该用哪个最好" class="headerlink" title="9 想定制化一个日期选择器, 该用哪个最好?"></a>9 想定制化一个日期选择器, 该用哪个最好?</h1><p>现成的控件中, 下面这个组件功能最多最好, 至少他的实例里面有介绍<br>pub.dev/packages/syncfusion_flutter_datepicker</p>
+<h6 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h6><p>1） 开源协议不可靠,<br>2） 他提供的实例代码无法使用</p>
+<h6 id="关于日期选择器的相关资料"><a href="#关于日期选择器的相关资料" class="headerlink" title="关于日期选择器的相关资料:"></a>关于日期选择器的相关资料:</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">www.cnblogs.com/joe235/p/11978304.html	</span><br><span class="line">https://help.syncfusion.com/flutter/daterangepicker/customizations</span><br><span class="line">https://pub.dev/packages/syncfusion_flutter_datepicker</span><br><span class="line">https://pub.dev/packages/flutter_rounded_date_picker(ok)</span><br><span class="line">https://medium.com/enappd/building-a-flutter-datetime-picker-in-just-15-minutes-6a4b13d6a6d1(https://pub.dev/packages/flutter_datetime_picker/example) </span><br></pre></td></tr></table></figure>
+<h1 id="10-dart-语言中在变量的后面添加感叹号是什么意思"><a href="#10-dart-语言中在变量的后面添加感叹号是什么意思" class="headerlink" title="10 dart 语言中在变量的后面添加感叹号是什么意思?"></a>10 dart 语言中在变量的后面添加感叹号是什么意思?</h1><p>由于 dart 语言存在 null-safety 的机制, 就产生一个变量是非 null-safety, 另外一个变量是 null-safety, 这样的话, 如果把非 null-safety 的变量赋值给 null-safety 的变量, 就会产生下面的报错:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a value of int? can’t be assigned to a variable type of ‘int’ </span><br></pre></td></tr></table></figure>
+
+<p>这个时候, 我们只需要在他的后面添加感叹号就可以了, 个人的理解是, 告诉 dart, 我确保他是 null-safety 的。    </p>
+<h1 id="11-flutter-如何让组件位于屏幕的底部"><a href="#11-flutter-如何让组件位于屏幕的底部" class="headerlink" title="11 flutter 如何让组件位于屏幕的底部?"></a>11 flutter 如何让组件位于屏幕的底部?</h1><p>查看了网上的资料, 说下面的代码可以让按钮处于屏幕的底部</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Body</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">	<span class="keyword">return</span> Align(</span><br><span class="line">	  alignment: Alignment.bottomCenter,</span><br><span class="line">	  child: RaisedButton(</span><br><span class="line">		onPressed: () &#123;&#125;,</span><br><span class="line">		child: <span class="keyword">const</span> Text(<span class="string">&#x27;Bottom Button!&#x27;</span>, style: TextStyle(fontSize: <span class="number">20</span>)),</span><br><span class="line">		color: Colors.blue,</span><br><span class="line">		textColor: Colors.white,</span><br><span class="line">		elevation: <span class="number">5</span>,</span><br><span class="line">	  ),</span><br><span class="line">	);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>来源: flutterforyou.com/how-to-place-a-button-at-bottom-of-the-screen-in-flutter/</p>
+<p>Alignment.bottomCenter 是让按钮处于底部的关键,但是我怎么测试都不行, 后来转念一想, 有可能是我要求处于左侧滑出菜单的底部, 这个左侧菜单有特殊要求, 所以才没有处于底部, 于是又改成下面的代码:</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">drawer: Drawer(</span><br><span class="line">  child: Column(</span><br><span class="line">	mainAxisSize: MainAxisSize.max,</span><br><span class="line">	children: &lt;Widget&gt;[</span><br><span class="line">	  Text(<span class="string">&#x27;Top&#x27;</span>),</span><br><span class="line">	  Expanded(</span><br><span class="line">		child: Align(</span><br><span class="line">		  alignment: Alignment.bottomCenter,</span><br><span class="line">		  child: Text(<span class="string">&#x27;Bottom&#x27;</span>),</span><br><span class="line">		),</span><br><span class="line">	  ),</span><br><span class="line">	],</span><br><span class="line">  ),</span><br><span class="line">),</span><br></pre></td></tr></table></figure>
+
+<h6 id="注意-1"><a href="#注意-1" class="headerlink" title="注意:"></a>注意:</h6><p>A) Column 不能使用 ListView 来代替， 否则将无法达到效果<br>B) 感觉上, Expanded 和 Align 两个组件需要配合使用, 但是没有亲自测试是否可以缺少其中某一个组件。</p>
+<h6 id="来源-4"><a href="#来源-4" class="headerlink" title="来源:"></a>来源:</h6><p>stackoverflow.com/questions/50471025/flutter-align-button-to-bottom-of-drawer</p>
+<h1 id="13-dart-语言可以重新定义变量"><a href="#13-dart-语言可以重新定义变量" class="headerlink" title="13 dart 语言可以重新定义变量"></a>13 dart 语言可以重新定义变量</h1><p>dart 语言中, 下面的代码竟然不会报错:</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">String</span> a = <span class="string">&quot;a&quot;</span>;</span><br><span class="line"><span class="keyword">if</span> (a == <span class="string">&quot;a&quot;</span>) &#123;</span><br><span class="line">  <span class="built_in">String</span> a = <span class="string">&quot;b&quot;</span>;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">&quot;first a is <span class="subst">$&#123;a&#125;</span>&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;second a is <span class="subst">$&#123;a&#125;</span>&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>注意, a 定义了两次, 在 java 中肯定会报错, 但是 dart 竟然不报错, 第二次等于重新定义了这个变量, 但是作用域仅限于 if 语句块, 出了这个范围就使用第一次定义的值。</p>
+<p>打印效果如下:</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">first a is b</span><br><span class="line">second a is a</span><br></pre></td></tr></table></figure>
+
+<h1 id="14-flutte-如何限制只能输入数字"><a href="#14-flutte-如何限制只能输入数字" class="headerlink" title="14 flutte 如何限制只能输入数字?"></a>14 flutte 如何限制只能输入数字?</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&#x27;package:flutter/services.dart&#x27;</span>;</span><br><span class="line"></span><br><span class="line">TextField(</span><br><span class="line">  keyboardType: TextInputType.number,<span class="comment">//键盘类型，数字键盘</span></span><br><span class="line">  inputFormatters: &lt;TextInputFormatter&gt;[</span><br><span class="line">	WhitelistingTextInputFormatter.digitsOnly,<span class="comment">//只输入数字</span></span><br><span class="line">	LengthLimitingTextInputFormatter(<span class="number">6</span>)<span class="comment">//限制长度</span></span><br><span class="line">  ],</span><br><span class="line">  onChanged: _listenCpyCode,</span><br><span class="line">),</span><br></pre></td></tr></table></figure>
+<p>WhitelistingTextInputFormatter 代码准备过期, 请使用 FilteringTextInputFormatter 代替:</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">inputFormatters: [</span><br><span class="line">  <span class="comment">// FilteringTextInputFormatter.digitsOnly,//数字，只能是整数</span></span><br><span class="line">  FilteringTextInputFormatter.allow(<span class="built_in">RegExp</span>(<span class="string">&quot;[0-9.]&quot;</span>)),<span class="comment">//数字包括小数</span></span><br><span class="line">  FilteringTextInputFormatter.allow(<span class="built_in">RegExp</span>(<span class="string">&quot;[a-zA-Z]&quot;</span>)),<span class="comment">//只允许输入字母</span></span><br><span class="line">],</span><br></pre></td></tr></table></figure>
+
+<h1 id="15-flutter-如何实现淡入淡出效果"><a href="#15-flutter-如何实现淡入淡出效果" class="headerlink" title="15 flutter 如何实现淡入淡出效果"></a>15 flutter 如何实现淡入淡出效果</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">child: AnimatedOpacity(</span><br><span class="line">  duration: <span class="keyword">const</span> <span class="built_in">Duration</span>(seconds: <span class="number">10</span>),</span><br><span class="line">  opacity: <span class="number">1.0</span>,</span><br><span class="line">  child: Center(</span><br><span class="line">	child: <span class="keyword">this</span>.widget,</span><br><span class="line">  ),</span><br><span class="line">),</span><br></pre></td></tr></table></figure>
+<p>AnimatedOpacity 可以实现这个效果, 但是自己测试好像效果不是很好</p>
+<h6 id="来源-5"><a href="#来源-5" class="headerlink" title="来源:"></a>来源:</h6><p>blog.csdn.net/weixin_33842304/article/details/88024657</p>
+<h1 id="16-showDatePicker-显示日历后如何限制不让选择某个日期"><a href="#16-showDatePicker-显示日历后如何限制不让选择某个日期" class="headerlink" title="16 showDatePicker 显示日历后如何限制不让选择某个日期?"></a>16 showDatePicker 显示日历后如何限制不让选择某个日期?</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">showDatePicker(</span><br><span class="line">  context: context,</span><br><span class="line">  initialDate: <span class="built_in">DateTime</span>.now(), <span class="comment">//selected date</span></span><br><span class="line">  firstDate: <span class="built_in">DateTime</span>(<span class="number">2020</span>), <span class="comment">// start date</span></span><br><span class="line">  lastDate: <span class="built_in">DateTime</span>(<span class="number">2100</span>),</span><br><span class="line">  selectableDayPredicate: (<span class="built_in">DateTime</span> val) =&gt; val.day &lt; <span class="built_in">DateTime</span>.now().day ? <span class="keyword">false</span> : <span class="keyword">true</span>, <span class="comment">// date selectable setting</span></span><br><span class="line">).then((val)&#123;</span><br><span class="line">  <span class="keyword">if</span> (val == <span class="keyword">null</span>) <span class="keyword">return</span>;</span><br><span class="line">  Message.toast(context, <span class="string">&quot;<span class="subst">$&#123;val&#125;</span>&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>使用 selectableDayPredicate 来做限制</p>
+<h6 id="参考"><a href="#参考" class="headerlink" title="参考:"></a>参考:</h6><p>stackoverflow.com/questions/51683646/how-do-i-use-the-selectabledaypredicate-to-limit-my-datepicker-to-only-weekdays</p>
+<h1 id="17-dart-如何设置回调函数"><a href="#17-dart-如何设置回调函数" class="headerlink" title="17 dart 如何设置回调函数?"></a>17 dart 如何设置回调函数?</h1><pre><code>我们调用其他人开发的函数, 我们希望他们处理完成后要有反馈, 这个时候我就需要调用他们定义的回调函数, 反过来, 我给其他人提供支持, 我们希望处理完成后通知他们, 如何定义回调函数?
+java 中, 我们可以通过定义一个接口类, 然后在我们提供函数的参数中定义该接口类, 处理完成后, 调用他就可以通知使用者, dart 如何处理这个问题呢?
+A) 首先, 我们得定义一个类似的接口类:
+   typedef ICallbackClass = Function(DateType type);
+   
+B) 接着, 我们提供一个函数, 该函数让使用者来调用, 函数的方法中传入一个参数, 参数的数据类型为我们定义的接口类, 然后直接把该参数当作方法来调用就可以了:
+   void myMethod(ICallbackClass callback) &#123;
+      // todo something
+      callback(type);
+   &#125;
+   
+</code></pre>
+<h1 id="18-dart-如何定义和使用枚举类型"><a href="#18-dart-如何定义和使用枚举类型" class="headerlink" title="18 dart 如何定义和使用枚举类型?"></a>18 dart 如何定义和使用枚举类型?</h1><p>A) 定义枚举类型</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> ClassName &#123;</span><br><span class="line">  item1,</span><br><span class="line">  item2,</span><br><span class="line">  item3</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>B) 使用枚举类型</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ClassName.item1</span><br></pre></td></tr></table></figure>
+
+<h1 id="19-flutter-如何画分割线"><a href="#19-flutter-如何画分割线" class="headerlink" title="19 flutter 如何画分割线?"></a>19 flutter 如何画分割线?</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Divider(height: <span class="number">1.0</span>,indent: <span class="number">0.0</span>,color: Colors.grey);</span><br></pre></td></tr></table></figure>
+<p>来源: blog.csdn.net/changzengli/article/details/88906957</p>
+<h1 id="20-dart-如何强制类型转换"><a href="#20-dart-如何强制类型转换" class="headerlink" title="20 dart 如何强制类型转换?"></a>20 dart 如何强制类型转换?</h1><p>dart 无法强制类型转换, 在 java 中, 下面的代码可以正常运行</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Map</span>&lt;<span class="built_in">String</span>, <span class="built_in">Object</span>&gt; map = &#123;<span class="string">&quot;a&quot;</span>: <span class="string">&quot;b&quot;</span>, <span class="string">&quot;c&quot;</span>: <span class="number">5</span>&#125;;</span><br><span class="line"><span class="built_in">String</span> a = (<span class="built_in">String</span>) map.<span class="keyword">get</span>(<span class="string">&quot;a&quot;</span>); <span class="comment">// 强制类型转换</span></span><br></pre></td></tr></table></figure>
+
+<p>但是 dart 语言不行, 第二行将会报错, 解决办法:<br>使用 String 来代替 Object, 数值先转换成字符串在存储到 Map 中, 获取后在转换成数值。</p>
+<h1 id="21-flutter-中-下列组件没有-height-属性可以设置怎么办"><a href="#21-flutter-中-下列组件没有-height-属性可以设置怎么办" class="headerlink" title="21 flutter 中, 下列组件没有 height 属性可以设置怎么办?"></a>21 flutter 中, 下列组件没有 height 属性可以设置怎么办?</h1><p>在外层添加 SizeBox 来解决:<br>RaisedButton、FloatingActionButton、FlatButton、OutlineButton, TextButton</p>
+<h1 id="22-flutter-时间选择器"><a href="#22-flutter-时间选择器" class="headerlink" title="22 flutter 时间选择器"></a>22 flutter 时间选择器</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">showDatePicker(</span><br><span class="line">  context: context,</span><br><span class="line">  initialDate: <span class="built_in">DateTime</span>.now(), <span class="comment">//选中的日期</span></span><br><span class="line">  firstDate: <span class="built_in">DateTime</span>(<span class="number">2020</span>), <span class="comment">//日期选择器上可选择的最早日期</span></span><br><span class="line">  lastDate: <span class="built_in">DateTime</span>(<span class="number">2100</span>), <span class="comment">//日期选择器上可选择的最晚日期</span></span><br><span class="line">).then((val)&#123;</span><br><span class="line">  <span class="keyword">if</span> (val == <span class="keyword">null</span>) <span class="keyword">return</span>;</span><br><span class="line">  Message.toast(context, <span class="string">&quot;<span class="subst">$&#123;val&#125;</span>&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h6 id="来源-6"><a href="#来源-6" class="headerlink" title="来源:"></a>来源:</h6><p>cnblogs.com/joe235/p/11978304.html</p>
+<h1 id="23-flutter-如何设置背景色"><a href="#23-flutter-如何设置背景色" class="headerlink" title="23 flutter 如何设置背景色?"></a>23 flutter 如何设置背景色?</h1><p>全局统一: MaterialApp.theme.scaffoldBackgroundColor<br>单个页面: Scaffold.backgroundColor</p>
+<h6 id="来源-7"><a href="#来源-7" class="headerlink" title="来源:"></a>来源:</h6><p>stackoverflow.com/questions/43822671/how-do-i-set-the-background-color-of-my-main-screen-in-flutter</p>
+<h1 id="24-flutter-Text-如何设置粗体字"><a href="#24-flutter-Text-如何设置粗体字" class="headerlink" title="24 flutter Text 如何设置粗体字?"></a>24 flutter Text 如何设置粗体字?</h1><p>Text.style.fontWeight = FontWeight.bold</p>
+<h1 id="25-flutter-card-组件如何设置标题"><a href="#25-flutter-card-组件如何设置标题" class="headerlink" title="25 flutter card 组件如何设置标题?"></a>25 flutter card 组件如何设置标题?</h1><p>我的做法是, 在 children 的第一行添加 row, 然后使用这个 row 来作为标题进行设置</p>
+<h1 id="26-dart-Map-如何根据-key-来取值"><a href="#26-dart-Map-如何根据-key-来取值" class="headerlink" title="26 dart Map 如何根据 key 来取值"></a>26 dart Map 如何根据 key 来取值</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">List</span>&lt;<span class="built_in">Map</span>&lt;<span class="built_in">String</span>, <span class="built_in">String</span>&gt;&gt; dataList = [&#123;<span class="string">&quot;title&quot;</span>:<span class="string">&quot;&quot;</span>,<span class="string">&quot;duration&quot;</span>:<span class="string">&quot;5m&quot;</span>,<span class="string">&quot;datetime&quot;</span>: <span class="string">&quot;09-10&quot;</span>&#125;];</span><br><span class="line"><span class="built_in">String</span> title = dataList[<span class="number">0</span>][<span class="string">&quot;title&quot;</span>]; <span class="comment">// java: dateList.get(&quot;title&quot;);</span></span><br></pre></td></tr></table></figure>
+<h1 id="27-dart-如何赋值的同时设置默认值"><a href="#27-dart-如何赋值的同时设置默认值" class="headerlink" title="27 dart 如何赋值的同时设置默认值?"></a>27 dart 如何赋值的同时设置默认值?</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">String</span> str = b ?? <span class="string">&quot;u&quot;</span>; <span class="comment">// 如果 b 为空, str 默认为 &quot;u&quot;;</span></span><br></pre></td></tr></table></figure>
+<p>两个问好就可以设置默认值</p>
+<h1 id="28-flutter-中的-Container-Column-Row-Expanded-如何自适应高度"><a href="#28-flutter-中的-Container-Column-Row-Expanded-如何自适应高度" class="headerlink" title="28 flutter 中的 Container, Column, Row, Expanded, 如何自适应高度?"></a>28 flutter 中的 Container, Column, Row, Expanded, 如何自适应高度?</h1><p>设置 mainAxisSize 属性:</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mainAxisSize: MainAxisSize.min</span><br></pre></td></tr></table></figure>
+<h1 id="29-flutter-Container-如何实现圆角"><a href="#29-flutter-Container-如何实现圆角" class="headerlink" title="29 flutter Container 如何实现圆角"></a>29 flutter Container 如何实现圆角</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> Container(</span><br><span class="line">  decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(<span class="number">4.0</span>)), color: Colors.white),      </span><br><span class="line">  <span class="comment">// color: Colors.white,</span></span><br><span class="line">  child: xxxx,</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>注意: decoration 和 color 不可以同时设置， 否则报错。<br>来源: cloud.tencent.com/developer/article/1738551</p>
+<h1 id="30-flutter-appBar-添加菜单后-如何修改菜单图标的颜色"><a href="#30-flutter-appBar-添加菜单后-如何修改菜单图标的颜色" class="headerlink" title="30 flutter appBar 添加菜单后, 如何修改菜单图标的颜色?"></a>30 flutter appBar 添加菜单后, 如何修改菜单图标的颜色?</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">AppBar(</span><br><span class="line">  iconTheme: IconThemeData(color: AppColor.primaryColor),</span><br><span class="line">) </span><br></pre></td></tr></table></figure>
+<p>使用 iconTheme 来修改那三个横杠的颜色。</p>
+<p>来源: stackoverflow.com/questions/51658440/changing-drawer-icon-color-flutter</p>
+<h1 id="31-flutter-如何实现遮罩效果"><a href="#31-flutter-如何实现遮罩效果" class="headerlink" title="31 flutter 如何实现遮罩效果?"></a>31 flutter 如何实现遮罩效果?</h1><p>A) 下面的代码可以实现弹出遮罩效果的窗口</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">void</span> cover(BuildContext context, Widget widget) &#123;</span><br><span class="line">	showGeneralDialog(</span><br><span class="line">	  context: context,</span><br><span class="line">	  barrierLabel: <span class="string">&quot;&quot;</span>,</span><br><span class="line">	  barrierDismissible: <span class="keyword">true</span>,</span><br><span class="line">	  barrierColor: Colors.black.withOpacity(<span class="number">0.8</span>),</span><br><span class="line">	  transitionDuration: <span class="keyword">const</span> <span class="built_in">Duration</span>(milliseconds: <span class="number">200</span>),</span><br><span class="line">	  transitionBuilder: (</span><br><span class="line">		  BuildContext context, Animation&lt;<span class="built_in">double</span>&gt; animation,</span><br><span class="line">		  Animation&lt;<span class="built_in">double</span>&gt; secondaryAnimation, Widget child</span><br><span class="line">		  ) &#123;</span><br><span class="line">		<span class="keyword">return</span> ScaleTransition(scale: animation, child: child);</span><br><span class="line">	  &#125;,</span><br><span class="line">	  pageBuilder: (BuildContext context, Animation&lt;<span class="built_in">double</span>&gt; animation, Animation&lt;<span class="built_in">double</span>&gt; secondaryAnimation) &#123;</span><br><span class="line">		<span class="keyword">return</span> widget;</span><br><span class="line">	  &#125;,</span><br><span class="line">	);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>B) 下面的语句可以通过代码关闭遮罩效果的窗口</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Navigator.pop(context);</span><br></pre></td></tr></table></figure>
+
+<p>来源: stackoverflow.com/questions/50683524/how-to-dismiss-flutter-dialog</p>
+<h1 id="32-flutter-内置的弹窗系列"><a href="#32-flutter-内置的弹窗系列" class="headerlink" title="32 flutter 内置的弹窗系列"></a>32 flutter 内置的弹窗系列</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">www.cnblogs.com/mengqd/p/12526884.html</span><br></pre></td></tr></table></figure>
+      
+     <!-- by blair add this if sentence at 20160725 -->
+      <br>
+      
+<div id="bottom-donation-section">
+<span style="font-size: 1.0em; padding:0em 1em 0.5em 1em; margin: 0 auto;">
+  <strong style="vertical-align: top;">分享到:</strong>
+    <div class="j_handlclick"  style="background: url(/images/logos/share_facebook_icon.jpg);background-size: contain;display: inline-block; width:50px; height:50px" href="https://www.facebook.com/sharer/sharer.php?u=" target="_blank">
+    </div>
+    <div class="j_handlclick"  style="background: url(/images/logos/share_twitter_icon.jpg);background-size: contain;display: inline-block; width:50px; height:50px" href="https://twitter.com/intent/tweet?url=" target="_blank">
+    </div>
+    <div class="j_handlclick"  style="background: url(/images/logos/share_line_icon.jpg);background-size: contain;display: inline-block; width:50px; height:50px" href="https://www.addtoany.com/add_to/line?linkurl=" target="_blank">
+    </div>
+    <div class="j_handlclick"  style="background: url(/images/logos/share_wechat_icon.jpg);background-size: contain;display: inline-block; width:50px; height:50px" href="https://api.addthis.com/oexchange/0.8/forward/wechat/offer?url=" target="_blank">
+    </div>
+  <br>  
+  <br>  
+  &nbsp;&nbsp;如果您觉得这篇文章对您的学习很有帮助, 请您也分享它, 让它能再次帮助到更多的需要学习的人.
+您的<a href="/support/"><strong>支持</strong></a>将鼓励我继续创作 !
+  <br>  
+
+</span>
+<!--
+<h3 id="bottom-donation-title">支持 让文章变得更优质</h3>
+<div>
+<a id="bottom-donation-button" href="/support">点我 赞助 作者</a>
+</div>
+-->
+</div>
+<div class="well">
+  <!--
+  原创文章，转载请注明： 转载自<a target="_blank" rel="noopener" href="http://52binge.github.io"> Blair Chan's Blog</a>，作者：
+  <a href="/about">Blair Chan</a> <br>
+  -->
+  本文基于<a target="_blank" title="Creative Commons Attribution 4.0 international License" href="https://creativecommons.org/licenses/by-nc/4.0/">署名4.0国际许可协议</a>发布，转载请保留本文署名和文章链接。 如您有任何授权方面的协商，请邮件联系我。
+</div>
+ <!-- by blair add 160724-->
+    
+    </div>
+    
+      <div class="article-toc">
+        <h3>Contents</h3>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-flutter-%E4%B8%AD%E7%9A%84-drawer-%E7%BB%84%E4%BB%B6-%E9%80%9A%E8%BF%87-hoverColor-%E5%8F%AF%E4%BB%A5%E6%94%B9%E5%8F%98%E9%BC%A0%E6%A0%87%E7%BB%8F%E8%BF%87%E6%97%B6%E7%9A%84%E8%83%8C%E6%99%AF%E8%89%B2-%E4%BD%86%E6%98%AF%E6%97%A0%E6%B3%95%E6%94%B9%E5%8F%98%E4%BB%96%E7%9A%84%E5%AD%97%E4%BD%93%E9%A2%9C%E8%89%B2-%E6%80%8E%E4%B9%88%E5%8A%9E"><span class="toc-text">1 flutter 中的 drawer 组件, 通过 hoverColor 可以改变鼠标经过时的背景色, 但是无法改变他的字体颜色, 怎么办?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E5%AE%9E%E4%BD%93%E7%B1%BB%E4%BD%BF%E7%94%A8%E9%A9%BC%E5%B3%B0%E5%91%BD%E5%90%8D%E6%B3%95-sqlite-%E8%A1%A8%E5%AD%97%E6%AE%B5%E5%90%8D%E7%A7%B0%E4%BC%9A%E5%8C%BA%E5%88%86%E5%A4%A7%E5%B0%8F%E5%86%99%E5%90%97"><span class="toc-text">2 实体类使用驼峰命名法, sqlite 表字段名称会区分大小写吗?</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-text">背景</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%96%91%E9%97%AE"><span class="toc-text">疑问</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%AD%94%E6%A1%88"><span class="toc-text">答案</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%9D%A5%E6%BA%90"><span class="toc-text">来源:</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-sqlite-%E5%8F%AF%E4%BB%A5%E4%BD%BF%E7%94%A8%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%9E%8B%E5%90%97"><span class="toc-text">3 sqlite 可以使用枚举类型吗?</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%AD%94%E6%A1%88-1"><span class="toc-text">答案</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%9D%A5%E6%BA%90-1"><span class="toc-text">来源:</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-dart-%E8%AF%AD%E8%A8%80-int-%E5%A6%82%E4%BD%95%E8%BD%AC%E6%8D%A2%E4%B8%BA-enum"><span class="toc-text">4 dart 语言, int 如何转换为 enum?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-sqlite-%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%B9%B6%E6%B2%A1%E6%9C%89-boolean-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-%E4%BD%86%E6%98%AF%E5%A6%82%E6%9E%9C%E6%88%91%E7%9A%84%E5%AE%9E%E4%BD%93%E7%B1%BB%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%E6%98%AF-bool-%E7%B1%BB%E5%9E%8B-%E9%80%9A%E8%BF%87-floor-%E6%A1%86%E6%9E%B6%E8%87%AA%E5%8A%A8%E6%98%A0%E5%B0%84-%E4%BF%9D%E5%AD%98%E5%9C%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E9%87%8C%E9%9D%A2%E7%9A%84%E6%98%AF%E4%BB%80%E4%B9%88%E7%B1%BB%E5%9E%8B%E5%91%A2-%E6%88%91%E8%AF%A5%E5%A6%82%E4%BD%95%E6%9F%A5%E8%AF%A2%E5%91%A2%EF%BC%9F"><span class="toc-text">5 sqlite 的基本数据类型并没有 boolean 数据类型, 但是如果我的实体类成员变量是 bool 类型, 通过 floor 框架自动映射, 保存在数据库里面的是什么类型呢? 我该如何查询呢？</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%AD%94%E6%A1%88-2"><span class="toc-text">答案:</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%9D%A5%E6%BA%90-2"><span class="toc-text">来源:</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-sqlite-%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4%E6%88%B3%EF%BC%9F"><span class="toc-text">6 sqlite 如何获取系统时间戳？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-flutter-%E5%A6%82%E4%BD%95%E9%9A%90%E8%97%8F%E6%8E%A7%E4%BB%B6"><span class="toc-text">7 flutter 如何隐藏控件?</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%9D%A5%E6%BA%90-3"><span class="toc-text">来源:</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-flutter-%E6%97%A5%E6%9C%9F%E9%80%89%E6%8B%A9%E5%99%A8%E4%B8%AD-CupertinoDatePicker-%E9%9C%80%E8%A6%81%E7%BB%93%E5%90%88-showModalBottomSheet-%E6%9D%A5%E6%98%BE%E7%A4%BA"><span class="toc-text">8 flutter 日期选择器中, CupertinoDatePicker 需要结合 showModalBottomSheet 来显示</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F"><span class="toc-text">注意:</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-%E6%83%B3%E5%AE%9A%E5%88%B6%E5%8C%96%E4%B8%80%E4%B8%AA%E6%97%A5%E6%9C%9F%E9%80%89%E6%8B%A9%E5%99%A8-%E8%AF%A5%E7%94%A8%E5%93%AA%E4%B8%AA%E6%9C%80%E5%A5%BD"><span class="toc-text">9 想定制化一个日期选择器, 该用哪个最好?</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E9%97%AE%E9%A2%98"><span class="toc-text">问题</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E6%97%A5%E6%9C%9F%E9%80%89%E6%8B%A9%E5%99%A8%E7%9A%84%E7%9B%B8%E5%85%B3%E8%B5%84%E6%96%99"><span class="toc-text">关于日期选择器的相关资料:</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#10-dart-%E8%AF%AD%E8%A8%80%E4%B8%AD%E5%9C%A8%E5%8F%98%E9%87%8F%E7%9A%84%E5%90%8E%E9%9D%A2%E6%B7%BB%E5%8A%A0%E6%84%9F%E5%8F%B9%E5%8F%B7%E6%98%AF%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D"><span class="toc-text">10 dart 语言中在变量的后面添加感叹号是什么意思?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#11-flutter-%E5%A6%82%E4%BD%95%E8%AE%A9%E7%BB%84%E4%BB%B6%E4%BD%8D%E4%BA%8E%E5%B1%8F%E5%B9%95%E7%9A%84%E5%BA%95%E9%83%A8"><span class="toc-text">11 flutter 如何让组件位于屏幕的底部?</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F-1"><span class="toc-text">注意:</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%9D%A5%E6%BA%90-4"><span class="toc-text">来源:</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#13-dart-%E8%AF%AD%E8%A8%80%E5%8F%AF%E4%BB%A5%E9%87%8D%E6%96%B0%E5%AE%9A%E4%B9%89%E5%8F%98%E9%87%8F"><span class="toc-text">13 dart 语言可以重新定义变量</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#14-flutte-%E5%A6%82%E4%BD%95%E9%99%90%E5%88%B6%E5%8F%AA%E8%83%BD%E8%BE%93%E5%85%A5%E6%95%B0%E5%AD%97"><span class="toc-text">14 flutte 如何限制只能输入数字?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#15-flutter-%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E6%B7%A1%E5%85%A5%E6%B7%A1%E5%87%BA%E6%95%88%E6%9E%9C"><span class="toc-text">15 flutter 如何实现淡入淡出效果</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%9D%A5%E6%BA%90-5"><span class="toc-text">来源:</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#16-showDatePicker-%E6%98%BE%E7%A4%BA%E6%97%A5%E5%8E%86%E5%90%8E%E5%A6%82%E4%BD%95%E9%99%90%E5%88%B6%E4%B8%8D%E8%AE%A9%E9%80%89%E6%8B%A9%E6%9F%90%E4%B8%AA%E6%97%A5%E6%9C%9F"><span class="toc-text">16 showDatePicker 显示日历后如何限制不让选择某个日期?</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-text">参考:</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#17-dart-%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0"><span class="toc-text">17 dart 如何设置回调函数?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#18-dart-%E5%A6%82%E4%BD%95%E5%AE%9A%E4%B9%89%E5%92%8C%E4%BD%BF%E7%94%A8%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%9E%8B"><span class="toc-text">18 dart 如何定义和使用枚举类型?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#19-flutter-%E5%A6%82%E4%BD%95%E7%94%BB%E5%88%86%E5%89%B2%E7%BA%BF"><span class="toc-text">19 flutter 如何画分割线?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#20-dart-%E5%A6%82%E4%BD%95%E5%BC%BA%E5%88%B6%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-text">20 dart 如何强制类型转换?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#21-flutter-%E4%B8%AD-%E4%B8%8B%E5%88%97%E7%BB%84%E4%BB%B6%E6%B2%A1%E6%9C%89-height-%E5%B1%9E%E6%80%A7%E5%8F%AF%E4%BB%A5%E8%AE%BE%E7%BD%AE%E6%80%8E%E4%B9%88%E5%8A%9E"><span class="toc-text">21 flutter 中, 下列组件没有 height 属性可以设置怎么办?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#22-flutter-%E6%97%B6%E9%97%B4%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">22 flutter 时间选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%9D%A5%E6%BA%90-6"><span class="toc-text">来源:</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#23-flutter-%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF%E8%89%B2"><span class="toc-text">23 flutter 如何设置背景色?</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%9D%A5%E6%BA%90-7"><span class="toc-text">来源:</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#24-flutter-Text-%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE%E7%B2%97%E4%BD%93%E5%AD%97"><span class="toc-text">24 flutter Text 如何设置粗体字?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#25-flutter-card-%E7%BB%84%E4%BB%B6%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE%E6%A0%87%E9%A2%98"><span class="toc-text">25 flutter card 组件如何设置标题?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#26-dart-Map-%E5%A6%82%E4%BD%95%E6%A0%B9%E6%8D%AE-key-%E6%9D%A5%E5%8F%96%E5%80%BC"><span class="toc-text">26 dart Map 如何根据 key 来取值</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#27-dart-%E5%A6%82%E4%BD%95%E8%B5%8B%E5%80%BC%E7%9A%84%E5%90%8C%E6%97%B6%E8%AE%BE%E7%BD%AE%E9%BB%98%E8%AE%A4%E5%80%BC"><span class="toc-text">27 dart 如何赋值的同时设置默认值?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#28-flutter-%E4%B8%AD%E7%9A%84-Container-Column-Row-Expanded-%E5%A6%82%E4%BD%95%E8%87%AA%E9%80%82%E5%BA%94%E9%AB%98%E5%BA%A6"><span class="toc-text">28 flutter 中的 Container, Column, Row, Expanded, 如何自适应高度?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#29-flutter-Container-%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E5%9C%86%E8%A7%92"><span class="toc-text">29 flutter Container 如何实现圆角</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#30-flutter-appBar-%E6%B7%BB%E5%8A%A0%E8%8F%9C%E5%8D%95%E5%90%8E-%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9%E8%8F%9C%E5%8D%95%E5%9B%BE%E6%A0%87%E7%9A%84%E9%A2%9C%E8%89%B2"><span class="toc-text">30 flutter appBar 添加菜单后, 如何修改菜单图标的颜色?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#31-flutter-%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E9%81%AE%E7%BD%A9%E6%95%88%E6%9E%9C"><span class="toc-text">31 flutter 如何实现遮罩效果?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#32-flutter-%E5%86%85%E7%BD%AE%E7%9A%84%E5%BC%B9%E7%AA%97%E7%B3%BB%E5%88%97"><span class="toc-text">32 flutter 内置的弹窗系列</span></a></li></ol>
+      </div>
+    
+    
+      <footer class="article-footer">
+        <!-- <div class="well" style="width:100px; height:30px;"></div>  by blair-->
+        
+ <!-- by blair add 160724-->
+        <!--
+        <div style="width:100px; height:30px;"></div> by blair add 160724
+        -->
+        
+  <div class="article-tag">
+    <a class="article-tag-none-link" href="/tags/flutter/" rel="tag">flutter</a>
+  </div>
+
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/20211030/flutter-%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E7%B3%BB%E5%88%97%E4%B9%8B%E5%9B%9B/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">flutter-开发问题系列之四&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 wanlion&nbsp;
+    </div>
+  </div>
+</footer>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+      displayMath: [ ['$$','$$']],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
+</script>
+
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+  </div>
+</body>
+</html>
