@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>flutter-开发问题系列之七 - wanlion</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="这是 todoline++ 项目开发过程中遇到的问题系列, 记录下来供大家参考。本篇记录一些开发中遇到的疑问:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="flutter-开发问题系列之七">
+<meta property="og:url" content="https://xwanlion.github.io/20211113/flutter-%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E7%B3%BB%E5%88%97%E4%B9%8B%E4%B8%83/index.html">
+<meta property="og:site_name" content="wanlion">
+<meta property="og:description" content="这是 todoline++ 项目开发过程中遇到的问题系列, 记录下来供大家参考。本篇记录一些开发中遇到的疑问:">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-11-13T04:07:48.000Z">
+<meta property="article:modified_time" content="2021-11-13T04:16:52.546Z">
+<meta property="article:author" content="wanlion">
+<meta property="article:tag" content="flutter">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <!-- blair add baidu tongji start... @2017.10.03 -->
+<!-- blair add baidu tongji end ! @2017.10.03 -->
+
+<header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo" href="/"></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://xwanlion.github.io"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+    <br>
+    <section id="main" class="outer"><article id="post-flutter-开发问题系列之七" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      flutter-开发问题系列之七
+      <small class=article-detail-date-index>&nbsp; 2021-11-13</small>
+    </h1>
+  
+
+
+        <div class=page-title></div>
+        <br>
+      </header>
+    
+    <div class="article-meta">
+      <!--<a href="/20211113/flutter-%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E7%B3%BB%E5%88%97%E4%B9%8B%E4%B8%83/" class="article-date">
+  <time datetime="2021-11-13T04:07:48.000Z" itemprop="datePublished">2021-11-13</time>
+</a>-->
+      <!-- 
+--><!-- by blair 160724 -->
+      <!-- by blair
+      
+      -->
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这是 todoline++ 项目开发过程中遇到的问题系列, 记录下来供大家参考。<br>本篇记录一些开发中遇到的疑问:</p>
+<span id="more"></span>
+<p>todoline++ 官网请看这里: <a target="_blank" rel="noopener" href="https://todoline-plus-plus.github.io/">https://todoline-plus-plus.github.io/</a></p>
+<h1 id="1-dart-如何使用绝对值"><a href="#1-dart-如何使用绝对值" class="headerlink" title="1 dart 如何使用绝对值?"></a>1 dart 如何使用绝对值?</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> main() &#123;  </span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">-12</span>; </span><br><span class="line">  <span class="built_in">print</span>(a.abs()); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="2-flutter-Align-中的-widthFactor-做什么用"><a href="#2-flutter-Align-中的-widthFactor-做什么用" class="headerlink" title="2 flutter Align 中的 widthFactor 做什么用?"></a>2 flutter Align 中的 widthFactor 做什么用?</h1><p>book.flutterchina.club/chapter4/alignment.html</p>
+<h1 id="3-flutter-如何画圆形进度条"><a href="#3-flutter-如何画圆形进度条" class="headerlink" title="3 flutter 如何画圆形进度条?"></a>3 flutter 如何画圆形进度条?</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">SizedBox(</span><br><span class="line">  height: <span class="number">200</span>,</span><br><span class="line">  width: <span class="number">200</span>,</span><br><span class="line">  child: CircularProgressIndicator(</span><br><span class="line">	backgroundColor: Colors.grey[<span class="number">200</span>],</span><br><span class="line">	valueColor: <span class="keyword">const</span> AlwaysStoppedAnimation(Colors.blue),</span><br><span class="line">	value: <span class="number">0.7</span>,</span><br><span class="line">  ),</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p>CircularProgressIndicator 是画圆形进度条的组件<br>SizedBox 用于调整大小</p>
+<h6 id="存在的问题："><a href="#存在的问题：" class="headerlink" title="存在的问题："></a>存在的问题：</h6><p>CircularProgressIndicator 无法屏幕居中, SizeBox 外面加一个 Container 也没有用<br>SizeBox 外面加一个 Container 并且设置 Container 的高度和宽度, 会更改 CircularProgressIndicator 的大小, 这时候 SizeBox 的高宽设置失效</p>
+<h6 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法:"></a>解决办法:</h6><p>我自己就是在 SizeBox 外面加一个 Row, 并设置 Row 的 mainAxisAlignment: MainAxisAlignment.center 实现居中</p>
+<h6 id="意外"><a href="#意外" class="headerlink" title="意外:"></a>意外:</h6><p>后来我发现, 网上有文章说可以使用 Container 让他居中<br>coder.work/article/7442938<br>我现在不知道我自己的情况为什么会这样</p>
+<h6 id="来源："><a href="#来源：" class="headerlink" title="来源："></a>来源：</h6><p>book.flutterchina.club/chapter3/progress.html</p>
+<p>如果想看更多绘画圆形组件的请看这里:<br>zhuanlan.zhihu.com/p/145634328</p>
+<h1 id="4-IconButton-如何调整原来的-padding"><a href="#4-IconButton-如何调整原来的-padding" class="headerlink" title="4 IconButton 如何调整原来的 padding ?"></a>4 IconButton 如何调整原来的 padding ?</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"> Container(</span><br><span class="line">padding: <span class="keyword">const</span> EdgeInsets.all(<span class="number">0</span>),</span><br><span class="line">width: <span class="number">30</span>,</span><br><span class="line">height: <span class="number">30</span>,</span><br><span class="line">child: IconButton(</span><br><span class="line">  icon: <span class="keyword">const</span> Icon(Icons.keyboard_arrow_up),</span><br><span class="line">  onPressed: () &#123;</span><br><span class="line">	Message.toast(context, <span class="string">&quot;previous todo&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">),</span><br><span class="line"> )</span><br></pre></td></tr></table></figure>
+<p>在外面套一个 Container, 设置 padding 为 0, 同时设置宽高就可以。</p>
+<p>来源:<br>blog.csdn.net/weixin_43298955/article/details/115720294</p>
+<h1 id="5-fluter-如何让两个组件层叠起来"><a href="#5-fluter-如何让两个组件层叠起来" class="headerlink" title="5 fluter 如何让两个组件层叠起来?"></a>5 fluter 如何让两个组件层叠起来?</h1><p>请用 Stack 配合 Positioned 这两个组件来布局<br>来源: book.flutterchina.club/chapter4/stack.html</p>
+<h1 id="6-Flutter-textField-的-onEditingComplete-事件为什么没有触发"><a href="#6-Flutter-textField-的-onEditingComplete-事件为什么没有触发" class="headerlink" title="6 Flutter textField 的 onEditingComplete 事件为什么没有触发?"></a>6 Flutter textField 的 onEditingComplete 事件为什么没有触发?</h1><p>这个事件的错误需要在输入框中按回车键, 但是我同时发现, 如果是 maxline &gt; 1， 按回车键就会失效。</p>
+<h1 id="7-dar-语言中-对一组字符串-如何去掉重复数据"><a href="#7-dar-语言中-对一组字符串-如何去掉重复数据" class="headerlink" title="7 dar 语言中, 对一组字符串? 如何去掉重复数据?"></a>7 dar 语言中, 对一组字符串? 如何去掉重复数据?</h1><p>把这一组字符串放到 Set 类型的变量中, 他会自动去重。</p>
+<h1 id="8-dart-语言操作符-是什么意思"><a href="#8-dart-语言操作符-是什么意思" class="headerlink" title="8 dart 语言操作符 ??= 是什么意思?"></a>8 dart 语言操作符 ??= 是什么意思?</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">b ??= val;</span><br></pre></td></tr></table></figure>
+<p>如果 b 为空, 将 val 的值赋值给 b, 否则保持 b 原来的值不变。    </p>
+<h1 id="9-dart-语言如何设计单利模式"><a href="#9-dart-语言如何设计单利模式" class="headerlink" title="9 dart 语言如何设计单利模式?"></a>9 dart 语言如何设计单利模式?</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BeanFactory</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">final</span> <span class="built_in">List</span>&lt;BeanFactory&gt; _factoryList = [];</span><br><span class="line">  <span class="keyword">late</span> <span class="keyword">final</span> TodoService _todoService;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">static</span> _BeanFactory() &#123;&#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">static</span> BeanFactory init() &#123;</span><br><span class="line">	<span class="keyword">if</span> (_factoryList.isEmpty) &#123;</span><br><span class="line">	  DatabaseFactory.generateDatabase();</span><br><span class="line">	  _factoryList.add(_BeanFactory());</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> _factoryList[<span class="number">0</span>];</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  getTodoService() &#123;</span><br><span class="line">	_todoService ??= TodoServiceImpl();</span><br><span class="line">	<span class="keyword">return</span> _todoService;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面的设计似乎没有问题, 但是 flutter run 了以后, 报错如下:<br>Operand of null-aware operation ‘??=’ has type ‘TodoService’ which excludes null</p>
+<p>_todoService 已经定义成非 null, 怎么还需要判断他是不是 null 呢? 这部是相互矛盾吗?</p>
+<p>于是, 我把它定义出 null-able： TodoService? _todoService; 然后在运行 flutter run, 进而报错:</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Invalid value: Valid value range is empty</span><br></pre></td></tr></table></figure>
+
+<p>报错的语句是:</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> BeanFactory init() &#123;</span><br><span class="line">  ...</span><br><span class="line">  ...</span><br><span class="line">  ...</span><br><span class="line">  <span class="keyword">return</span> _factoryList[<span class="number">0</span>]; <span class="comment">// 报错</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>最后我不得不承认, dart 语言中, 对于单例模式, 我不会设计, 只好搜索, 正确而且完整的代码如下:</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BeanFactory</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">final</span> <span class="built_in">List</span>&lt;BeanFactory&gt; _factoryList = [];</span><br><span class="line">  TodoService? _todoService;</span><br><span class="line"></span><br><span class="line">  BeanFactory._init();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">static</span> BeanFactory init() &#123;</span><br><span class="line">	<span class="keyword">if</span> (_factoryList.isEmpty) &#123;</span><br><span class="line">	  DatabaseFactory.generateDatabase();</span><br><span class="line">	  _factoryList.add(BeanFactory._init());</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> _factoryList[<span class="number">0</span>];</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  getTodoService() &#123;</span><br><span class="line">	_todoService ??= TodoServiceImpl();</span><br><span class="line">	<span class="keyword">return</span> _todoService;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意:<br>构造函数定义成私有的方法: BeanFactory._init();</p>
+<p>来源:<br>jianshu.com/p/dad432427b3b</p>
+<h1 id="10-关于-DateTime-和-时间戳之间的转换？"><a href="#10-关于-DateTime-和-时间戳之间的转换？" class="headerlink" title="10 关于 DateTime 和 时间戳之间的转换？"></a>10 关于 DateTime 和 时间戳之间的转换？</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> dateFromMS() &#123;</span><br><span class="line">  <span class="built_in">DateTime</span> now = <span class="built_in">DateTime</span>.now();</span><br><span class="line">  <span class="built_in">int</span> ms = now.millisecondsSinceEpoch;</span><br><span class="line">  <span class="built_in">DateTime</span> now2 = <span class="built_in">DateTime</span>.fromMicrosecondsSinceEpoch(ms);</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">&quot;<span class="subst">$&#123;now.toString()&#125;</span>, <span class="subst">$&#123;ms&#125;</span>, <span class="subst">$&#123;now2.toString()&#125;</span>&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2021</span>-<span class="number">11</span>-<span class="number">08</span> <span class="number">14</span>:<span class="number">10</span>:<span class="number">06</span>.<span class="number">139508</span>, <span class="number">1636351806139</span>, <span class="number">1970</span>-<span class="number">01</span>-<span class="number">20</span> <span class="number">06</span>:<span class="number">32</span>:<span class="number">31</span>.<span class="number">806139</span></span><br></pre></td></tr></table></figure>
+
+<p>为什么会这样? 为什么转换之前是当前日期, 转换之后是 1970 年?<br>请注意 milliseconds(毫秒， 千分之一秒) 和 Microseconds(微妙， 百万分之一秒) 的区别</p>
+<h1 id="11-dart-导入的类名重复怎么办"><a href="#11-dart-导入的类名重复怎么办" class="headerlink" title="11 dart 导入的类名重复怎么办?"></a>11 dart 导入的类名重复怎么办?</h1><p>解决方法:<br>采用 as 语句来进行重命名， 例如:</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&#x27;package:xxx/xxx/todo.dart&#x27;</span> <span class="keyword">as</span> todo_item</span><br></pre></td></tr></table></figure>
+
+<p>如何定义变量:</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">late</span> todo_item.Todo _item;</span><br></pre></td></tr></table></figure>
+
+<p>我们可以把 todo_item 当作包名来看待, Todo 就是类名</p>
+<h1 id="12-flutter-如何单独给-checkbox-更改显示颜色"><a href="#12-flutter-如何单独给-checkbox-更改显示颜色" class="headerlink" title="12 flutter 如何单独给 checkbox 更改显示颜色?"></a>12 flutter 如何单独给 checkbox 更改显示颜色?</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"> Checkbox(</span><br><span class="line">value: <span class="keyword">false</span>,</span><br><span class="line">onChanged: onSelectedItem,</span><br><span class="line">fillColor: MaterialStateProperty.resolveWith((<span class="built_in">Set</span>&lt;MaterialState&gt; states) &#123;</span><br><span class="line">  <span class="keyword">if</span> (states.contains(MaterialState.disabled)) &#123;</span><br><span class="line">	<span class="keyword">return</span> ThemeData.from(colorScheme: ColorScheme.light()).disabledColor;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (states.contains(MaterialState.selected)) &#123;</span><br><span class="line">	<span class="keyword">return</span> ThemeData().toggleableActiveColor;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 最终返回</span></span><br><span class="line">  <span class="keyword">return</span> todoItemColor;</span><br><span class="line">&#125;),</span><br><span class="line"> )</span><br></pre></td></tr></table></figure>
+<p>来源：<br>jianshu.com/p/bca01ce93f79</p>
+<h1 id="13-flutter-TextField-如何赋值"><a href="#13-flutter-TextField-如何赋值" class="headerlink" title="13 flutter TextField 如何赋值?"></a>13 flutter TextField 如何赋值?</h1><p>设置 TextField.controller 属性, 并且通过 controller 来赋值。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">TextEditingController _titleController = TextEditingController();</span><br><span class="line">_titleController.value = _titleController.value.copyWith(</span><br><span class="line">	text: _item.title ?? <span class="string">&quot;&quot;</span></span><br><span class="line">);</span><br><span class="line">~~~.controller = </span><br><span class="line">注意: 我们只需要设置 TextField.controller:_titleController 即可</span><br><span class="line"></span><br><span class="line">参考:</span><br><span class="line">jianshu.com/p/f6f84d3a0292</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"># <span class="number">14</span> dart 日期和字符串如何进行转换?</span><br><span class="line">A) 字符串转成日期</span><br><span class="line">~~~dart</span><br><span class="line">  <span class="comment">// 1.</span></span><br><span class="line">  <span class="built_in">DateTime</span> datetime1 = <span class="built_in">DateTime</span>.parse(<span class="string">&quot;2020-01-10&quot;</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 2.</span></span><br><span class="line">  <span class="built_in">DateTime</span> datetime2 = HttpDate.parse(<span class="string">&quot;2020-01-10&quot;</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 3.</span></span><br><span class="line">  DateFormat format = DateFormat(<span class="string">&quot;yyyy-MM-dd&quot;</span>);</span><br><span class="line">  <span class="built_in">DateTime</span> datetime3 = format.parse(<span class="string">&quot;2020-01-10&quot;</span>);    </span><br></pre></td></tr></table></figure>
+
+<p>B) 日期转成字符串</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DateFormat format = DateFormat(<span class="string">&quot;yyyy-MM-dd&quot;</span>);</span><br><span class="line"><span class="built_in">DateTime</span> datetime1 = format.format(<span class="built_in">DateTime</span>.now());</span><br></pre></td></tr></table></figure>
+
+<p>来源:<br>woolha.com/tutorials/dart-convert-string-to-datetime</p>
+<h1 id="15-flutter-中使用-sqlLite-测试时运行-windows-应用-如何查看-sqlLite-中的数据"><a href="#15-flutter-中使用-sqlLite-测试时运行-windows-应用-如何查看-sqlLite-中的数据" class="headerlink" title="15 flutter 中使用 sqlLite, 测试时运行 windows 应用, 如何查看 sqlLite 中的数据?"></a>15 flutter 中使用 sqlLite, 测试时运行 windows 应用, 如何查看 sqlLite 中的数据?</h1><p>目前无解, 有人建议使用 moor, 来源:<br>stackoverflow.com/questions/60170406/is-there-a-solution-to-work-with-sqlite-on-flutter-desktop-for-windows</p>
+<p>但这是2021年年初的情况, 目前我的数据已经可以存储和获取, 但遇到问题时就不知道如何查看数据库里面的数据。</p>
+<h1 id="16-dart-如何取模"><a href="#16-dart-如何取模" class="headerlink" title="16 dart 如何取模?"></a>16 dart 如何取模?</h1><p>dart 取模运算标识符为 ~/, java 是 %, 但在 dart 中, % 表示取余。      </p>
+<h1 id="17-dart-如何给枚举-（enum）-添加方法"><a href="#17-dart-如何给枚举-（enum）-添加方法" class="headerlink" title="17 dart 如何给枚举 （enum） 添加方法?"></a>17 dart 如何给枚举 （enum） 添加方法?</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> DateType &#123;</span><br><span class="line">	millionSecond,</span><br><span class="line">	second,</span><br><span class="line">	minute,</span><br><span class="line">	hour,</span><br><span class="line">	day,</span><br><span class="line">	month,</span><br><span class="line">	year,</span><br><span class="line">	custom</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">extension</span> DateTypeExtension <span class="keyword">on</span> DateType &#123;</span><br><span class="line">	<span class="built_in">String</span> <span class="keyword">get</span> name =&gt; describeEnum(<span class="keyword">this</span>);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">int</span> <span class="keyword">get</span> toMinute &#123;</span><br><span class="line">	  <span class="keyword">if</span> (<span class="keyword">this</span> == DateType.hour) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">60</span>;</span><br><span class="line">	  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">this</span> == DateType.day) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">60</span> * <span class="number">24</span>;</span><br><span class="line">	  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">this</span> == DateType.month) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">60</span> * <span class="number">24</span> * <span class="number">30</span>;</span><br><span class="line">	  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">this</span> == DateType.year) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">60</span> * <span class="number">24</span> * <span class="number">365</span>;</span><br><span class="line">	  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	  &#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">static</span> <span class="built_in">List</span>&lt;<span class="built_in">String</span>&gt; labels() &#123;</span><br><span class="line">		<span class="comment">// ms: million second, s: second, m: minute, h: hour, </span></span><br><span class="line">		<span class="comment">//d: day, M: month, y: year</span></span><br><span class="line">		<span class="keyword">return</span> [<span class="string">&quot;ms&quot;</span>, <span class="string">&quot;s&quot;</span>, <span class="string">&quot;m&quot;</span>, <span class="string">&quot;h&quot;</span>, <span class="string">&quot;d&quot;</span>, <span class="string">&quot;M&quot;</span>, <span class="string">&quot;y&quot;</span>];</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在上面的代码中, 我们给 DateType 这个枚举类添加 2 个方法: name, toMinute, 还添加了一个方法 labels</p>
+<p>这就是 extension 的用法</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(DateType.hour.name); <span class="comment">// hour</span></span><br><span class="line"><span class="built_in">print</span>(DateType.hour.toMinute); <span class="comment">// 60</span></span><br><span class="line"><span class="built_in">print</span>(DateTypeExtension.labels()); <span class="comment">// [&quot;ms&quot;, &quot;s&quot;, &quot;m&quot;, &quot;h&quot;, &quot;d&quot;, &quot;M&quot;, &quot;y&quot;]</span></span><br></pre></td></tr></table></figure>
+<p>注意: static 方法要使用时， 引用名只能使用 Exception 类的名称, 不能使用枚举类名， 在上面的例子中, DateType.labels() 将会引发报错。</p>
+<h1 id="18-为什么代码会一片混乱-如何让他看起来更简洁一点"><a href="#18-为什么代码会一片混乱-如何让他看起来更简洁一点" class="headerlink" title="18 为什么代码会一片混乱, 如何让他看起来更简洁一点?"></a>18 为什么代码会一片混乱, 如何让他看起来更简洁一点?</h1><p>今天看到自己的代码一片混乱, 于是进行了重构, 得出下面的结论：<br>两个或者两个以上的变量, 如果在某个地方使用到其中一个变量, 另外一个变量也会不可避免的使用到, 我们应该将他们封装曾一个实体类, 然后只需要定义一个变量, 这个变量的数据类型就是该实体类。</p>
+<p>这样做的好处:</p>
+<ol>
+<li>代码简洁<br>2） 可读性高</li>
+</ol>
+<p>举例子:<br>todoline++ 项目中的待办任务, 预计消耗时间我们需要显示 5 min, 6 hr 之类, 用来表示 5 分钟, 6 小时, 这样的话, 我们就需要两个变量来表示, 一个用来表示时间量, 另外一个用来表示时间类型， 但当我们大量使用到这两个变量时, 方法之间的参数传递, 以及分钟和小时之间的转换, 就会让代码看起来到处都见到这两个变量的身影, 当我们封装成一个实体类了以后, 变量只需要定义一个就可以了, 参数传递也需要一个变量就可以了， 更重要的是, 与这两个变量有关的操作, 都可以封装在实体类中, 代码得到重复利用, 看起来也就简洁多了。</p>
+<h1 id="19-flutter-如何旋转-icon-图标"><a href="#19-flutter-如何旋转-icon-图标" class="headerlink" title="19 flutter 如何旋转 icon 图标?"></a>19 flutter 如何旋转 icon 图标?</h1><ol>
+<li>方案1<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Transform.rotate(</span><br><span class="line">  angle: <span class="number">330</span> * <span class="number">3.14159</span> / <span class="number">180</span>, <span class="comment">// 330 代表旋转的度数</span></span><br><span class="line">  child: IconButton(</span><br><span class="line">	iconSize: <span class="number">40</span>,</span><br><span class="line">	icon: <span class="keyword">const</span> Icon(Icons.send),</span><br><span class="line">	onPressed: () &#123;</span><br><span class="line"></span><br><span class="line">	&#125;,</span><br><span class="line">  ),</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+</li>
+<li>方案2<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">RotatedBox(</span><br><span class="line">  quarterTurns: <span class="number">4</span>, <span class="comment">// 只能填写1，2，3，4， 分别代表90度，180度，270度，360度</span></span><br><span class="line">  child: IconButton(</span><br><span class="line">	iconSize: <span class="number">40</span>,</span><br><span class="line">	icon: <span class="keyword">const</span> Icon(Icons.send),</span><br><span class="line">	onPressed: () &#123;</span><br><span class="line"></span><br><span class="line">	&#125;,</span><br><span class="line">  ),</span><br><span class="line">)</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>个人推荐使用方案1， 旋转的度数比较精确</p>
+<h1 id="20-如何实现点击按钮-App-页面底部弹出窗口-窗口上面可以输入文字-弹出的时候自动调出软键盘-关闭的时候自动关闭软键盘"><a href="#20-如何实现点击按钮-App-页面底部弹出窗口-窗口上面可以输入文字-弹出的时候自动调出软键盘-关闭的时候自动关闭软键盘" class="headerlink" title="20 如何实现点击按钮, App 页面底部弹出窗口, 窗口上面可以输入文字, 弹出的时候自动调出软键盘, 关闭的时候自动关闭软键盘?"></a>20 如何实现点击按钮, App 页面底部弹出窗口, 窗口上面可以输入文字, 弹出的时候自动调出软键盘, 关闭的时候自动关闭软键盘?</h1><p>使用 showModelButtonSheet 来实现底部弹出窗口, 至于上面布局 TextField 就不用说了！</p>
+<p>设置 TextField.autoFocus = true 就能实现自动弹出软键盘, 关闭窗口后， 软键盘会自动消失。</p>
+<h5 id="软键盘弹出后把-TextField-遮盖了怎么办"><a href="#软键盘弹出后把-TextField-遮盖了怎么办" class="headerlink" title="软键盘弹出后把 TextField 遮盖了怎么办?"></a>软键盘弹出后把 TextField 遮盖了怎么办?</h5><p>请参考这里来解决: codeleading.com/article/44633407955/</p>
+<h5 id="弹出的窗口中-使用-setState-无法更新界面怎么办"><a href="#弹出的窗口中-使用-setState-无法更新界面怎么办" class="headerlink" title="弹出的窗口中, 使用 setState 无法更新界面怎么办?"></a>弹出的窗口中, 使用 setState 无法更新界面怎么办?</h5><p>我做测试看到的效果, 需要点击两次界面才会更新， 根据网上的说法, 当我们在 showModalBottomSheet 调用 setState 的时候, 相当于 showModalBottomSheet 这个类里面进行更新, 但是这个类里面包裹的组件并没有更新, 这是我脑补的结果， 那么我们怎么办呢？ </p>
+<p>使用 StatefulBuilder, 具体参考这里: jianshu.com/p/949a638cd465</p>
+<p>上面 3 个问题, 全部解决代码如下:</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">popupModelButtonSheet() &#123;</span><br><span class="line">  <span class="built_in">int</span> _todoType = <span class="number">0</span>;</span><br><span class="line">  TextEditingController _titleController = TextEditingController();</span><br><span class="line"></span><br><span class="line">  showModalBottomSheet(</span><br><span class="line">	context: context,</span><br><span class="line">	isScrollControlled: <span class="keyword">true</span>,  <span class="comment">// !important</span></span><br><span class="line">	builder: (BuildContext context) &#123;</span><br><span class="line">	  <span class="keyword">return</span> StatefulBuilder(builder: (builder, sate) &#123;</span><br><span class="line">		<span class="keyword">return</span> SingleChildScrollView(  <span class="comment">// !important</span></span><br><span class="line">		  child: Container(</span><br><span class="line">			padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),  <span class="comment">// !important</span></span><br><span class="line">			child: Container(</span><br><span class="line">			  padding: <span class="keyword">const</span> EdgeInsets.fromLTRB(<span class="number">5</span>, <span class="number">0</span>, <span class="number">5</span>, <span class="number">5</span>),</span><br><span class="line">			  height: MediaQuery.of(context).size.height * <span class="number">0.20</span>,</span><br><span class="line">			  color: <span class="keyword">const</span> Color(<span class="number">0xfff1f1f1</span>),</span><br><span class="line">			  child: Column(</span><br><span class="line">				children: [</span><br><span class="line">				  Row(</span><br><span class="line">					children: [</span><br><span class="line">					  Expanded(</span><br><span class="line">						flex: <span class="number">10</span>,</span><br><span class="line">						child: AppWidget.getLayoutOfTodoTitle(_titleController, <span class="keyword">true</span>),</span><br><span class="line">					  ),</span><br><span class="line">					  Expanded(</span><br><span class="line">						flex: <span class="number">2</span>,</span><br><span class="line">						child: AppWidget.getLayoutOfTodoType(_todoType, (<span class="built_in">int?</span> index) &#123;</span><br><span class="line">						  sate(() &#123;</span><br><span class="line">							_todoType = index ?? <span class="number">0</span>;</span><br><span class="line">						  &#125;);</span><br><span class="line">						&#125;, todoTypeColorList[_todoType]),</span><br><span class="line">					  ),</span><br><span class="line">					],</span><br><span class="line">				  ),</span><br><span class="line">				]</span><br><span class="line">			  ),</span><br><span class="line">			),</span><br><span class="line">		  ),</span><br><span class="line">		);</span><br><span class="line">	  &#125;);</span><br><span class="line">	&#125;,</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面标识为 important 的, 这是防止软键盘覆盖内容的重点。</p>
+<h1 id="21-flutter-如何使用路由"><a href="#21-flutter-如何使用路由" class="headerlink" title="21 flutter 如何使用路由?"></a>21 flutter 如何使用路由?</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">MaterialApp(</span><br><span class="line">  ...</span><br><span class="line">  ...</span><br><span class="line">  ...</span><br><span class="line">  routes: &#123;</span><br><span class="line">	<span class="string">&quot;/home&quot;</span>: (context) =&gt; <span class="keyword">const</span> UserRegister(title:<span class="string">&quot;&quot;</span>),</span><br><span class="line">	<span class="string">&quot;/Inbox&quot;</span>: (context) =&gt; <span class="keyword">const</span> Inbox(title: <span class="string">&#x27;Inbox&#x27;</span>),</span><br><span class="line">	<span class="string">&quot;/Todo&quot;</span>: (context) =&gt; <span class="keyword">const</span> Todo(title: <span class="string">&#x27;Todo Item&#x27;</span>),</span><br><span class="line">  &#125;,</span><br><span class="line">  initialRoute: <span class="string">&quot;/home&quot;</span>,</span><br><span class="line">  home: <span class="keyword">const</span> Todo(title: <span class="string">&#x27;Todo Item&#x27;</span>),</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>设置路由后 App 运行的第一个界面是 initialRoute 指定的页面, 而不是 home 界面, 但是不是不设置 home 就会报错。</p>
+<h1 id="22-MaterialApp-设置-initialRoute-后-home-有什么作用"><a href="#22-MaterialApp-设置-initialRoute-后-home-有什么作用" class="headerlink" title="22 MaterialApp 设置 initialRoute 后, home 有什么作用?"></a>22 MaterialApp 设置 initialRoute 后, home 有什么作用?</h1><p>未知, 目前不知道</p>
+<h1 id="23-flutter-如何在页面初始化的时候进行路由跳转"><a href="#23-flutter-如何在页面初始化的时候进行路由跳转" class="headerlink" title="23 flutter 如何在页面初始化的时候进行路由跳转?"></a>23 flutter 如何在页面初始化的时候进行路由跳转?</h1><p>背景:<br>flutter 使用 sqlite 来存储数据, 在用户打开页面的时候, 先从 sqlLite 中获取用户数据, 如果用户数据存在, 就进入用户主页, 否则让用户注册, 这样的话就需要进行跳转,要么跳转到用户注册页面， 要么跳转到用户主页， 如何在页面初始化的时候进行跳转呢?</p>
+<p>如何在初始化的时候进行跳转?</p>
+<p>重写 initState() 方法, 然后在里面进行跳转， 不要在 build 方法里面跳转, build 方法是渲染页面使用的, 他要求必须返回 Widget 对象， 而且还不能返回 null 值.</p>
+<p>floor 初始化数据库是异步进行, 在 initState() 方法里面初始化数据库, 然后获取数据库对象为空, 怎么办?</p>
+<p>我的解决办法是, 在 main 页面中重写 createElement() 方法, 并在里面初始化数据库, 在跳转页面中获取数据库对象。</p>
+<p>注意:<br>stateless 页才可以重写 createElement 方法, statefull 页面请在 initState 进行。</p>
+<h1 id="24-flutter-在-windows-上调试-如何清空-sqlite-数据库"><a href="#24-flutter-在-windows-上调试-如何清空-sqlite-数据库" class="headerlink" title="24 flutter 在 windows 上调试, 如何清空 sqlite 数据库?"></a>24 flutter 在 windows 上调试, 如何清空 sqlite 数据库?</h1><p>背景:<br>flutter 使用 sqlLite 来存储数据, 并使用 floor 框架进行映射, 在调试的时候, 有时候我们需要清空数据库, 在 android 中我们可以通过卸载 APP 来达到清空数据库的目的， 可以是在 windows 中， 我们如何清空数据库呢?</p>
+<p>解决办法:<br>我的做法是， 使用 cmd 命令 flutter clean 运行一下, 我们就可以清空数据库了。</p>
+<h1 id="25-flutter-如何定义和使用路由"><a href="#25-flutter-如何定义和使用路由" class="headerlink" title="25 flutter 如何定义和使用路由?"></a>25 flutter 如何定义和使用路由?</h1><ol>
+<li><p>如何定义路由?</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"> MaterialApp(</span><br><span class="line">routes: &#123;</span><br><span class="line">  <span class="string">&quot;/Home&quot;</span>: (context) =&gt; <span class="keyword">const</span> Home(title:<span class="string">&quot;&quot;</span>),</span><br><span class="line">  <span class="string">&quot;/SignUp&quot;</span>: (context) =&gt; <span class="keyword">const</span> SignUp(title:<span class="string">&quot;&quot;</span>),</span><br><span class="line">  <span class="string">&quot;/Inbox&quot;</span>: (context) =&gt; <span class="keyword">const</span> Inbox(title: <span class="string">&#x27;Inbox&#x27;</span>),</span><br><span class="line">  <span class="string">&quot;/Todo&quot;</span>: (context) =&gt; <span class="keyword">const</span> Todo(title: <span class="string">&#x27;Todo Item&#x27;</span>),</span><br><span class="line">&#125;,</span><br><span class="line">initialRoute: firstPage,</span><br><span class="line">home: <span class="keyword">const</span> Home(title:<span class="string">&quot;&quot;</span>),</span><br><span class="line"> )</span><br></pre></td></tr></table></figure></li>
+<li><p>如何通过路由跳转到某个页面?<br>Navigator.pushNamed(context, “/Inbox”, arguments: list[0]);</p>
+</li>
+<li><p>如何返回上一个页面?<br>Navigator.pop(context);</p>
+</li>
+</ol>
+<h1 id="26-flutter-中-GestureDetector-做什么用"><a href="#26-flutter-中-GestureDetector-做什么用" class="headerlink" title="26 flutter 中 GestureDetector 做什么用?"></a>26 flutter 中 GestureDetector 做什么用?</h1><p>就是负责跟用户的手势交互</p>
+<p>来源: blog.csdn.net/LJLThomson/article/details/116463135</p>
+<h1 id="27-A-RenderFlex-overflowed-by-16-pixels-on-the-right"><a href="#27-A-RenderFlex-overflowed-by-16-pixels-on-the-right" class="headerlink" title="27 A RenderFlex overflowed by 16 pixels on the right"></a>27 A RenderFlex overflowed by 16 pixels on the right</h1><p>发生这个问题, 我的经验是， 分配给组件的屏幕空间太小, 无法完全显示引起， 特别是使用 Expanded 组件, 通过 flex 属性按照比例来设置显示宽度, 如果分配的屏幕空间太小, 就会报错。</p>
+<h1 id="28-DropdownButton-实现的下拉框-图标和文字距离太大-如何修改"><a href="#28-DropdownButton-实现的下拉框-图标和文字距离太大-如何修改" class="headerlink" title="28 DropdownButton 实现的下拉框, 图标和文字距离太大, 如何修改?"></a>28 DropdownButton 实现的下拉框, 图标和文字距离太大, 如何修改?</h1><p>只需要调整 DropdownButton 的宽度就可以, 他会自动调整好的。</p>
+<h1 id="29-TextField-如何取消下划线"><a href="#29-TextField-如何取消下划线" class="headerlink" title="29 TextField 如何取消下划线?"></a>29 TextField 如何取消下划线?</h1><p>TextField.decoration.border: InputBorder.none,</p>
+<p>来源: blog.csdn.net/mp624183768/article/details/116496546</p>
+<h1 id="30-DropdownButton-选择项目后没有更新-怎么办"><a href="#30-DropdownButton-选择项目后没有更新-怎么办" class="headerlink" title="30 DropdownButton 选择项目后没有更新, 怎么办?"></a>30 DropdownButton 选择项目后没有更新, 怎么办?</h1><p>按照这个说明无法解决问题:<br>fluttercampus.com/guide/126/how-to-fix-dropdown-button-not-switching-selected-item-in-flutter/</p>
+<p>附: 按照上面的说明, 行不通的原因是:<br>setState 方法中重新赋值的变量不是全局变量, 他需要是类的全局变量, 单纯在 build 里面定义该变量不行, 一个可能的原因是, flutter 区分有状态和无状态的组件, 有状态组件更新时会自动更新该页面的所有组件, 这样的话他需要重新运行一遍 build 方法, 才会重新渲染页面。 既然重新运行了 build 方法, build 方法中定义的变量就得重新定义, 这样的话 setState 方法中赋值永远失败, 这是我个人脑补的结果。</p>
+<h1 id="31-dart-enum-如何获取名称"><a href="#31-dart-enum-如何获取名称" class="headerlink" title="31 dart enum 如何获取名称?"></a>31 dart enum 如何获取名称?</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> Color&#123;red, black&#125;</span><br><span class="line"><span class="built_in">String</span> name = Color.red.toString(); <span class="comment">// name = Color.red</span></span><br></pre></td></tr></table></figure>
+
+<p>如何想获取字符串 red, 怎么办?<br>String name = Color.red.toString().split(“.”).last();</p>
+<p>来源: stackoverflow.com/questions/29567236/dart-how-to-get-the-value-of-an-enum</p>
+<h1 id="32-flutter-如何添加浮动按钮"><a href="#32-flutter-如何添加浮动按钮" class="headerlink" title="32 flutter 如何添加浮动按钮?"></a>32 flutter 如何添加浮动按钮?</h1><p>什么是浮动按钮?<br>  即我们平时看到的在 App 界面右下角的加号按钮</p>
+<p>如何添加浮动按钮?<br>  fluttr 界面布局, 都会用到 Scaffold, Scaffold 有 floatingActionButton 属性, 给这个属性设置一个 wiget 即可?</p>
+<h1 id="33-flutter-IconButton-如何设置背景色和前景色"><a href="#33-flutter-IconButton-如何设置背景色和前景色" class="headerlink" title="33 flutter IconButton 如何设置背景色和前景色?"></a>33 flutter IconButton 如何设置背景色和前景色?</h1><p>我看到别人的浮动按钮, 那个加号按钮, 外面的圆圈是绿色或者蓝色, 里面的加号是白色, 我如何调整像他们一样调整背景色和前景色?</p>
+<p>icon 只有一种颜色, 我们之所以看到外面蓝色的圆圈， 里面是白色的加号, 那是因为图标中间加号这些区域是空心的, 可以看到后面的背景色, 只要整个页面背景色是白色, 把图标颜色调成蓝色即可看到这个效果。</p>
+<h1 id="34-flutter-如何使用下拉选择框"><a href="#34-flutter-如何使用下拉选择框" class="headerlink" title="34 flutter 如何使用下拉选择框"></a>34 flutter 如何使用下拉选择框</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">DropdownButton(</span><br><span class="line">  items:[</span><br><span class="line">	Icon(Icons.calendar_today),</span><br><span class="line">	Icon(Icons.loop),</span><br><span class="line">  ]</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p>来源: jianshu.com/p/cba2171bcf30</p>
+
+      
+     <!-- by blair add this if sentence at 20160725 -->
+      <br>
+      
+<div id="bottom-donation-section">
+<span style="font-size: 1.0em; padding:0em 1em 0.5em 1em; margin: 0 auto;">
+  <strong style="vertical-align: top;">分享到:</strong>
+    <div class="j_handlclick"  style="background: url(/images/logos/share_facebook_icon.jpg);background-size: contain;display: inline-block; width:50px; height:50px" href="https://www.facebook.com/sharer/sharer.php?u=" target="_blank">
+    </div>
+    <div class="j_handlclick"  style="background: url(/images/logos/share_twitter_icon.jpg);background-size: contain;display: inline-block; width:50px; height:50px" href="https://twitter.com/intent/tweet?url=" target="_blank">
+    </div>
+    <div class="j_handlclick"  style="background: url(/images/logos/share_line_icon.jpg);background-size: contain;display: inline-block; width:50px; height:50px" href="https://www.addtoany.com/add_to/line?linkurl=" target="_blank">
+    </div>
+    <div class="j_handlclick"  style="background: url(/images/logos/share_wechat_icon.jpg);background-size: contain;display: inline-block; width:50px; height:50px" href="https://api.addthis.com/oexchange/0.8/forward/wechat/offer?url=" target="_blank">
+    </div>
+  <br>  
+  <br>  
+  &nbsp;&nbsp;如果您觉得这篇文章对您的学习很有帮助, 请您也分享它, 让它能再次帮助到更多的需要学习的人.
+您的<a href="/support/"><strong>支持</strong></a>将鼓励我继续创作 !
+  <br>  
+
+</span>
+<!--
+<h3 id="bottom-donation-title">支持 让文章变得更优质</h3>
+<div>
+<a id="bottom-donation-button" href="/support">点我 赞助 作者</a>
+</div>
+-->
+</div>
+<div class="well">
+  <!--
+  原创文章，转载请注明： 转载自<a target="_blank" rel="noopener" href="http://52binge.github.io"> Blair Chan's Blog</a>，作者：
+  <a href="/about">Blair Chan</a> <br>
+  -->
+  本文基于<a target="_blank" title="Creative Commons Attribution 4.0 international License" href="https://creativecommons.org/licenses/by-nc/4.0/">署名4.0国际许可协议</a>发布，转载请保留本文署名和文章链接。 如您有任何授权方面的协商，请邮件联系我。
+</div>
+ <!-- by blair add 160724-->
+    
+    </div>
+    
+      <div class="article-toc">
+        <h3>Contents</h3>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-dart-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E7%BB%9D%E5%AF%B9%E5%80%BC"><span class="toc-text">1 dart 如何使用绝对值?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-flutter-Align-%E4%B8%AD%E7%9A%84-widthFactor-%E5%81%9A%E4%BB%80%E4%B9%88%E7%94%A8"><span class="toc-text">2 flutter Align 中的 widthFactor 做什么用?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-flutter-%E5%A6%82%E4%BD%95%E7%94%BB%E5%9C%86%E5%BD%A2%E8%BF%9B%E5%BA%A6%E6%9D%A1"><span class="toc-text">3 flutter 如何画圆形进度条?</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%AD%98%E5%9C%A8%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%9A"><span class="toc-text">存在的问题：</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95"><span class="toc-text">解决办法:</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%84%8F%E5%A4%96"><span class="toc-text">意外:</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%9D%A5%E6%BA%90%EF%BC%9A"><span class="toc-text">来源：</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-IconButton-%E5%A6%82%E4%BD%95%E8%B0%83%E6%95%B4%E5%8E%9F%E6%9D%A5%E7%9A%84-padding"><span class="toc-text">4 IconButton 如何调整原来的 padding ?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-fluter-%E5%A6%82%E4%BD%95%E8%AE%A9%E4%B8%A4%E4%B8%AA%E7%BB%84%E4%BB%B6%E5%B1%82%E5%8F%A0%E8%B5%B7%E6%9D%A5"><span class="toc-text">5 fluter 如何让两个组件层叠起来?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-Flutter-textField-%E7%9A%84-onEditingComplete-%E4%BA%8B%E4%BB%B6%E4%B8%BA%E4%BB%80%E4%B9%88%E6%B2%A1%E6%9C%89%E8%A7%A6%E5%8F%91"><span class="toc-text">6 Flutter textField 的 onEditingComplete 事件为什么没有触发?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-dar-%E8%AF%AD%E8%A8%80%E4%B8%AD-%E5%AF%B9%E4%B8%80%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2-%E5%A6%82%E4%BD%95%E5%8E%BB%E6%8E%89%E9%87%8D%E5%A4%8D%E6%95%B0%E6%8D%AE"><span class="toc-text">7 dar 语言中, 对一组字符串? 如何去掉重复数据?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-dart-%E8%AF%AD%E8%A8%80%E6%93%8D%E4%BD%9C%E7%AC%A6-%E6%98%AF%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D"><span class="toc-text">8 dart 语言操作符 ??&#x3D; 是什么意思?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-dart-%E8%AF%AD%E8%A8%80%E5%A6%82%E4%BD%95%E8%AE%BE%E8%AE%A1%E5%8D%95%E5%88%A9%E6%A8%A1%E5%BC%8F"><span class="toc-text">9 dart 语言如何设计单利模式?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#10-%E5%85%B3%E4%BA%8E-DateTime-%E5%92%8C-%E6%97%B6%E9%97%B4%E6%88%B3%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2%EF%BC%9F"><span class="toc-text">10 关于 DateTime 和 时间戳之间的转换？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#11-dart-%E5%AF%BC%E5%85%A5%E7%9A%84%E7%B1%BB%E5%90%8D%E9%87%8D%E5%A4%8D%E6%80%8E%E4%B9%88%E5%8A%9E"><span class="toc-text">11 dart 导入的类名重复怎么办?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#12-flutter-%E5%A6%82%E4%BD%95%E5%8D%95%E7%8B%AC%E7%BB%99-checkbox-%E6%9B%B4%E6%94%B9%E6%98%BE%E7%A4%BA%E9%A2%9C%E8%89%B2"><span class="toc-text">12 flutter 如何单独给 checkbox 更改显示颜色?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#13-flutter-TextField-%E5%A6%82%E4%BD%95%E8%B5%8B%E5%80%BC"><span class="toc-text">13 flutter TextField 如何赋值?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#15-flutter-%E4%B8%AD%E4%BD%BF%E7%94%A8-sqlLite-%E6%B5%8B%E8%AF%95%E6%97%B6%E8%BF%90%E8%A1%8C-windows-%E5%BA%94%E7%94%A8-%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8B-sqlLite-%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE"><span class="toc-text">15 flutter 中使用 sqlLite, 测试时运行 windows 应用, 如何查看 sqlLite 中的数据?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#16-dart-%E5%A6%82%E4%BD%95%E5%8F%96%E6%A8%A1"><span class="toc-text">16 dart 如何取模?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#17-dart-%E5%A6%82%E4%BD%95%E7%BB%99%E6%9E%9A%E4%B8%BE-%EF%BC%88enum%EF%BC%89-%E6%B7%BB%E5%8A%A0%E6%96%B9%E6%B3%95"><span class="toc-text">17 dart 如何给枚举 （enum） 添加方法?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#18-%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BB%A3%E7%A0%81%E4%BC%9A%E4%B8%80%E7%89%87%E6%B7%B7%E4%B9%B1-%E5%A6%82%E4%BD%95%E8%AE%A9%E4%BB%96%E7%9C%8B%E8%B5%B7%E6%9D%A5%E6%9B%B4%E7%AE%80%E6%B4%81%E4%B8%80%E7%82%B9"><span class="toc-text">18 为什么代码会一片混乱, 如何让他看起来更简洁一点?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#19-flutter-%E5%A6%82%E4%BD%95%E6%97%8B%E8%BD%AC-icon-%E5%9B%BE%E6%A0%87"><span class="toc-text">19 flutter 如何旋转 icon 图标?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#20-%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E7%82%B9%E5%87%BB%E6%8C%89%E9%92%AE-App-%E9%A1%B5%E9%9D%A2%E5%BA%95%E9%83%A8%E5%BC%B9%E5%87%BA%E7%AA%97%E5%8F%A3-%E7%AA%97%E5%8F%A3%E4%B8%8A%E9%9D%A2%E5%8F%AF%E4%BB%A5%E8%BE%93%E5%85%A5%E6%96%87%E5%AD%97-%E5%BC%B9%E5%87%BA%E7%9A%84%E6%97%B6%E5%80%99%E8%87%AA%E5%8A%A8%E8%B0%83%E5%87%BA%E8%BD%AF%E9%94%AE%E7%9B%98-%E5%85%B3%E9%97%AD%E7%9A%84%E6%97%B6%E5%80%99%E8%87%AA%E5%8A%A8%E5%85%B3%E9%97%AD%E8%BD%AF%E9%94%AE%E7%9B%98"><span class="toc-text">20 如何实现点击按钮, App 页面底部弹出窗口, 窗口上面可以输入文字, 弹出的时候自动调出软键盘, 关闭的时候自动关闭软键盘?</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BD%AF%E9%94%AE%E7%9B%98%E5%BC%B9%E5%87%BA%E5%90%8E%E6%8A%8A-TextField-%E9%81%AE%E7%9B%96%E4%BA%86%E6%80%8E%E4%B9%88%E5%8A%9E"><span class="toc-text">软键盘弹出后把 TextField 遮盖了怎么办?</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BC%B9%E5%87%BA%E7%9A%84%E7%AA%97%E5%8F%A3%E4%B8%AD-%E4%BD%BF%E7%94%A8-setState-%E6%97%A0%E6%B3%95%E6%9B%B4%E6%96%B0%E7%95%8C%E9%9D%A2%E6%80%8E%E4%B9%88%E5%8A%9E"><span class="toc-text">弹出的窗口中, 使用 setState 无法更新界面怎么办?</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#21-flutter-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E8%B7%AF%E7%94%B1"><span class="toc-text">21 flutter 如何使用路由?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#22-MaterialApp-%E8%AE%BE%E7%BD%AE-initialRoute-%E5%90%8E-home-%E6%9C%89%E4%BB%80%E4%B9%88%E4%BD%9C%E7%94%A8"><span class="toc-text">22 MaterialApp 设置 initialRoute 后, home 有什么作用?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#23-flutter-%E5%A6%82%E4%BD%95%E5%9C%A8%E9%A1%B5%E9%9D%A2%E5%88%9D%E5%A7%8B%E5%8C%96%E7%9A%84%E6%97%B6%E5%80%99%E8%BF%9B%E8%A1%8C%E8%B7%AF%E7%94%B1%E8%B7%B3%E8%BD%AC"><span class="toc-text">23 flutter 如何在页面初始化的时候进行路由跳转?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#24-flutter-%E5%9C%A8-windows-%E4%B8%8A%E8%B0%83%E8%AF%95-%E5%A6%82%E4%BD%95%E6%B8%85%E7%A9%BA-sqlite-%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-text">24 flutter 在 windows 上调试, 如何清空 sqlite 数据库?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#25-flutter-%E5%A6%82%E4%BD%95%E5%AE%9A%E4%B9%89%E5%92%8C%E4%BD%BF%E7%94%A8%E8%B7%AF%E7%94%B1"><span class="toc-text">25 flutter 如何定义和使用路由?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#26-flutter-%E4%B8%AD-GestureDetector-%E5%81%9A%E4%BB%80%E4%B9%88%E7%94%A8"><span class="toc-text">26 flutter 中 GestureDetector 做什么用?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#27-A-RenderFlex-overflowed-by-16-pixels-on-the-right"><span class="toc-text">27 A RenderFlex overflowed by 16 pixels on the right</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#28-DropdownButton-%E5%AE%9E%E7%8E%B0%E7%9A%84%E4%B8%8B%E6%8B%89%E6%A1%86-%E5%9B%BE%E6%A0%87%E5%92%8C%E6%96%87%E5%AD%97%E8%B7%9D%E7%A6%BB%E5%A4%AA%E5%A4%A7-%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9"><span class="toc-text">28 DropdownButton 实现的下拉框, 图标和文字距离太大, 如何修改?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#29-TextField-%E5%A6%82%E4%BD%95%E5%8F%96%E6%B6%88%E4%B8%8B%E5%88%92%E7%BA%BF"><span class="toc-text">29 TextField 如何取消下划线?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#30-DropdownButton-%E9%80%89%E6%8B%A9%E9%A1%B9%E7%9B%AE%E5%90%8E%E6%B2%A1%E6%9C%89%E6%9B%B4%E6%96%B0-%E6%80%8E%E4%B9%88%E5%8A%9E"><span class="toc-text">30 DropdownButton 选择项目后没有更新, 怎么办?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#31-dart-enum-%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E5%90%8D%E7%A7%B0"><span class="toc-text">31 dart enum 如何获取名称?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#32-flutter-%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0%E6%B5%AE%E5%8A%A8%E6%8C%89%E9%92%AE"><span class="toc-text">32 flutter 如何添加浮动按钮?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#33-flutter-IconButton-%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF%E8%89%B2%E5%92%8C%E5%89%8D%E6%99%AF%E8%89%B2"><span class="toc-text">33 flutter IconButton 如何设置背景色和前景色?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#34-flutter-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E4%B8%8B%E6%8B%89%E9%80%89%E6%8B%A9%E6%A1%86"><span class="toc-text">34 flutter 如何使用下拉选择框</span></a></li></ol>
+      </div>
+    
+    
+      <footer class="article-footer">
+        <!-- <div class="well" style="width:100px; height:30px;"></div>  by blair-->
+        
+ <!-- by blair add 160724-->
+        <!--
+        <div style="width:100px; height:30px;"></div> by blair add 160724
+        -->
+        
+  <div class="article-tag">
+    <a class="article-tag-none-link" href="/tags/flutter/" rel="tag">flutter</a>
+  </div>
+
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/20211113/flutter-%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E7%B3%BB%E5%88%97%E4%B9%8B%E5%85%AD/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">flutter-开发问题系列之六&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 wanlion&nbsp;
+    </div>
+  </div>
+</footer>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+      displayMath: [ ['$$','$$']],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
+</script>
+
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+  </div>
+</body>
+</html>
