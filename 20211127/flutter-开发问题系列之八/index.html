@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>flutter-开发问题系列之八 - wanlion</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="这是 todoline++ 项目开发过程中遇到的问题系列, 记录下来供大家参考。本篇记录一些开发中遇到的疑问:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="flutter-开发问题系列之八">
+<meta property="og:url" content="https://xwanlion.github.io/20211127/flutter-%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E7%B3%BB%E5%88%97%E4%B9%8B%E5%85%AB/index.html">
+<meta property="og:site_name" content="wanlion">
+<meta property="og:description" content="这是 todoline++ 项目开发过程中遇到的问题系列, 记录下来供大家参考。本篇记录一些开发中遇到的疑问:">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-11-27T01:33:20.000Z">
+<meta property="article:modified_time" content="2021-11-27T02:17:36.325Z">
+<meta property="article:author" content="wanlion">
+<meta property="article:tag" content="flutter">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <!-- blair add baidu tongji start... @2017.10.03 -->
+<!-- blair add baidu tongji end ! @2017.10.03 -->
+
+<header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo" href="/"></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://xwanlion.github.io"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+    <br>
+    <section id="main" class="outer"><article id="post-flutter-开发问题系列之八" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      flutter-开发问题系列之八
+      <small class=article-detail-date-index>&nbsp; 2021-11-27</small>
+    </h1>
+  
+
+
+        <div class=page-title></div>
+        <br>
+      </header>
+    
+    <div class="article-meta">
+      <!--<a href="/20211127/flutter-%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E7%B3%BB%E5%88%97%E4%B9%8B%E5%85%AB/" class="article-date">
+  <time datetime="2021-11-27T01:33:20.000Z" itemprop="datePublished">2021-11-27</time>
+</a>-->
+      <!-- 
+--><!-- by blair 160724 -->
+      <!-- by blair
+      
+      -->
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这是 todoline++ 项目开发过程中遇到的问题系列, 记录下来供大家参考。<br>本篇记录一些开发中遇到的疑问:</p>
+<span id="more"></span>
+<p>todoline++ 官网请看这里: <a target="_blank" rel="noopener" href="https://todoline-plus-plus.github.io/">https://todoline-plus-plus.github.io/</a></p>
+<h1 id="1-flutter-state-的声明周期"><a href="#1-flutter-state-的声明周期" class="headerlink" title="1 flutter state 的声明周期?"></a>1 flutter state 的声明周期?</h1><p>state 的生命周期有 3 个阶段:</p>
+<ol>
+<li><p>初始化<br>开始 –&gt; 构造函数 –&gt; initState –&gt; didChangeDepandencies –&gt; build</p>
+</li>
+<li><p>状态改变<br>update –&gt; diChangeDepanedencies –&gt; build</p>
+</li>
+<li><p>结束<br>结束 –&gt; deactivate –&gt; dispose –&gt; 结束</p>
+</li>
+</ol>
+<p>来源: jianshu.com/p/ed220761f7b1</p>
+<h1 id="2-flutter-有图文按钮吗"><a href="#2-flutter-有图文按钮吗" class="headerlink" title="2 flutter 有图文按钮吗?"></a>2 flutter 有图文按钮吗?</h1><p>请使用下面的方法来构建图文按钮:</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TextButton.icon();</span><br></pre></td></tr></table></figure>
+<h1 id="3-TextButton-中的-style-如何赋值"><a href="#3-TextButton-中的-style-如何赋值" class="headerlink" title="3 TextButton 中的 style 如何赋值?"></a>3 TextButton 中的 style 如何赋值?</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TextButton.style.backgroundColor: MaterialStateProperty.all(Colors.green),</span><br></pre></td></tr></table></figure>
+<p>来源: stackoverflow.com/questions/66542199/what-is-materialstatepropertycolor</p>
+<h1 id="4-TextButton-icon-如何修改他的宽度"><a href="#4-TextButton-icon-如何修改他的宽度" class="headerlink" title="4 TextButton.icon 如何修改他的宽度?"></a>4 TextButton.icon 如何修改他的宽度?</h1><p>外面套一层 SizedBox, 然后给 SizedBox 设置宽度即可</p>
+<h1 id="5-TextButton-icon-如何修改圆角"><a href="#5-TextButton-icon-如何修改圆角" class="headerlink" title="5 TextButton.icon 如何修改圆角"></a>5 TextButton.icon 如何修改圆角</h1><p>这个实际上等于 shape 如何使用。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">TextButton.icon(</span><br><span class="line">  style: ButtonStyle(</span><br><span class="line">	backgroundColor: MaterialStateProperty.all(AppColor.primaryColor),</span><br><span class="line">	shape: MaterialStateProperty.all(</span><br><span class="line">		RoundedRectangleBorder(</span><br><span class="line">			borderRadius: BorderRadius.circular(<span class="number">18.67</span>) <span class="comment">// 圆角</span></span><br><span class="line">		)</span><br><span class="line">	),</span><br><span class="line">  ),</span><br><span class="line">  icon: Icon(icon, size: <span class="number">36</span>, color: AppColor.white),</span><br><span class="line">  label: Text(label, style: <span class="keyword">const</span> TextStyle(fontSize: <span class="number">30</span>, color: AppColor.white)),</span><br><span class="line">  onPressed: ()&#123;</span><br><span class="line">	<span class="comment">// xxx</span></span><br><span class="line">  &#125;,</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h1 id="6-flutter-项目-开发-windows-应用-如何修改标题栏的名称"><a href="#6-flutter-项目-开发-windows-应用-如何修改标题栏的名称" class="headerlink" title="6 flutter 项目, 开发 windows 应用, 如何修改标题栏的名称?"></a>6 flutter 项目, 开发 windows 应用, 如何修改标题栏的名称?</h1><p>一般情况下, flutter 默认开发出来的 windows 应用程序的标题栏的名称就是项目名称, 但有时候我们想要更改标题栏的名称, 怎么办?<br>文件名: windows/runner/main.cpp<br>修改的内容:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if (!window.CreateAndShow(L&quot;todoLine++&quot;, origin, size)) &#123;</span><br><span class="line">  return EXIT_FAILURE;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面的 todoline++, 修改成你自己的名称就可以了！</p>
+<h1 id="7-flutter-如何播放音乐"><a href="#7-flutter-如何播放音乐" class="headerlink" title="7 flutter 如何播放音乐?"></a>7 flutter 如何播放音乐?</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&#x27;package:audioplayers/audioplayers.dart&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Player</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">const</span> defaultSound = <span class="string">&quot;audio/xxx.mp3&quot;</span>;</span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">final</span> AudioCache _cache = AudioCache();</span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">final</span> AudioPlayer _player = AudioPlayer();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">void</span> play([<span class="built_in">String</span> fileName = defaultSound]) &#123;</span><br><span class="line">    _cache.fixedPlayer = _player;</span><br><span class="line">    _cache.loop(fileName);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">void</span> stop() &#123;</span><br><span class="line">    _player.stop();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>来源: blog.csdn.net/moasad/article/details/119931986</p>
+<h1 id="8-flutter-Text-组件文字太长怎么办"><a href="#8-flutter-Text-组件文字太长怎么办" class="headerlink" title="8 flutter Text 组件文字太长怎么办?"></a>8 flutter Text 组件文字太长怎么办?</h1><p>A) Text 外面套一个 Expanded 组件<br>B) 设置 overflow = TextOverflow.ellipsis</p>
+<p>来源: blog.csdn.net/weixin_42354735/article/details/109473211</p>
+<h1 id="9-flutter-如何弹出文件选择框"><a href="#9-flutter-如何弹出文件选择框" class="headerlink" title="9 flutter 如何弹出文件选择框?"></a>9 flutter 如何弹出文件选择框?</h1><p>请使用 file_picker 插件, 下面是官方源码:</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">FilePickerResult? result = <span class="keyword">await</span> FilePicker.platform.pickFiles();</span><br><span class="line"><span class="keyword">if</span> (result != <span class="keyword">null</span>) &#123;</span><br><span class="line">  File file = File(result.files.single.path);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="comment">// User canceled the picker</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="10-为什么命名构造器没有生成对象"><a href="#10-为什么命名构造器没有生成对象" class="headerlink" title="10 为什么命名构造器没有生成对象?"></a>10 为什么命名构造器没有生成对象?</h1><p>下面的两个构造器中, Config.from 无法生成 config 对象</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> Config(<span class="keyword">this</span>.id, <span class="keyword">this</span>.tag, <span class="keyword">this</span>.key, <span class="keyword">this</span>.val, <span class="keyword">this</span>.remark);</span><br><span class="line"> Config.from(User user, <span class="built_in">String</span> tag, <span class="built_in">String</span> key, <span class="built_in">String</span> val, <span class="built_in">String</span> remark) &#123;</span><br><span class="line"><span class="built_in">int</span> id = generateId(user);</span><br><span class="line">Config(id, tag, key, val, remark);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<p>正确方法:</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> Config.from(User user, <span class="keyword">this</span>.tag, <span class="keyword">this</span>.key, <span class="keyword">this</span>.val, <span class="keyword">this</span>.remark) &#123;</span><br><span class="line"><span class="built_in">int</span> id = generateId(user);</span><br><span class="line"><span class="comment">// Config(id, tag, key, val, remark);</span></span><br><span class="line"><span class="keyword">this</span>.id = id;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意:</p>
+<ol>
+<li>不在命名构造器调用同名构造器</li>
+<li>在命名构造器的参数中直接写上 this.xxx 表示直接对这个成员变量赋值。</li>
+</ol>
+<h1 id="11-flutter-开发使用-sqlite-如果开发的是-windows-桌面应用程序-那么-sqlLite-的数据库文件存放在哪里"><a href="#11-flutter-开发使用-sqlite-如果开发的是-windows-桌面应用程序-那么-sqlLite-的数据库文件存放在哪里" class="headerlink" title="11 flutter 开发使用 sqlite, 如果开发的是 windows 桌面应用程序, 那么 sqlLite 的数据库文件存放在哪里?"></a>11 flutter 开发使用 sqlite, 如果开发的是 windows 桌面应用程序, 那么 sqlLite 的数据库文件存放在哪里?</h1><p>老实说, 一开始我也是一头雾水, 不知道该怎么办, 后来我看到这篇文章:<br>codaffection.com/flutter-article/view-sqlite-db-in-flutter-application/</p>
+<p>他说, 数据库文件肯定存在于某个地方, 我灵光一闪： everthing, 果然, 找到了他的地址:<br>{your-project-folder}.dart_tool\sqflite_common_ffi\databases\xxx.db</p>
+<h1 id="12-floor-构建代码的语句太长记不住怎么办"><a href="#12-floor-构建代码的语句太长记不住怎么办" class="headerlink" title="12 floor 构建代码的语句太长记不住怎么办?"></a>12 floor 构建代码的语句太长记不住怎么办?</h1><p>floor 是 flutter 中用来映射 sqlLite 数据库的 ORM 框架, 当我们写好抽象类了以后, 就需要运行下面的命令, 然后 floor 才会生成我们需要的代码：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter packages pub run build_runner build</span><br></pre></td></tr></table></figure>
+<p>但是这个命令也太长了, 不容易记住, 而且每次都这么敲的话也太麻烦了, 不是吗?<br>有什么办法可以帮我们记住这个代码呢?</p>
+<p>我的办法是, 编写脚本文件, windows 中只需要写好 .bat 文件, 然后就可以执行了, 再然后我们使用效率工具, 比如 utool, wox 来运行该脚本文件即可.<br>下面是 .bat 脚本文件的内容:</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cmd</span> /c &quot;<span class="built_in">cd</span> /d D:\xxx\project_name&amp;&amp;flutter packages pub run build_runner build&quot;</span><br></pre></td></tr></table></figure>
+
+<p>注意: </p>
+<ol>
+<li>D:\xxx\project_name 是项目文件夹名称, 请替换成你自己的就行</li>
+<li>项目文件夹名称和 cmd 命令之间请使用 &amp;&amp; 来隔开</li>
+<li>效率工具如何运行.bat 文件? 请各自参考相关说明文件, 我使用的是 wox, 安装插件 wox.pulgin.runner 即可配置。</li>
+</ol>
+<h1 id="13-构造器中添加-factory-修饰符是什么意思-他跟不添加有什么区别"><a href="#13-构造器中添加-factory-修饰符是什么意思-他跟不添加有什么区别" class="headerlink" title="13 构造器中添加 factory 修饰符是什么意思, 他跟不添加有什么区别?"></a>13 构造器中添加 factory 修饰符是什么意思, 他跟不添加有什么区别?</h1><p>flutter 中的类, 有下面三种:</p>
+<ol>
+<li><p>同名构造器<br>构造器的名称和类名称一样</p>
+</li>
+<li><p>命名构造器<br>类名.xxx 即为命名构造器, 他的作用跟同名构造器一样, 方便定义多个构造函数</p>
+</li>
+<li><p>工厂构造器<br>在构造器的前面加一个 factory 即为工厂构造器, 工厂构造器的作用有 3 个:<br>A) 方便缓存, 同一个构造器生成一个实例对象<br>B) 方便调用子类<br>C) 创建单利模式</p>
+</li>
+</ol>
+<h1 id="14-floor-中-如果表中某个字段需要唯一-不允许重复怎么办"><a href="#14-floor-中-如果表中某个字段需要唯一-不允许重复怎么办" class="headerlink" title="14 floor 中, 如果表中某个字段需要唯一, 不允许重复怎么办?"></a>14 floor 中, 如果表中某个字段需要唯一, 不允许重复怎么办?</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> <span class="meta">@Entity</span>(tableName:<span class="string">&quot;&quot;</span>, indices: [Index(value: [<span class="string">&#x27;key&#x27;</span>])])</span><br><span class="line"> <span class="class"><span class="keyword">class</span> <span class="title">Config</span> </span>&#123;</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+      
+     <!-- by blair add this if sentence at 20160725 -->
+      <br>
+      
+<div id="bottom-donation-section">
+<span style="font-size: 1.0em; padding:0em 1em 0.5em 1em; margin: 0 auto;">
+  <strong style="vertical-align: top;">分享到:</strong>
+    <div class="j_handlclick"  style="background: url(/images/logos/share_facebook_icon.jpg);background-size: contain;display: inline-block; width:50px; height:50px" href="https://www.facebook.com/sharer/sharer.php?u=" target="_blank">
+    </div>
+    <div class="j_handlclick"  style="background: url(/images/logos/share_twitter_icon.jpg);background-size: contain;display: inline-block; width:50px; height:50px" href="https://twitter.com/intent/tweet?url=" target="_blank">
+    </div>
+    <div class="j_handlclick"  style="background: url(/images/logos/share_line_icon.jpg);background-size: contain;display: inline-block; width:50px; height:50px" href="https://www.addtoany.com/add_to/line?linkurl=" target="_blank">
+    </div>
+    <div class="j_handlclick"  style="background: url(/images/logos/share_wechat_icon.jpg);background-size: contain;display: inline-block; width:50px; height:50px" href="https://api.addthis.com/oexchange/0.8/forward/wechat/offer?url=" target="_blank">
+    </div>
+  <br>  
+  <br>  
+  &nbsp;&nbsp;如果您觉得这篇文章对您的学习很有帮助, 请您也分享它, 让它能再次帮助到更多的需要学习的人.
+您的<a href="/support/"><strong>支持</strong></a>将鼓励我继续创作 !
+  <br>  
+
+</span>
+<!--
+<h3 id="bottom-donation-title">支持 让文章变得更优质</h3>
+<div>
+<a id="bottom-donation-button" href="/support">点我 赞助 作者</a>
+</div>
+-->
+</div>
+<div class="well">
+  <!--
+  原创文章，转载请注明： 转载自<a target="_blank" rel="noopener" href="http://52binge.github.io"> Blair Chan's Blog</a>，作者：
+  <a href="/about">Blair Chan</a> <br>
+  -->
+  本文基于<a target="_blank" title="Creative Commons Attribution 4.0 international License" href="https://creativecommons.org/licenses/by-nc/4.0/">署名4.0国际许可协议</a>发布，转载请保留本文署名和文章链接。 如您有任何授权方面的协商，请邮件联系我。
+</div>
+ <!-- by blair add 160724-->
+    
+    </div>
+    
+      <div class="article-toc">
+        <h3>Contents</h3>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-flutter-state-%E7%9A%84%E5%A3%B0%E6%98%8E%E5%91%A8%E6%9C%9F"><span class="toc-text">1 flutter state 的声明周期?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-flutter-%E6%9C%89%E5%9B%BE%E6%96%87%E6%8C%89%E9%92%AE%E5%90%97"><span class="toc-text">2 flutter 有图文按钮吗?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-TextButton-%E4%B8%AD%E7%9A%84-style-%E5%A6%82%E4%BD%95%E8%B5%8B%E5%80%BC"><span class="toc-text">3 TextButton 中的 style 如何赋值?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-TextButton-icon-%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9%E4%BB%96%E7%9A%84%E5%AE%BD%E5%BA%A6"><span class="toc-text">4 TextButton.icon 如何修改他的宽度?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-TextButton-icon-%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9%E5%9C%86%E8%A7%92"><span class="toc-text">5 TextButton.icon 如何修改圆角</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-flutter-%E9%A1%B9%E7%9B%AE-%E5%BC%80%E5%8F%91-windows-%E5%BA%94%E7%94%A8-%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9%E6%A0%87%E9%A2%98%E6%A0%8F%E7%9A%84%E5%90%8D%E7%A7%B0"><span class="toc-text">6 flutter 项目, 开发 windows 应用, 如何修改标题栏的名称?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-flutter-%E5%A6%82%E4%BD%95%E6%92%AD%E6%94%BE%E9%9F%B3%E4%B9%90"><span class="toc-text">7 flutter 如何播放音乐?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-flutter-Text-%E7%BB%84%E4%BB%B6%E6%96%87%E5%AD%97%E5%A4%AA%E9%95%BF%E6%80%8E%E4%B9%88%E5%8A%9E"><span class="toc-text">8 flutter Text 组件文字太长怎么办?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-flutter-%E5%A6%82%E4%BD%95%E5%BC%B9%E5%87%BA%E6%96%87%E4%BB%B6%E9%80%89%E6%8B%A9%E6%A1%86"><span class="toc-text">9 flutter 如何弹出文件选择框?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#10-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%91%BD%E5%90%8D%E6%9E%84%E9%80%A0%E5%99%A8%E6%B2%A1%E6%9C%89%E7%94%9F%E6%88%90%E5%AF%B9%E8%B1%A1"><span class="toc-text">10 为什么命名构造器没有生成对象?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#11-flutter-%E5%BC%80%E5%8F%91%E4%BD%BF%E7%94%A8-sqlite-%E5%A6%82%E6%9E%9C%E5%BC%80%E5%8F%91%E7%9A%84%E6%98%AF-windows-%E6%A1%8C%E9%9D%A2%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F-%E9%82%A3%E4%B9%88-sqlLite-%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E6%96%87%E4%BB%B6%E5%AD%98%E6%94%BE%E5%9C%A8%E5%93%AA%E9%87%8C"><span class="toc-text">11 flutter 开发使用 sqlite, 如果开发的是 windows 桌面应用程序, 那么 sqlLite 的数据库文件存放在哪里?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#12-floor-%E6%9E%84%E5%BB%BA%E4%BB%A3%E7%A0%81%E7%9A%84%E8%AF%AD%E5%8F%A5%E5%A4%AA%E9%95%BF%E8%AE%B0%E4%B8%8D%E4%BD%8F%E6%80%8E%E4%B9%88%E5%8A%9E"><span class="toc-text">12 floor 构建代码的语句太长记不住怎么办?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#13-%E6%9E%84%E9%80%A0%E5%99%A8%E4%B8%AD%E6%B7%BB%E5%8A%A0-factory-%E4%BF%AE%E9%A5%B0%E7%AC%A6%E6%98%AF%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D-%E4%BB%96%E8%B7%9F%E4%B8%8D%E6%B7%BB%E5%8A%A0%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB"><span class="toc-text">13 构造器中添加 factory 修饰符是什么意思, 他跟不添加有什么区别?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#14-floor-%E4%B8%AD-%E5%A6%82%E6%9E%9C%E8%A1%A8%E4%B8%AD%E6%9F%90%E4%B8%AA%E5%AD%97%E6%AE%B5%E9%9C%80%E8%A6%81%E5%94%AF%E4%B8%80-%E4%B8%8D%E5%85%81%E8%AE%B8%E9%87%8D%E5%A4%8D%E6%80%8E%E4%B9%88%E5%8A%9E"><span class="toc-text">14 floor 中, 如果表中某个字段需要唯一, 不允许重复怎么办?</span></a></li></ol>
+      </div>
+    
+    
+      <footer class="article-footer">
+        <!-- <div class="well" style="width:100px; height:30px;"></div>  by blair-->
+        
+ <!-- by blair add 160724-->
+        <!--
+        <div style="width:100px; height:30px;"></div> by blair add 160724
+        -->
+        
+  <div class="article-tag">
+    <a class="article-tag-none-link" href="/tags/flutter/" rel="tag">flutter</a>
+  </div>
+
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/20211127/flutter-%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E7%B3%BB%E5%88%97%E4%B9%8B%E4%B9%9D/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          flutter-开发问题系列之九
+        
+      </div>
+    </a>
+  
+  
+    <a href="/20211115/%E5%8F%A3%E5%BE%88%E6%B8%B4-%E4%BD%86%E6%B2%A1%E9%92%B1%E4%B9%B0%E6%B0%B4%E6%80%8E%E4%B9%88%E5%8A%9E/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">口很渴, 但没钱买水怎么办?&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 wanlion&nbsp;
+    </div>
+  </div>
+</footer>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+      displayMath: [ ['$$','$$']],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
+</script>
+
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+  </div>
+</body>
+</html>
