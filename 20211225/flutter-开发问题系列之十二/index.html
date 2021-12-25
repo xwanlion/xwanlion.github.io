@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>flutter-开发问题系列之十二 - wanlion</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="这是 todoline++ 项目开发过程中遇到的问题系列, 记录下来供大家参考。本篇记录一些开发中遇到的疑问:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="flutter-开发问题系列之十二">
+<meta property="og:url" content="https://xwanlion.github.io/20211225/flutter-%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E7%B3%BB%E5%88%97%E4%B9%8B%E5%8D%81%E4%BA%8C/index.html">
+<meta property="og:site_name" content="wanlion">
+<meta property="og:description" content="这是 todoline++ 项目开发过程中遇到的问题系列, 记录下来供大家参考。本篇记录一些开发中遇到的疑问:">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-12-25T10:22:43.000Z">
+<meta property="article:modified_time" content="2021-12-25T10:23:46.839Z">
+<meta property="article:author" content="wanlion">
+<meta property="article:tag" content="flutter">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <!-- blair add baidu tongji start... @2017.10.03 -->
+<!-- blair add baidu tongji end ! @2017.10.03 -->
+
+<header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo" href="/"></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://xwanlion.github.io"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+    <br>
+    <section id="main" class="outer"><article id="post-flutter-开发问题系列之十二" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      flutter-开发问题系列之十二
+      <small class=article-detail-date-index>&nbsp; 2021-12-25</small>
+    </h1>
+  
+
+
+        <div class=page-title></div>
+        <br>
+      </header>
+    
+    <div class="article-meta">
+      <!--<a href="/20211225/flutter-%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E7%B3%BB%E5%88%97%E4%B9%8B%E5%8D%81%E4%BA%8C/" class="article-date">
+  <time datetime="2021-12-25T10:22:43.000Z" itemprop="datePublished">2021-12-25</time>
+</a>-->
+      <!-- 
+--><!-- by blair 160724 -->
+      <!-- by blair
+      
+      -->
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这是 todoline++ 项目开发过程中遇到的问题系列, 记录下来供大家参考。<br>本篇记录一些开发中遇到的疑问:</p>
+<span id="more"></span>
+<p>todoline++ 官网请看这里: <a target="_blank" rel="noopener" href="https://todoline-plus-plus.github.io/">https://todoline-plus-plus.github.io/</a></p>
+<h1 id="1-flutter-Text-组件，-设置-overflow-不起作用"><a href="#1-flutter-Text-组件，-设置-overflow-不起作用" class="headerlink" title="1 flutter Text 组件， 设置 overflow 不起作用"></a>1 flutter Text 组件， 设置 overflow 不起作用</h1><p>之前 Text 组件的文字太长, 希望截断并使用… 来表示, 之前的方法如下:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">A) Text 外面套一个 Expanded 组件</span><br><span class="line">B) 设置 overflow = TextOverflow.ellipsis</span><br></pre></td></tr></table></figure>
+<p>但是今天设置发现, 不起作用, 把之前设置成功的代码拷贝过来, 依然不起作用。<br>只好写代码手工截断。</p>
+<h1 id="2-flutter-项目更改图标后-看起来非常的小"><a href="#2-flutter-项目更改图标后-看起来非常的小" class="headerlink" title="2 flutter 项目更改图标后, 看起来非常的小"></a>2 flutter 项目更改图标后, 看起来非常的小</h1><p>查看网上的资料, 通过 android 项目的办法来解决, 也就是把 flutter 项目目录下的 android 目录当作 android 项目来对待, 然后使用 android studio 来打开该项目, 然后在修改图标文件。</p>
+<p>在 flutter 中把 android 目录当作 android 工程来打开的办法如下:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android studio ==&gt; projectName ==&gt; android ==&gt; right click ==&gt; flutter ==&gt; open android module in android studio </span><br></pre></td></tr></table></figure>
+<p>来源:<br>stackoverflow.com/questions/58051362/flutter-android-launcher-icon-looks-very-small</p>
+<h1 id="3-flutter-如何打包"><a href="#3-flutter-如何打包" class="headerlink" title="3 flutter 如何打包?"></a>3 flutter 如何打包?</h1><p>使用 cmd 命令:</p>
+<ol>
+<li>一键打包: flutter build apk</li>
+<li>分架构打包: flutter build apk –target-platform android-arm,android-arm64,android-x64 –split-per-abi</li>
+</ol>
+<p>来源: blog.csdn.net/campchan/article/details/118912540</p>
+<h1 id="4-flutter-Column-组件-如果项目太多-超出屏幕高度所能够显示的高度-就会报错-怎么办"><a href="#4-flutter-Column-组件-如果项目太多-超出屏幕高度所能够显示的高度-就会报错-怎么办" class="headerlink" title="4 flutter Column 组件, 如果项目太多, 超出屏幕高度所能够显示的高度, 就会报错, 怎么办?"></a>4 flutter Column 组件, 如果项目太多, 超出屏幕高度所能够显示的高度, 就会报错, 怎么办?</h1><p>之前看到 Column, 认为它和 ListView 是一样的, 今天终于看到了他们的区别。</p>
+<h1 id="5-flutter-项目-如何修改程序图标"><a href="#5-flutter-项目-如何修改程序图标" class="headerlink" title="5 flutter 项目, 如何修改程序图标?"></a>5 flutter 项目, 如何修改程序图标?</h1><p>全部是按照原生项目的办法来解决, flutter 项目下有 android， ios, windows 等这些目录, 这些目录对应着各自的原生项目, 我们完全可以把它当作一个原生项目来对待就可以, 下面是各自对应的文件目录:<br>android： project-name\android\app\src\main\res<br>IOS: 没开发过IOS, 不知道。<br>window:  projectName\windows\runner\app_icon.ico</p>
+<h1 id="6-flutter-中有一个专门处理日期的类：DateUtils"><a href="#6-flutter-中有一个专门处理日期的类：DateUtils" class="headerlink" title="6 flutter 中有一个专门处理日期的类：DateUtils"></a>6 flutter 中有一个专门处理日期的类：DateUtils</h1><p>这是查看源代码的时候发现的, 平时处理日期的时候就不用自己再动手写了！</p>
+<h1 id="7-flutter-floor-框架的-Query-注解中-select-count-语句总是返回-null-值-得不到统计数值"><a href="#7-flutter-floor-框架的-Query-注解中-select-count-语句总是返回-null-值-得不到统计数值" class="headerlink" title="7 flutter floor 框架的 @Query 注解中, select count 语句总是返回 null 值, 得不到统计数值"></a>7 flutter floor 框架的 @Query 注解中, select count 语句总是返回 null 值, 得不到统计数值</h1><p>查看代码发现, floor 生成的代码中, 使用的是 _queryAdapter.queryNoReturn（） 方法, 执行该方法后不会返回查询到的数据, 因此为 null。</p>
+<p>那怎么办呢?</p>
+<p>通过测试发现, dao 类中如果返回的数据类型是 @entity 标记的类, 他就会返回数据, 否则生成的代码中就会调用 _queryAdapter.queryNoReturn（）, 这个不会返回任何数据.</p>
+<p>解决办法:<br>我提交了一个问题给开发者, 目前暂时的解决办法是: </p>
+<ol>
+<li>新建一个实体类, 然后在查询</li>
+<li>查询出所有的数据, 然后再用代码统计</li>
+</ol>
+<h1 id="8-easyIsolate-使用心得"><a href="#8-easyIsolate-使用心得" class="headerlink" title="8 easyIsolate 使用心得"></a>8 easyIsolate 使用心得</h1><p>初始化时 worker 需要发送消息才会在 IsolateHandler 中运行<br>pub.dev/packages/easy_isolate</p>
+<h1 id="9-Flutter-插件实现-JavaScript-和-Dart-交互数据"><a href="#9-Flutter-插件实现-JavaScript-和-Dart-交互数据" class="headerlink" title="9 Flutter 插件实现 JavaScript 和 Dart 交互数据"></a>9 Flutter 插件实现 JavaScript 和 Dart 交互数据</h1><p>该功能还没有实现过, 下面的地址仅供参考:<br>zhuanlan.zhihu.com/p/372006972</p>
+<h1 id="10-据说-RxDart-是一个非常牛逼的框架-用来处理异步非常方便-具体请参考"><a href="#10-据说-RxDart-是一个非常牛逼的框架-用来处理异步非常方便-具体请参考" class="headerlink" title="10 据说 RxDart 是一个非常牛逼的框架, 用来处理异步非常方便, 具体请参考:"></a>10 据说 RxDart 是一个非常牛逼的框架, 用来处理异步非常方便, 具体请参考:</h1><p>blog.csdn.net/hjjdehao/article/details/104280422</p>
+<h1 id="11-路由设置中-initialRoute-和-home-的区别是"><a href="#11-路由设置中-initialRoute-和-home-的区别是" class="headerlink" title="11 路由设置中 initialRoute 和 home 的区别是?"></a>11 路由设置中 initialRoute 和 home 的区别是?</h1><h1 id="12-flutter-中的-build-方法和-initState-不能添加-async-关键字"><a href="#12-flutter-中的-build-方法和-initState-不能添加-async-关键字" class="headerlink" title="12 flutter 中的 build 方法和 initState 不能添加 async 关键字"></a>12 flutter 中的 build 方法和 initState 不能添加 async 关键字</h1><p>想在系统中初始化数据库对象, 有两个独立的线程需要使用数据库对象：</p>
+<ol>
+<li>程序主线程, </li>
+<li>后台运行通知的副线程</li>
+</ol>
+<p>本来想在某个开始位置初始化数据库对象, 然后在启动第二个线程, 发现 main 入口中无法初始化, 这个时候 floor 基础类还没有初始化， 所以只能在 build 或者 initState 方法中初始化数据库对象, 但是我们需要等到数据库对象初始化完成后才能进行下一步， 所以需要 async, 但是发现这两个方法不能使用 async, 如果只有一个线程那好办, 抽出来在一个方法里面数据初始化就可以了, 但是有两个线程, 这个时候就难办了， 真不知道该如何是好！</p>
+<p>最后解决方案: 初始化数据库对象独立抽出来变成一个方法, 该方法需要:<br>A) 可以多线程异步调用<br>B) 只能运行一次， 第二次必须退出, 这样可以确保数据库对象只初始化一次<br>C) 使用锁确保只有一个线程进入</p>
+<h1 id="13-Widget-如何继承"><a href="#13-Widget-如何继承" class="headerlink" title="13 Widget 如何继承?"></a>13 Widget 如何继承?</h1><p>被继承页面的代码如下:</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BaseView</span>&lt;<span class="title">T</span>&gt; <span class="keyword">extends</span> <span class="title">StatefulWidget</span> </span>&#123;</span><br><span class="line">	<span class="keyword">const</span> BaseView(&#123;Key? key, <span class="keyword">required</span> <span class="keyword">this</span>.title&#125;) : <span class="keyword">super</span>(key: key);</span><br><span class="line">	<span class="keyword">final</span> <span class="built_in">String</span> title;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@override</span></span><br><span class="line">	State&lt;BaseView&gt; createState() =&gt; BaseViewState&lt;BaseView&gt;();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BaseViewState</span>&lt;<span class="title">T</span> <span class="keyword">extends</span> <span class="title">BaseView</span>&gt; <span class="keyword">extends</span> <span class="title">State</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">	 <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">	 <span class="keyword">return</span> xxx;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>继承页面的代码如下:</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Inbox</span> <span class="keyword">extends</span> <span class="title">BaseView</span> </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> Inbox(&#123;Key? key, <span class="keyword">required</span> <span class="keyword">this</span>.title&#125;) : <span class="keyword">super</span>(key: key, title: title);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">final</span> <span class="built_in">String</span> title;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  _InboxPageState createState() =&gt; _InboxPageState();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">_InboxPageState</span> <span class="keyword">extends</span> <span class="title">BaseViewState</span>&lt;<span class="title">Inbox</span>&gt; </span>&#123;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">super</span>.build(context);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>参考来源:<br>stackoverflow.com/questions/67145831/error-type-argument-t-doesnt-conform-to-the-bound-object-of-the-type-varia</p>
+<h1 id="14-flutter-如何判断操作系统平台"><a href="#14-flutter-如何判断操作系统平台" class="headerlink" title="14 flutter 如何判断操作系统平台?"></a>14 flutter 如何判断操作系统平台?</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&#x27;dart：io&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (Platform.isAndroid) &#123;</span><br><span class="line"><span class="comment">// </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="15-如何查看-Dart-和-Flutter安装路径"><a href="#15-如何查看-Dart-和-Flutter安装路径" class="headerlink" title="15 如何查看 Dart 和 Flutter安装路径"></a>15 如何查看 Dart 和 Flutter安装路径</h1><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">where flutter dart</span><br><span class="line">which flutter dart</span><br></pre></td></tr></table></figure>
+<p>参考来源: blog.csdn.net/ezconn/article/details/114480894</p>
+<h1 id="16-flutter-pub-get-后下载的插件放在哪里"><a href="#16-flutter-pub-get-后下载的插件放在哪里" class="headerlink" title="16 flutter pub get 后下载的插件放在哪里?"></a>16 flutter pub get 后下载的插件放在哪里?</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\xxx\AppData\Local\Pub\Cache\hosted\pub.flutter-io.cn\xxx</span><br></pre></td></tr></table></figure>
+<p>怎么找到?<br>flutter 项目的根目录下面有一个文件: .flutter-plugins, 里面指明了每个安装插件的所在路径。</p>
+<h1 id="17-flutter-应用如何进行混淆"><a href="#17-flutter-应用如何进行混淆" class="headerlink" title="17 flutter 应用如何进行混淆?"></a>17 flutter 应用如何进行混淆?</h1><p>还没有操作, 请参考:<br>jianshu.com/p/4dd5e5977f36</p>
+<h1 id="18-flutter-应用开机启动不让弹出页面怎么处理"><a href="#18-flutter-应用开机启动不让弹出页面怎么处理" class="headerlink" title="18 flutter 应用开机启动不让弹出页面怎么处理?"></a>18 flutter 应用开机启动不让弹出页面怎么处理?</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@override</span></span><br><span class="line">Widget build(BuildContext context) &#123;</span><br><span class="line"><span class="built_in">String</span> firstPage = <span class="string">&quot;/Home&quot;</span>;</span><br><span class="line"><span class="keyword">return</span> WillPopScope(</span><br><span class="line">  onWillPop: () <span class="keyword">async</span> &#123;</span><br><span class="line">	<span class="keyword">if</span> (Navigator.canPop(context)) &#123;</span><br><span class="line">	  <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">	  <span class="comment">// <span class="doctag">TODO:</span> run in background</span></span><br><span class="line">	  <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  child: MaterialApp(</span><br><span class="line">	debugShowCheckedModeBanner: <span class="keyword">false</span>,</span><br><span class="line">	title: <span class="string">&#x27;TodoLine++&#x27;</span>,</span><br><span class="line">	theme: ThemeData(</span><br><span class="line">	  primarySwatch: AppColor.primaryColor,</span><br><span class="line">	),</span><br><span class="line">	routes: &#123;</span><br><span class="line">	  <span class="string">&quot;/Home&quot;</span>: (context) =&gt; <span class="keyword">const</span> Home(title:<span class="string">&quot;&quot;</span>),</span><br><span class="line">	  <span class="string">&quot;/SignUp&quot;</span>: (context) =&gt; <span class="keyword">const</span> SignUp(title:<span class="string">&quot;&quot;</span>),</span><br><span class="line">	  <span class="string">&quot;/Inbox&quot;</span>: (context) =&gt; <span class="keyword">const</span> Inbox(title: <span class="string">&#x27;Inbox&#x27;</span>),</span><br><span class="line">	  <span class="string">&quot;/Todo&quot;</span>: (context) =&gt; <span class="keyword">const</span> Todo(title: <span class="string">&#x27;Todo Item&#x27;</span>),</span><br><span class="line">	  TodayViewMode.list.route: (context) =&gt; <span class="keyword">const</span> TodayListView(title: <span class="string">&#x27;Today&#x27;</span>),</span><br><span class="line">	  TodayViewMode.focus.route: (context) =&gt; <span class="keyword">const</span> TodayFocusView(title: <span class="string">&#x27;Tomato Clock&#x27;</span>),</span><br><span class="line">	  <span class="string">&quot;/TomatoSetting&quot;</span>: (context) =&gt; <span class="keyword">const</span> TodayTomatoSettingView(title: <span class="string">&#x27;Tomato Setting&#x27;</span>),</span><br><span class="line">	  <span class="string">&quot;/Breath&quot;</span>: (context) =&gt; <span class="keyword">const</span> Breath(title: <span class="string">&#x27;Breath&#x27;</span>),</span><br><span class="line">	  <span class="string">&quot;/Mood&quot;</span>: (context) =&gt; <span class="keyword">const</span> Mood(title: <span class="string">&#x27;Mood&#x27;</span>),</span><br><span class="line">	  <span class="string">&quot;/MoodAddView&quot;</span>: (context) =&gt; <span class="keyword">const</span> MoodNewView(title: <span class="string">&#x27;Mood New&#x27;</span>),</span><br><span class="line">	&#125;,</span><br><span class="line">	initialRoute: firstPage,</span><br><span class="line">	home: <span class="keyword">const</span> Home(title:<span class="string">&quot;&quot;</span>),</span><br><span class="line">  ),</span><br><span class="line">);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意:<br>关键的代码是 onWillPop 里面的判断<br>平时我们在 main 函数的 build 方法里面, 直接返回 MaterialApp, 但为了使用 onWillPop, 我们不得不使用 WillPopScope</p>
+
+      
+     <!-- by blair add this if sentence at 20160725 -->
+      <br>
+      
+<div id="bottom-donation-section">
+<span style="font-size: 1.0em; padding:0em 1em 0.5em 1em; margin: 0 auto;">
+  <strong style="vertical-align: top;">分享到:</strong>
+    <div class="j_handlclick"  style="background: url(/images/logos/share_facebook_icon.jpg);background-size: contain;display: inline-block; width:50px; height:50px" href="https://www.facebook.com/sharer/sharer.php?u=" target="_blank">
+    </div>
+    <div class="j_handlclick"  style="background: url(/images/logos/share_twitter_icon.jpg);background-size: contain;display: inline-block; width:50px; height:50px" href="https://twitter.com/intent/tweet?url=" target="_blank">
+    </div>
+    <div class="j_handlclick"  style="background: url(/images/logos/share_line_icon.jpg);background-size: contain;display: inline-block; width:50px; height:50px" href="https://www.addtoany.com/add_to/line?linkurl=" target="_blank">
+    </div>
+    <div class="j_handlclick"  style="background: url(/images/logos/share_wechat_icon.jpg);background-size: contain;display: inline-block; width:50px; height:50px" href="https://api.addthis.com/oexchange/0.8/forward/wechat/offer?url=" target="_blank">
+    </div>
+  <br>  
+  <br>  
+  &nbsp;&nbsp;如果您觉得这篇文章对您的学习很有帮助, 请您也分享它, 让它能再次帮助到更多的需要学习的人.
+您的<a href="/support/"><strong>支持</strong></a>将鼓励我继续创作 !
+  <br>  
+
+</span>
+<!--
+<h3 id="bottom-donation-title">支持 让文章变得更优质</h3>
+<div>
+<a id="bottom-donation-button" href="/support">点我 赞助 作者</a>
+</div>
+-->
+</div>
+<div class="well">
+  <!--
+  原创文章，转载请注明： 转载自<a target="_blank" rel="noopener" href="http://52binge.github.io"> Blair Chan's Blog</a>，作者：
+  <a href="/about">Blair Chan</a> <br>
+  -->
+  本文基于<a target="_blank" title="Creative Commons Attribution 4.0 international License" href="https://creativecommons.org/licenses/by-nc/4.0/">署名4.0国际许可协议</a>发布，转载请保留本文署名和文章链接。 如您有任何授权方面的协商，请邮件联系我。
+</div>
+ <!-- by blair add 160724-->
+    
+    </div>
+    
+      <div class="article-toc">
+        <h3>Contents</h3>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-flutter-Text-%E7%BB%84%E4%BB%B6%EF%BC%8C-%E8%AE%BE%E7%BD%AE-overflow-%E4%B8%8D%E8%B5%B7%E4%BD%9C%E7%94%A8"><span class="toc-text">1 flutter Text 组件， 设置 overflow 不起作用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-flutter-%E9%A1%B9%E7%9B%AE%E6%9B%B4%E6%94%B9%E5%9B%BE%E6%A0%87%E5%90%8E-%E7%9C%8B%E8%B5%B7%E6%9D%A5%E9%9D%9E%E5%B8%B8%E7%9A%84%E5%B0%8F"><span class="toc-text">2 flutter 项目更改图标后, 看起来非常的小</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-flutter-%E5%A6%82%E4%BD%95%E6%89%93%E5%8C%85"><span class="toc-text">3 flutter 如何打包?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-flutter-Column-%E7%BB%84%E4%BB%B6-%E5%A6%82%E6%9E%9C%E9%A1%B9%E7%9B%AE%E5%A4%AA%E5%A4%9A-%E8%B6%85%E5%87%BA%E5%B1%8F%E5%B9%95%E9%AB%98%E5%BA%A6%E6%89%80%E8%83%BD%E5%A4%9F%E6%98%BE%E7%A4%BA%E7%9A%84%E9%AB%98%E5%BA%A6-%E5%B0%B1%E4%BC%9A%E6%8A%A5%E9%94%99-%E6%80%8E%E4%B9%88%E5%8A%9E"><span class="toc-text">4 flutter Column 组件, 如果项目太多, 超出屏幕高度所能够显示的高度, 就会报错, 怎么办?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-flutter-%E9%A1%B9%E7%9B%AE-%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9%E7%A8%8B%E5%BA%8F%E5%9B%BE%E6%A0%87"><span class="toc-text">5 flutter 项目, 如何修改程序图标?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-flutter-%E4%B8%AD%E6%9C%89%E4%B8%80%E4%B8%AA%E4%B8%93%E9%97%A8%E5%A4%84%E7%90%86%E6%97%A5%E6%9C%9F%E7%9A%84%E7%B1%BB%EF%BC%9ADateUtils"><span class="toc-text">6 flutter 中有一个专门处理日期的类：DateUtils</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-flutter-floor-%E6%A1%86%E6%9E%B6%E7%9A%84-Query-%E6%B3%A8%E8%A7%A3%E4%B8%AD-select-count-%E8%AF%AD%E5%8F%A5%E6%80%BB%E6%98%AF%E8%BF%94%E5%9B%9E-null-%E5%80%BC-%E5%BE%97%E4%B8%8D%E5%88%B0%E7%BB%9F%E8%AE%A1%E6%95%B0%E5%80%BC"><span class="toc-text">7 flutter floor 框架的 @Query 注解中, select count 语句总是返回 null 值, 得不到统计数值</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-easyIsolate-%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97"><span class="toc-text">8 easyIsolate 使用心得</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-Flutter-%E6%8F%92%E4%BB%B6%E5%AE%9E%E7%8E%B0-JavaScript-%E5%92%8C-Dart-%E4%BA%A4%E4%BA%92%E6%95%B0%E6%8D%AE"><span class="toc-text">9 Flutter 插件实现 JavaScript 和 Dart 交互数据</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#10-%E6%8D%AE%E8%AF%B4-RxDart-%E6%98%AF%E4%B8%80%E4%B8%AA%E9%9D%9E%E5%B8%B8%E7%89%9B%E9%80%BC%E7%9A%84%E6%A1%86%E6%9E%B6-%E7%94%A8%E6%9D%A5%E5%A4%84%E7%90%86%E5%BC%82%E6%AD%A5%E9%9D%9E%E5%B8%B8%E6%96%B9%E4%BE%BF-%E5%85%B7%E4%BD%93%E8%AF%B7%E5%8F%82%E8%80%83"><span class="toc-text">10 据说 RxDart 是一个非常牛逼的框架, 用来处理异步非常方便, 具体请参考:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#11-%E8%B7%AF%E7%94%B1%E8%AE%BE%E7%BD%AE%E4%B8%AD-initialRoute-%E5%92%8C-home-%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF"><span class="toc-text">11 路由设置中 initialRoute 和 home 的区别是?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#12-flutter-%E4%B8%AD%E7%9A%84-build-%E6%96%B9%E6%B3%95%E5%92%8C-initState-%E4%B8%8D%E8%83%BD%E6%B7%BB%E5%8A%A0-async-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-text">12 flutter 中的 build 方法和 initState 不能添加 async 关键字</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#13-Widget-%E5%A6%82%E4%BD%95%E7%BB%A7%E6%89%BF"><span class="toc-text">13 Widget 如何继承?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#14-flutter-%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%B9%B3%E5%8F%B0"><span class="toc-text">14 flutter 如何判断操作系统平台?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#15-%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8B-Dart-%E5%92%8C-Flutter%E5%AE%89%E8%A3%85%E8%B7%AF%E5%BE%84"><span class="toc-text">15 如何查看 Dart 和 Flutter安装路径</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#16-flutter-pub-get-%E5%90%8E%E4%B8%8B%E8%BD%BD%E7%9A%84%E6%8F%92%E4%BB%B6%E6%94%BE%E5%9C%A8%E5%93%AA%E9%87%8C"><span class="toc-text">16 flutter pub get 后下载的插件放在哪里?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#17-flutter-%E5%BA%94%E7%94%A8%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E6%B7%B7%E6%B7%86"><span class="toc-text">17 flutter 应用如何进行混淆?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#18-flutter-%E5%BA%94%E7%94%A8%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8%E4%B8%8D%E8%AE%A9%E5%BC%B9%E5%87%BA%E9%A1%B5%E9%9D%A2%E6%80%8E%E4%B9%88%E5%A4%84%E7%90%86"><span class="toc-text">18 flutter 应用开机启动不让弹出页面怎么处理?</span></a></li></ol>
+      </div>
+    
+    
+      <footer class="article-footer">
+        <!-- <div class="well" style="width:100px; height:30px;"></div>  by blair-->
+        
+ <!-- by blair add 160724-->
+        <!--
+        <div style="width:100px; height:30px;"></div> by blair add 160724
+        -->
+        
+  <div class="article-tag">
+    <a class="article-tag-none-link" href="/tags/flutter/" rel="tag">flutter</a>
+  </div>
+
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/20211225/flutter-%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E7%B3%BB%E5%88%97%E4%B9%8B%E5%8D%81%E4%B8%89/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          flutter-开发问题系列之十三
+        
+      </div>
+    </a>
+  
+  
+    <a href="/20211211/flutter-%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E7%B3%BB%E5%88%97%E4%B9%8B%E5%8D%81%E4%B8%80/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">flutter-开发问题系列之十一&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 wanlion&nbsp;
+    </div>
+  </div>
+</footer>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+      displayMath: [ ['$$','$$']],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
+</script>
+
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+  </div>
+</body>
+</html>

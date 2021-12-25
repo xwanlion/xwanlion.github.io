@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>flutter-开发问题系列之十三 - wanlion</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="这是 todoline++ 项目开发过程中遇到的问题系列, 记录下来供大家参考。本篇记录一些开发中遇到的报错:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="flutter-开发问题系列之十三">
+<meta property="og:url" content="https://xwanlion.github.io/20211225/flutter-%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E7%B3%BB%E5%88%97%E4%B9%8B%E5%8D%81%E4%B8%89/index.html">
+<meta property="og:site_name" content="wanlion">
+<meta property="og:description" content="这是 todoline++ 项目开发过程中遇到的问题系列, 记录下来供大家参考。本篇记录一些开发中遇到的报错:">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-12-25T10:22:55.000Z">
+<meta property="article:modified_time" content="2021-12-25T10:24:07.046Z">
+<meta property="article:author" content="wanlion">
+<meta property="article:tag" content="flutter">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <!-- blair add baidu tongji start... @2017.10.03 -->
+<!-- blair add baidu tongji end ! @2017.10.03 -->
+
+<header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo" href="/"></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://xwanlion.github.io"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+    <br>
+    <section id="main" class="outer"><article id="post-flutter-开发问题系列之十三" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      flutter-开发问题系列之十三
+      <small class=article-detail-date-index>&nbsp; 2021-12-25</small>
+    </h1>
+  
+
+
+        <div class=page-title></div>
+        <br>
+      </header>
+    
+    <div class="article-meta">
+      <!--<a href="/20211225/flutter-%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E7%B3%BB%E5%88%97%E4%B9%8B%E5%8D%81%E4%B8%89/" class="article-date">
+  <time datetime="2021-12-25T10:22:55.000Z" itemprop="datePublished">2021-12-25</time>
+</a>-->
+      <!-- 
+--><!-- by blair 160724 -->
+      <!-- by blair
+      
+      -->
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这是 todoline++ 项目开发过程中遇到的问题系列, 记录下来供大家参考。<br>本篇记录一些开发中遇到的报错:</p>
+<span id="more"></span>
+<p>todoline++ 官网请看这里: <a target="_blank" rel="noopener" href="https://todoline-plus-plus.github.io/">https://todoline-plus-plus.github.io/</a></p>
+<h1 id="1-Unhandled-Exception-Unable-to-load-asset-assets-data-user-0-com-github-todoline-plus-plus-tracker-cache-file-picker-神奇的九寨"><a href="#1-Unhandled-Exception-Unable-to-load-asset-assets-data-user-0-com-github-todoline-plus-plus-tracker-cache-file-picker-神奇的九寨" class="headerlink" title="1 Unhandled Exception: Unable to load asset: assets//data/user/0/com.github.todoline.plus.plus.tracker/cache/file_picker/神奇的九寨"></a>1 Unhandled Exception: Unable to load asset: assets//data/user/0/com.github.todoline.plus.plus.tracker/cache/file_picker/神奇的九寨</h1><p>  插件 audioplayers 有两个类可以播放音乐， AudioCache 和 AudioPlayer， AudioCache 播放音乐默认文件路径在 asserts 下面, 所以报错。<br>  使用 AudioPlayer 来播放就可以了。</p>
+<h1 id="2-Unhandled-Exception-type-‘Null’-is-not-a-subtype-of-type-‘int’-in-type-cast"><a href="#2-Unhandled-Exception-type-‘Null’-is-not-a-subtype-of-type-‘int’-in-type-cast" class="headerlink" title="2 Unhandled Exception: type ‘Null’ is not a subtype of type ‘int’ in type cast"></a>2 Unhandled Exception: type ‘Null’ is not a subtype of type ‘int’ in type cast</h1><p>这是因为数据为空, 将 Null 转化为 int 导致报错.<br>那为什么会有 Null 呢? 追踪报错, 发现错误是 floor 自动构建的代码中, 把 create_time 转换成 int 时报错, 代码如下:</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@override</span></span><br><span class="line">Future&lt;<span class="built_in">List</span>&lt;Todo&gt;?&gt; listTodo() <span class="keyword">async</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> _queryAdapter.queryList(<span class="string">&#x27;SELECT * FROM v_t where deleted = 0&#x27;</span>,</span><br><span class="line">	  mapper: (<span class="built_in">Map</span>&lt;<span class="built_in">String</span>, <span class="built_in">Object?</span>&gt; row) =&gt; Todo(</span><br><span class="line">		  row[<span class="string">&#x27;id&#x27;</span>] <span class="keyword">as</span> <span class="built_in">int?</span>,</span><br><span class="line">		  row[<span class="string">&#x27;create_time&#x27;</span>] <span class="keyword">as</span> <span class="built_in">int</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>floor 从数据库查询 create_time 时, 数据为空, 转换成 int 时就报错了！ 因为 create_time 不可为空, 那为什么 floor 构建后的代码中 create_time 不可为空呢? 我如何才能让他允许为空? 进一步 google, 有人提议将映射的实体类的成员变量设置可为空就可以了. 我查看了下对应的成员变量, 确实可为空, 那为什么 floor 构建代码时为什么不可为空呢? 百思不得其解, 准备要查看 floor 源代码来确认怎么回事, 突然猜测到, 有可能是 floor 根据构造器来决定成员变量是否可为空, 果然, 修改后 floor 构建的代码正常.</p>
+<h1 id="3-Unhandled-Exception-Null-check-operator-used-on-a-null-value"><a href="#3-Unhandled-Exception-Null-check-operator-used-on-a-null-value" class="headerlink" title="3 Unhandled Exception: Null check operator used on a null value"></a>3 Unhandled Exception: Null check operator used on a null value</h1><p>App.logger.d(“finished todo: ${_handlingTodo?.toMap()}”);<br>_handlingTodo 为 null, 所以报错。</p>
+<h1 id="4-Unhandled-Exception-type-‘MaterialPageRoute-dynamic’-is-not-a-subtype-of-type-‘Route-Object-’-in-type-cast"><a href="#4-Unhandled-Exception-type-‘MaterialPageRoute-dynamic’-is-not-a-subtype-of-type-‘Route-Object-’-in-type-cast" class="headerlink" title="4 Unhandled Exception: type ‘MaterialPageRoute dynamic’ is not a subtype of type ‘Route Object?’ in type cast"></a>4 Unhandled Exception: type ‘MaterialPageRoute dynamic’ is not a subtype of type ‘Route Object?’ in type cast</h1><p>Navigator.pushNamed 不能使用 await 来等待返回, 错误代码如下:</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> toRecord(BuildContext context) <span class="keyword">async</span> &#123;</span><br><span class="line">	<span class="built_in">Object?</span> mood = <span class="keyword">await</span> Navigator.pushNamed(context, <span class="string">&quot;/MoodAddView&quot;</span>);</span><br><span class="line">	<span class="comment">// Next To Do ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>正确代码如下:</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> toRecordMood(BuildContext context) &#123;</span><br><span class="line">	Navigator.pushNamed(context, <span class="string">&quot;/MoodAddView&quot;</span>).then((mood)&#123;</span><br><span class="line">	  <span class="comment">// Next To Do ...</span></span><br><span class="line">	&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="5-AAPT-error-adaptive-icon-elements-require-a-sdk-version-of-at-least-26"><a href="#5-AAPT-error-adaptive-icon-elements-require-a-sdk-version-of-at-least-26" class="headerlink" title="5 AAPT: error: adaptive-icon elements require a sdk version of at least 26."></a>5 AAPT: error: adaptive-icon elements require a sdk version of at least 26.</h1><p>android 资源目录下删除掉原来的 launch_background.xml 文件, 自己多加了一个 ic_launcher.xml 文件引起</p>
+<p>launch_background.xml 文件内容:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">layer-list</span> <span class="attr">xmlns:android</span>=<span class="string">&quot;http://schemas.android.com/apk/res/android&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">item</span> <span class="attr">android:drawable</span>=<span class="string">&quot;?android:colorBackground&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">layer-list</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>ic_launcher.xml 文件内容:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">adaptive-icon</span> <span class="attr">xmlns:android</span>=<span class="string">&quot;http://schemas.android.com/apk/res/android&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">background</span> <span class="attr">android:drawable</span>=<span class="string">&quot;@color/ic_launcher_background&quot;</span>/&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">foreground</span> <span class="attr">android:drawable</span>=<span class="string">&quot;@mipmap/ic_launcher_foreground&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">adaptive-icon</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这可能是 adaptive-icon 最低版本需要 26 才可以。</p>
+<h1 id="6-Don’t-put-any-logic-in-createState"><a href="#6-Don’t-put-any-logic-in-createState" class="headerlink" title="6 Don’t put any logic in createState"></a>6 Don’t put any logic in createState</h1><p>当 createState 方法中调用 state 页面时, 传入太多的参数就会包此错误, 我们完全可以使用 widget.xxx 来调用 StatefulWidget 类的成员变量, 不需要再传递。</p>
+<h1 id="7-SPAN-EXCLUSIVE-EXCLUSIVE-spans-cannot-have-a-zero-lengt"><a href="#7-SPAN-EXCLUSIVE-EXCLUSIVE-spans-cannot-have-a-zero-lengt" class="headerlink" title="7 SPAN_EXCLUSIVE_EXCLUSIVE spans cannot have a zero lengt"></a>7 SPAN_EXCLUSIVE_EXCLUSIVE spans cannot have a zero lengt</h1><p>不知道该怎么办</p>
+<h1 id="8-Invalid-argument-s-Illegal-argument-in-isolate-message-object-is-aReceivePort"><a href="#8-Invalid-argument-s-Illegal-argument-in-isolate-message-object-is-aReceivePort" class="headerlink" title="8 Invalid argument(s): Illegal argument in isolate message: (object is aReceivePort)"></a>8 Invalid argument(s): Illegal argument in isolate message: (object is aReceivePort)</h1><p>SendPort.send 发生错误, 原因: Isolate 在独立的环境中运行, 这意味着参数传递时只能传原始类型的数据, 自定义参数类型将不被允许。</p>
+<p>建议使用 easy_isolate 代替, 它将解决这个问题： pub.dev/packages/easy_isolate</p>
+<p>来源:<br>stackoverflow.com/questions/67897395/invalid-arguments-illegal-argument-in-isolate-message-in-flutter</p>
+<h1 id="9-StatefulWidget-createState-must-return-a-subtype-of-State-Inbox"><a href="#9-StatefulWidget-createState-must-return-a-subtype-of-State-Inbox" class="headerlink" title="9 StatefulWidget.createState must return a subtype of State Inbox"></a>9 StatefulWidget.createState must return a subtype of State Inbox</h1><p>我们创建的页面布局文件, class 类必须继承自 State 类, 自己需要写一个继承页面，以便于达到封装的目的 ， 不知道, 写错了, 所以出现这个报错。</p>
+<h1 id="10-Could-not-find-any-matches-for-com-transistorsoft-tsbackgroundfetch-as-no-versions-of-com-transistorsoft-tsbackgroundfetch-are-available"><a href="#10-Could-not-find-any-matches-for-com-transistorsoft-tsbackgroundfetch-as-no-versions-of-com-transistorsoft-tsbackgroundfetch-are-available" class="headerlink" title="10 Could not find any matches for com.transistorsoft:tsbackgroundfetch:+ as no versions of com.transistorsoft:tsbackgroundfetch are available."></a>10 Could not find any matches for com.transistorsoft:tsbackgroundfetch:+ as no versions of com.transistorsoft:tsbackgroundfetch are available.</h1><p>tsbackgroundfetch 似乎有问题, 加载的版本是 0.7.3 或者更小的话， 不支持 null-safety， 加载版本大于 0.7.3 的话, 就报此错误。</p>
+
+      
+     <!-- by blair add this if sentence at 20160725 -->
+      <br>
+      
+<div id="bottom-donation-section">
+<span style="font-size: 1.0em; padding:0em 1em 0.5em 1em; margin: 0 auto;">
+  <strong style="vertical-align: top;">分享到:</strong>
+    <div class="j_handlclick"  style="background: url(/images/logos/share_facebook_icon.jpg);background-size: contain;display: inline-block; width:50px; height:50px" href="https://www.facebook.com/sharer/sharer.php?u=" target="_blank">
+    </div>
+    <div class="j_handlclick"  style="background: url(/images/logos/share_twitter_icon.jpg);background-size: contain;display: inline-block; width:50px; height:50px" href="https://twitter.com/intent/tweet?url=" target="_blank">
+    </div>
+    <div class="j_handlclick"  style="background: url(/images/logos/share_line_icon.jpg);background-size: contain;display: inline-block; width:50px; height:50px" href="https://www.addtoany.com/add_to/line?linkurl=" target="_blank">
+    </div>
+    <div class="j_handlclick"  style="background: url(/images/logos/share_wechat_icon.jpg);background-size: contain;display: inline-block; width:50px; height:50px" href="https://api.addthis.com/oexchange/0.8/forward/wechat/offer?url=" target="_blank">
+    </div>
+  <br>  
+  <br>  
+  &nbsp;&nbsp;如果您觉得这篇文章对您的学习很有帮助, 请您也分享它, 让它能再次帮助到更多的需要学习的人.
+您的<a href="/support/"><strong>支持</strong></a>将鼓励我继续创作 !
+  <br>  
+
+</span>
+<!--
+<h3 id="bottom-donation-title">支持 让文章变得更优质</h3>
+<div>
+<a id="bottom-donation-button" href="/support">点我 赞助 作者</a>
+</div>
+-->
+</div>
+<div class="well">
+  <!--
+  原创文章，转载请注明： 转载自<a target="_blank" rel="noopener" href="http://52binge.github.io"> Blair Chan's Blog</a>，作者：
+  <a href="/about">Blair Chan</a> <br>
+  -->
+  本文基于<a target="_blank" title="Creative Commons Attribution 4.0 international License" href="https://creativecommons.org/licenses/by-nc/4.0/">署名4.0国际许可协议</a>发布，转载请保留本文署名和文章链接。 如您有任何授权方面的协商，请邮件联系我。
+</div>
+ <!-- by blair add 160724-->
+    
+    </div>
+    
+      <div class="article-toc">
+        <h3>Contents</h3>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-Unhandled-Exception-Unable-to-load-asset-assets-data-user-0-com-github-todoline-plus-plus-tracker-cache-file-picker-%E7%A5%9E%E5%A5%87%E7%9A%84%E4%B9%9D%E5%AF%A8"><span class="toc-text">1 Unhandled Exception: Unable to load asset: assets&#x2F;&#x2F;data&#x2F;user&#x2F;0&#x2F;com.github.todoline.plus.plus.tracker&#x2F;cache&#x2F;file_picker&#x2F;神奇的九寨</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-Unhandled-Exception-type-%E2%80%98Null%E2%80%99-is-not-a-subtype-of-type-%E2%80%98int%E2%80%99-in-type-cast"><span class="toc-text">2 Unhandled Exception: type ‘Null’ is not a subtype of type ‘int’ in type cast</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-Unhandled-Exception-Null-check-operator-used-on-a-null-value"><span class="toc-text">3 Unhandled Exception: Null check operator used on a null value</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-Unhandled-Exception-type-%E2%80%98MaterialPageRoute-dynamic%E2%80%99-is-not-a-subtype-of-type-%E2%80%98Route-Object-%E2%80%99-in-type-cast"><span class="toc-text">4 Unhandled Exception: type ‘MaterialPageRoute dynamic’ is not a subtype of type ‘Route Object?’ in type cast</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-AAPT-error-adaptive-icon-elements-require-a-sdk-version-of-at-least-26"><span class="toc-text">5 AAPT: error: adaptive-icon elements require a sdk version of at least 26.</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-Don%E2%80%99t-put-any-logic-in-createState"><span class="toc-text">6 Don’t put any logic in createState</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-SPAN-EXCLUSIVE-EXCLUSIVE-spans-cannot-have-a-zero-lengt"><span class="toc-text">7 SPAN_EXCLUSIVE_EXCLUSIVE spans cannot have a zero lengt</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-Invalid-argument-s-Illegal-argument-in-isolate-message-object-is-aReceivePort"><span class="toc-text">8 Invalid argument(s): Illegal argument in isolate message: (object is aReceivePort)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-StatefulWidget-createState-must-return-a-subtype-of-State-Inbox"><span class="toc-text">9 StatefulWidget.createState must return a subtype of State Inbox</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#10-Could-not-find-any-matches-for-com-transistorsoft-tsbackgroundfetch-as-no-versions-of-com-transistorsoft-tsbackgroundfetch-are-available"><span class="toc-text">10 Could not find any matches for com.transistorsoft:tsbackgroundfetch:+ as no versions of com.transistorsoft:tsbackgroundfetch are available.</span></a></li></ol>
+      </div>
+    
+    
+      <footer class="article-footer">
+        <!-- <div class="well" style="width:100px; height:30px;"></div>  by blair-->
+        
+ <!-- by blair add 160724-->
+        <!--
+        <div style="width:100px; height:30px;"></div> by blair add 160724
+        -->
+        
+  <div class="article-tag">
+    <a class="article-tag-none-link" href="/tags/flutter/" rel="tag">flutter</a>
+  </div>
+
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/20211225/flutter-%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E7%B3%BB%E5%88%97%E4%B9%8B%E5%8D%81%E4%BA%8C/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">flutter-开发问题系列之十二&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 wanlion&nbsp;
+    </div>
+  </div>
+</footer>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+      displayMath: [ ['$$','$$']],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
+</script>
+
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+  </div>
+</body>
+</html>
