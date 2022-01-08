@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>flutter-开发问题系列之十四 - wanlion</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="这是 todoline++ 项目开发过程中遇到的问题系列, 记录下来供大家参考。本篇是最后一篇, 包括疑问类和报错类两部分:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="flutter-开发问题系列之十四">
+<meta property="og:url" content="https://xwanlion.github.io/20220108/flutter-%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E7%B3%BB%E5%88%97%E4%B9%8B%E5%8D%81%E5%9B%9B/index.html">
+<meta property="og:site_name" content="wanlion">
+<meta property="og:description" content="这是 todoline++ 项目开发过程中遇到的问题系列, 记录下来供大家参考。本篇是最后一篇, 包括疑问类和报错类两部分:">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-01-08T05:37:54.000Z">
+<meta property="article:modified_time" content="2022-01-08T05:38:49.313Z">
+<meta property="article:author" content="wanlion">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <!-- blair add baidu tongji start... @2017.10.03 -->
+<!-- blair add baidu tongji end ! @2017.10.03 -->
+
+<header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo" href="/"></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://xwanlion.github.io"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+    <br>
+    <section id="main" class="outer"><article id="post-flutter-开发问题系列之十四" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      flutter-开发问题系列之十四
+      <small class=article-detail-date-index>&nbsp; 2022-01-08</small>
+    </h1>
+  
+
+
+        <div class=page-title></div>
+        <br>
+      </header>
+    
+    <div class="article-meta">
+      <!--<a href="/20220108/flutter-%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E7%B3%BB%E5%88%97%E4%B9%8B%E5%8D%81%E5%9B%9B/" class="article-date">
+  <time datetime="2022-01-08T05:37:54.000Z" itemprop="datePublished">2022-01-08</time>
+</a>-->
+      <!-- 
+--><!-- by blair 160724 -->
+      <!-- by blair
+      
+      -->
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p> 这是 todoline++ 项目开发过程中遇到的问题系列, 记录下来供大家参考。<br>本篇是最后一篇, 包括疑问类和报错类两部分:</p>
+<span id="more"></span>
+<p>todoline++ 官网请看这里: <a target="_blank" rel="noopener" href="https://todoline-plus-plus.github.io/">https://todoline-plus-plus.github.io/</a></p>
+<h1 id="疑问类"><a href="#疑问类" class="headerlink" title="疑问类"></a>疑问类</h1><h6 id="1-flutter-如何获取系统临时路径"><a href="#1-flutter-如何获取系统临时路径" class="headerlink" title="1 flutter 如何获取系统临时路径?"></a>1 flutter 如何获取系统临时路径?</h6><p>使用path_provider获得应用路径和临时文件路径</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Directory tempDir = <span class="keyword">await</span> getTemporaryDirectory();</span><br><span class="line"><span class="built_in">String</span> tempPath = tempDir.path;</span><br><span class="line"></span><br><span class="line">Directory appDocDir = <span class="keyword">await</span> getApplicationDocumentsDirectory();</span><br><span class="line"><span class="built_in">String</span> appDocPath = appDocDir.path;</span><br></pre></td></tr></table></figure>
+
+<h6 id="2-上架到-Google-Play-隐私生成政策"><a href="#2-上架到-Google-Play-隐私生成政策" class="headerlink" title="2 上架到 Google Play 隐私生成政策:"></a>2 上架到 Google Play 隐私生成政策:</h6><p>blog.csdn.net/xxx823952375/article/details/89395534<br>app-privacy-policy-generator.firebaseapp.com/</p>
+<h6 id="3-flutter-如何读取本地文件"><a href="#3-flutter-如何读取本地文件" class="headerlink" title="3 flutter 如何读取本地文件?"></a>3 flutter 如何读取本地文件?</h6><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">String</span> a = <span class="keyword">await</span> rootBundle.loadString(<span class="string">&#x27;data/agreeText.txt&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<p>来源: jianshu.com/p/f4cc6a258162</p>
+<h6 id="4-flutter-打包详细说明"><a href="#4-flutter-打包详细说明" class="headerlink" title="4 flutter 打包详细说明:"></a>4 flutter 打包详细说明:</h6><p>请参考:<br>bookstack.cn/read/flutter-1.2-zh/65cbdef5d8028edd.md</p>
+<p>注意:<br>flutter 从 1.2 版本开始, 默认启用混淆, 因此不用再进行混淆设置, 如果遇到安装闪崩要关闭, 请参考这里: blog.csdn.net/weixin_38025168/article/details/104019388</p>
+<h6 id="5-AboutDialog-flutter-给我们提供的-About-页面。"><a href="#5-AboutDialog-flutter-给我们提供的-About-页面。" class="headerlink" title="5 AboutDialog  flutter 给我们提供的 About 页面。"></a>5 AboutDialog  flutter 给我们提供的 About 页面。</h6><p>它的好处是我们使用的插件, 它都会列出所有的 license, 这样我们添加什么插件就不用添加协议声明了.</p>
+<h1 id="报错类"><a href="#报错类" class="headerlink" title="报错类"></a>报错类</h1><h6 id="1-java-io-IOException-setDataSource-failed"><a href="#1-java-io-IOException-setDataSource-failed" class="headerlink" title="1 java.io.IOException: setDataSource failed."></a>1 java.io.IOException: setDataSource failed.</h6><pre><code>使用插件 audioplayers 来播放音乐, 设置的文件名不存在
+</code></pre>
+<h6 id="2-Provided-initialDate-2021-12-29-17-33-42-698-must-satisfy-provided-selectableDayPredicate"><a href="#2-Provided-initialDate-2021-12-29-17-33-42-698-must-satisfy-provided-selectableDayPredicate" class="headerlink" title="2 Provided initialDate 2021-12-29 17:33:42.698 must satisfy provided selectableDayPredicate."></a>2 Provided initialDate 2021-12-29 17:33:42.698 must satisfy provided selectableDayPredicate.</h6><pre><code>将系统日期往前调整后就报此错误！
+</code></pre>
+<h6 id="3-Could-not-resolve-all-artifacts-for-configuration-‘-url-launcher-android-debugUnitTestRuntimeClasspath’"><a href="#3-Could-not-resolve-all-artifacts-for-configuration-‘-url-launcher-android-debugUnitTestRuntimeClasspath’" class="headerlink" title="3 Could not resolve all artifacts for configuration ‘:url_launcher_android:debugUnitTestRuntimeClasspath’."></a>3 Could not resolve all artifacts for configuration ‘:url_launcher_android:debugUnitTestRuntimeClasspath’.</h6><pre><code>打包时没有联网, 联网就可以解决问题了
+</code></pre>
+<h6 id="4-xxx-android-app-src-main-res-mipmap-anydpi-v26-ic-launcher-xml-4-AAPT-error-resource-mipmap-ic-launcher-foreground-aka-com-github-todoline-plus-plus-tracker-mipmap-ic-launcher-foreground-not-found"><a href="#4-xxx-android-app-src-main-res-mipmap-anydpi-v26-ic-launcher-xml-4-AAPT-error-resource-mipmap-ic-launcher-foreground-aka-com-github-todoline-plus-plus-tracker-mipmap-ic-launcher-foreground-not-found" class="headerlink" title="4 xxx\android\app\src\main\res\mipmap-anydpi-v26\ic_launcher.xml:4: AAPT:  error: resource mipmap/ic_launcher_foreground (aka com.github.todoline.plus.plus.tracker:mipmap/ic_launcher_foreground) not found."></a>4 xxx\android\app\src\main\res\mipmap-anydpi-v26\ic_launcher.xml:4: AAPT:  error: resource mipmap/ic_launcher_foreground (aka com.github.todoline.plus.plus.tracker:mipmap/ic_launcher_foreground) not found.</h6><p>我发现, 通过 potoshop 调整图片的中心, 就可以避免, 比如我的 TodoLine++ 的 logo, 把重心往右下角调整一点点就不会报错了, 但如果把重心往右上角调整一点点, 两个头发接触到边框时就会报错。 原因未知！</p>
+<p>这个问题反复出现, 但是每次再多试几次就可以了！</p>
+<h6 id="5-No-implementation-found-for-method-getAll-on-channel-plugins-flutter-io-package-info"><a href="#5-No-implementation-found-for-method-getAll-on-channel-plugins-flutter-io-package-info" class="headerlink" title="5 No implementation found for method getAll on channel plugins.flutter.io/package_info"></a>5 No implementation found for method getAll on channel plugins.flutter.io/package_info</h6><pre><code>我在使用 package_info 这个插件遇到了这个问题, 于是换成 package_info_plus, 这两个插件差不多
+</code></pre>
+<h5 id="6-todoLine-的-apk-安装在小米-4-显示的图标是-android-的图标，-不是自己设计出来的图标"><a href="#6-todoLine-的-apk-安装在小米-4-显示的图标是-android-的图标，-不是自己设计出来的图标" class="headerlink" title="6 todoLine++ 的 apk 安装在小米 4 显示的图标是 android 的图标， 不是自己设计出来的图标"></a>6 todoLine++ 的 apk 安装在小米 4 显示的图标是 android 的图标， 不是自己设计出来的图标</h5><p>在其他手机上就能够正确显示出来, 但是就在小米 4 手机上就是显示不出来, 找到下面的帖子, 但是按照他的方法来也是不行<br>stackoverflow.com/questions/51569550/change-flutter-icon-that-shows-when-overview-button-pressed-in-android</p>
+<p>他说重启手机后就可以。<br>但是对我来讲, 重启后不行</p>
+<p>于是又找到 flutter 官网的帖子也是不行<br>github.com/flutter/flutter/issues/25136<br>  他的办法是:</p>
+<ol>
+<li>重启手机<br>2） flutter clean 后 build release</li>
+</ol>
+<p>按照这个办法也是不行， 我自己对比了下 mainifest.xml 文件, 发现能够在小米 4 上正常显示的跟不能正常显示的有一个区别:<br>不能正常显示的有两个 activity, 但是我做了一个测试, 并不是有两个 activity 就无法正常显示。</p>
+<p>问题在哪里哪呢?<br>这时候我想到一个问题:<br>在安装应用的时候, andorid 操作系统是如何读取 APK 文件中的 LOGO 的?</p>
+<p>于是我又在 google , 发现了介绍 android logo 适配的博文, 准确的讲, 本来设置 logo 是一个非常简单的问题, 设置一个图片就可以了, 但因为国内手机厂家对 android 系统的底层进行修改, 搞了特殊性, 然后就开始出现混乱, 特殊性在哪里呢? android 开源的精神在于自由, logo 的形状是圆形和还是圆角型, 由开发者来决定, 但是小米就是强制要求所有logo图标是圆角型, 于是 google 开始整顿 android logo, 这样就出现了 android 8.0 以后开始使用新的规则, 这个新规则把图标分为前景色和背景色, 前景色用来定义图标, 而背景色用来衬托图标, 这样小米你不是要求圆角型吗? 只要你把背景色的形状更改就可以了， 于是问题就来了, 小米4他能识别新规则吗? 肯定不行啊, 老规则的名称默认只有一个, 比如 ic_luncher， 新规则下有两个: ic_luncher_background 和 ic_luncher_foreground， 然后小米 4 你只能识别老规则, 于是找不到图标了, 找不到怎么办呢? 我猜测只能默认使用 android 图标。</p>
+<p>如何解决这个问题: 你只能使用老规则, 在 flutter 中, 你老老实实的设计图标, 然后替换掉原来的 flutter 图标就可以了, 如果遇到图标变小, 只能通过 ps 来处理, 不要通过 android studio 中的图标设置导向来处理, 否则就会出现两个名称, 然后你就遇到了这个问题。</p>
+<p>参考: cnblogs.com/whycxb/p/9738681.html</p>
+
+      
+     <!-- by blair add this if sentence at 20160725 -->
+      <br>
+      
+<div id="bottom-donation-section">
+<span style="font-size: 1.0em; padding:0em 1em 0.5em 1em; margin: 0 auto;">
+  <strong style="vertical-align: top;">分享到:</strong>
+    <div class="j_handlclick"  style="background: url(/images/logos/share_facebook_icon.jpg);background-size: contain;display: inline-block; width:50px; height:50px" href="https://www.facebook.com/sharer/sharer.php?u=" target="_blank">
+    </div>
+    <div class="j_handlclick"  style="background: url(/images/logos/share_twitter_icon.jpg);background-size: contain;display: inline-block; width:50px; height:50px" href="https://twitter.com/intent/tweet?url=" target="_blank">
+    </div>
+    <div class="j_handlclick"  style="background: url(/images/logos/share_line_icon.jpg);background-size: contain;display: inline-block; width:50px; height:50px" href="https://www.addtoany.com/add_to/line?linkurl=" target="_blank">
+    </div>
+    <div class="j_handlclick"  style="background: url(/images/logos/share_wechat_icon.jpg);background-size: contain;display: inline-block; width:50px; height:50px" href="https://api.addthis.com/oexchange/0.8/forward/wechat/offer?url=" target="_blank">
+    </div>
+  <br>  
+  <br>  
+  &nbsp;&nbsp;如果您觉得这篇文章对您的学习很有帮助, 请您也分享它, 让它能再次帮助到更多的需要学习的人.
+您的<a href="/support/"><strong>支持</strong></a>将鼓励我继续创作 !
+  <br>  
+
+</span>
+<!--
+<h3 id="bottom-donation-title">支持 让文章变得更优质</h3>
+<div>
+<a id="bottom-donation-button" href="/support">点我 赞助 作者</a>
+</div>
+-->
+</div>
+<div class="well">
+  <!--
+  原创文章，转载请注明： 转载自<a target="_blank" rel="noopener" href="http://52binge.github.io"> Blair Chan's Blog</a>，作者：
+  <a href="/about">Blair Chan</a> <br>
+  -->
+  本文基于<a target="_blank" title="Creative Commons Attribution 4.0 international License" href="https://creativecommons.org/licenses/by-nc/4.0/">署名4.0国际许可协议</a>发布，转载请保留本文署名和文章链接。 如您有任何授权方面的协商，请邮件联系我。
+</div>
+ <!-- by blair add 160724-->
+    
+    </div>
+    
+      <div class="article-toc">
+        <h3>Contents</h3>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%96%91%E9%97%AE%E7%B1%BB"><span class="toc-text">疑问类</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1-flutter-%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E7%B3%BB%E7%BB%9F%E4%B8%B4%E6%97%B6%E8%B7%AF%E5%BE%84"><span class="toc-text">1 flutter 如何获取系统临时路径?</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-%E4%B8%8A%E6%9E%B6%E5%88%B0-Google-Play-%E9%9A%90%E7%A7%81%E7%94%9F%E6%88%90%E6%94%BF%E7%AD%96"><span class="toc-text">2 上架到 Google Play 隐私生成政策:</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-flutter-%E5%A6%82%E4%BD%95%E8%AF%BB%E5%8F%96%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6"><span class="toc-text">3 flutter 如何读取本地文件?</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#4-flutter-%E6%89%93%E5%8C%85%E8%AF%A6%E7%BB%86%E8%AF%B4%E6%98%8E"><span class="toc-text">4 flutter 打包详细说明:</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#5-AboutDialog-flutter-%E7%BB%99%E6%88%91%E4%BB%AC%E6%8F%90%E4%BE%9B%E7%9A%84-About-%E9%A1%B5%E9%9D%A2%E3%80%82"><span class="toc-text">5 AboutDialog  flutter 给我们提供的 About 页面。</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8A%A5%E9%94%99%E7%B1%BB"><span class="toc-text">报错类</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1-java-io-IOException-setDataSource-failed"><span class="toc-text">1 java.io.IOException: setDataSource failed.</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-Provided-initialDate-2021-12-29-17-33-42-698-must-satisfy-provided-selectableDayPredicate"><span class="toc-text">2 Provided initialDate 2021-12-29 17:33:42.698 must satisfy provided selectableDayPredicate.</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-Could-not-resolve-all-artifacts-for-configuration-%E2%80%98-url-launcher-android-debugUnitTestRuntimeClasspath%E2%80%99"><span class="toc-text">3 Could not resolve all artifacts for configuration ‘:url_launcher_android:debugUnitTestRuntimeClasspath’.</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#4-xxx-android-app-src-main-res-mipmap-anydpi-v26-ic-launcher-xml-4-AAPT-error-resource-mipmap-ic-launcher-foreground-aka-com-github-todoline-plus-plus-tracker-mipmap-ic-launcher-foreground-not-found"><span class="toc-text">4 xxx\android\app\src\main\res\mipmap-anydpi-v26\ic_launcher.xml:4: AAPT:  error: resource mipmap&#x2F;ic_launcher_foreground (aka com.github.todoline.plus.plus.tracker:mipmap&#x2F;ic_launcher_foreground) not found.</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#5-No-implementation-found-for-method-getAll-on-channel-plugins-flutter-io-package-info"><span class="toc-text">5 No implementation found for method getAll on channel plugins.flutter.io&#x2F;package_info</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6-todoLine-%E7%9A%84-apk-%E5%AE%89%E8%A3%85%E5%9C%A8%E5%B0%8F%E7%B1%B3-4-%E6%98%BE%E7%A4%BA%E7%9A%84%E5%9B%BE%E6%A0%87%E6%98%AF-android-%E7%9A%84%E5%9B%BE%E6%A0%87%EF%BC%8C-%E4%B8%8D%E6%98%AF%E8%87%AA%E5%B7%B1%E8%AE%BE%E8%AE%A1%E5%87%BA%E6%9D%A5%E7%9A%84%E5%9B%BE%E6%A0%87"><span class="toc-text">6 todoLine++ 的 apk 安装在小米 4 显示的图标是 android 的图标， 不是自己设计出来的图标</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+      </div>
+    
+    
+      <footer class="article-footer">
+        <!-- <div class="well" style="width:100px; height:30px;"></div>  by blair-->
+        
+ <!-- by blair add 160724-->
+        <!--
+        <div style="width:100px; height:30px;"></div> by blair add 160724
+        -->
+        
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/20211225/flutter-%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E7%B3%BB%E5%88%97%E4%B9%8B%E5%8D%81%E4%B8%89/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">flutter-开发问题系列之十三&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022 wanlion&nbsp;
+    </div>
+  </div>
+</footer>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+      displayMath: [ ['$$','$$']],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
+</script>
+
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+  </div>
+</body>
+</html>
