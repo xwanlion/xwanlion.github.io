@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>leetCode 刷题经验总结一 - wanlion</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="昨天利用一天的时间, 在 leetCode 上面刷了三道题, 现在做下总结, 涉及到的题目:A) 移除元素B) 搜索插入位置C) 螺旋矩阵 II">
+<meta property="og:type" content="article">
+<meta property="og:title" content="leetCode 刷题经验总结一">
+<meta property="og:url" content="https://xwanlion.github.io/20220116/leetCode-%E5%88%B7%E9%A2%98%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E4%B8%80/index.html">
+<meta property="og:site_name" content="wanlion">
+<meta property="og:description" content="昨天利用一天的时间, 在 leetCode 上面刷了三道题, 现在做下总结, 涉及到的题目:A) 移除元素B) 搜索插入位置C) 螺旋矩阵 II">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-01-16T04:17:50.000Z">
+<meta property="article:modified_time" content="2022-01-16T04:35:26.674Z">
+<meta property="article:author" content="wanlion">
+<meta property="article:tag" content="算法">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <!-- blair add baidu tongji start... @2017.10.03 -->
+<!-- blair add baidu tongji end ! @2017.10.03 -->
+
+<header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo" href="/"></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://xwanlion.github.io"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+    <br>
+    <section id="main" class="outer"><article id="post-leetCode-刷题经验总结一" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      leetCode 刷题经验总结一
+      <small class=article-detail-date-index>&nbsp; 2022-01-16</small>
+    </h1>
+  
+
+
+        <div class=page-title></div>
+        <br>
+      </header>
+    
+    <div class="article-meta">
+      <!--<a href="/20220116/leetCode-%E5%88%B7%E9%A2%98%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E4%B8%80/" class="article-date">
+  <time datetime="2022-01-16T04:17:50.000Z" itemprop="datePublished">2022-01-16</time>
+</a>-->
+      <!-- 
+--><!-- by blair 160724 -->
+      <!-- by blair
+      
+      -->
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>昨天利用一天的时间, 在 leetCode 上面刷了三道题, 现在做下总结, 涉及到的题目:<br>A) 移除元素<br>B) 搜索插入位置<br>C) 螺旋矩阵 II</p>
+<span id="more"></span>
+<h1 id="过程记录"><a href="#过程记录" class="headerlink" title="过程记录"></a>过程记录</h1><h6 id="A-移除元素"><a href="#A-移除元素" class="headerlink" title="A) 移除元素:"></a>A) 移除元素:</h6><p>给定一个数组 nums 和一个值 val, 从数组中找出跟 val 一样的值, 并且删除掉, 然后返回数组中剩余元素的个数。</p>
+<p>这道题目一开始就有了思路, 先把符合条件的元素设置为零, 然后在用排序算法把剩余元素放到前面, 最后返回剩余元素的个数就可以了。</p>
+<p>但紧接着我就犯蒙了, 如果给定的数组是一个自然数, 数组中本来就有 0 怎么办? 幸好它做了一个条件限制, 数组中的所有元素都大于等于零。</p>
+<h6 id="B-搜索插入位置"><a href="#B-搜索插入位置" class="headerlink" title="B) 搜索插入位置"></a>B) 搜索插入位置</h6><p>给定一个已经排序的数组, 和一个值, 查找该值可以在数组中插入的位置， 要求该位置上的数值大于等于给定的值。</p>
+<p>一开始我以为很简单, 其实他也很简单, 但自己就是没有思考完全, 一开始心想, 不就是 for 循环查找, 只要发现大于等于该值就可以了, 不简单吗? 但是提交还是报错了， 一看, 数组只有一个元素的时候 报错了, 于是就添加一个判读条件, 紧接着又报错了, 给定的值大于数组中所有元素的值的时候报错了, 这种情况自己能够感知到, 但报错的原因是数组下标越界, 经过几轮折腾, 终于形成清晰的判断:<br>1） 给定值小于数组元素值<br>2) 给定值等于数组元素值<br>3) 给定值大于数组元素值</p>
+<p>终于, 提交通过。</p>
+<p>但话说回来, 这个题目自己的代码, 从性能的角度来将, 他不是最优的, 因为没有使用到二分查找算法。</p>
+<h6 id="C-螺旋矩阵-II"><a href="#C-螺旋矩阵-II" class="headerlink" title="C) 螺旋矩阵 II"></a>C) 螺旋矩阵 II</h6><p>给定一个数字 n, 画出 n*n 的螺旋矩阵, 形式如:<br>01 02 03 04<br>12 12 14 05<br>11 16 15 06<br>10 09 08 07</p>
+<p>看出来了吗? 如果看不出来, 我在用箭头画一下:<br>⍈ ⍈ ⍈ ↴<br>⍐ ⍈ ↴ ⍗<br>⍐ ⍐ ↵ ⍗<br>⍇ ⍇ ⍇ ↵</p>
+<p>这个形状就好像是写回字型, 外面是一圈, 里面是一圈， 里面的圈比外面的那一圈要小。</p>
+<p>说实在, 刚开始我真不知道怎么去写这个代码, 犹豫了很久, 仍然不知道怎么办, 于是就开始摸索他的规律, 先由左到右， 然后是上到下， 在然后是右到左， 最后是下到上， 就这样循环。</p>
+<p>到那里开始转弯, 这个点如何判断? 心里面知道是以 n 为依据来做判断, 代码敲着敲着就发现不对劲, 里面那一圈比外面的小, 因此， 长度已经不是 n 了, 这时候需要做递减处理, 但是左右边两头都需要处理， 上下也是一样。</p>
+<p>原先使用 for 语句循环, 这个时候只能改用 while 循环了, 那什么时候结束呢？ 判断的依据是累加数字大于等于 n*n 就可以, 敲完了代码, 就运行了, 发现超时, 一开始还不知道已经进入死循环, 还以为服务器那边做时间限制, 一段折腾后, 实在没则, 就到本地执行， 一点一滴的修改， debug, 终于完成了！</p>
+<p>问题在哪里? 对边界值的判断不准, 主要有:<br>1） 一圈的长度是多少<br>2） 拐弯处的判断, 这个时候判断不准就会把已经画好的点重画, 看到的形状就是乱七八糟。<br>3） 什么时候结束? 虽说大于等于 n*n 是一个精确的判断, 但如果不知道要画多少圈的情况下, 就不知道在哪一圈结束, 判读出错, 然后就进入死循环, 运行超时。</p>
+<p>运行通过后我看了别人的方法, 其实记起来就很简单， 这个螺旋矩阵, 规律有:<br>1） 每一圈的画法, 都是先从左到右, 接着从上到下， 然后右到左， 最后是下往上。<br>2) 每一圈的起点, 都是从左上角开始, 只要把握住这个点就可以了<br>3) 每一圈的每一个方向, 其长度是多少? 最外面一层是n, 每进入一层, 就要减 2, 比如上面的 4・4 矩阵, 里面那一圈的长度就比外面的相差 2.<br>4） 什么时候需要画多少圈? n/2 + n%2, 这是 java的写法, 记起来就是， 如果 n 是奇数, 就是除于 2 再加 1, 如果是偶数, 直接除于 2 就可以了。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ol>
+<li><p>每一道算法题, 都需要考虑边界, 平时写代码也一样, 前面和后面, 开始和结束, 都需要考虑。</p>
+</li>
+<li><p>面向对象的思想, 就是要找出符合事物运行的规律, 因此当自己迷惑的时候, 不妨琢磨这个对象有什么特征吧， 不妨琢磨它有什么规律吧, 琢磨出来后, 往往得到的是表面的东西, 清晰明确的规律还需要进一步的思考, 就好比上面提到的螺旋矩阵, 一开始的琢磨只能得出最初浅的认识, 从上到下, 从左到右, 要想得到后面的规律, 起始点和边长, 需要进一步的思考。</p>
+</li>
+<li><p>如果数据已经排序， 查找的时候, 直接使用二分法吧, 他肯定是最高效的。</p>
+</li>
+</ol>
+
+      
+     <!-- by blair add this if sentence at 20160725 -->
+      <br>
+      
+<div id="bottom-donation-section">
+<span style="font-size: 1.0em; padding:0em 1em 0.5em 1em; margin: 0 auto;">
+  <strong style="vertical-align: top;">分享到:</strong>
+    <div class="j_handlclick"  style="background: url(/images/logos/share_facebook_icon.jpg);background-size: contain;display: inline-block; width:50px; height:50px" href="https://www.facebook.com/sharer/sharer.php?u=" target="_blank">
+    </div>
+    <div class="j_handlclick"  style="background: url(/images/logos/share_twitter_icon.jpg);background-size: contain;display: inline-block; width:50px; height:50px" href="https://twitter.com/intent/tweet?url=" target="_blank">
+    </div>
+    <div class="j_handlclick"  style="background: url(/images/logos/share_line_icon.jpg);background-size: contain;display: inline-block; width:50px; height:50px" href="https://www.addtoany.com/add_to/line?linkurl=" target="_blank">
+    </div>
+    <div class="j_handlclick"  style="background: url(/images/logos/share_wechat_icon.jpg);background-size: contain;display: inline-block; width:50px; height:50px" href="https://api.addthis.com/oexchange/0.8/forward/wechat/offer?url=" target="_blank">
+    </div>
+  <br>  
+  <br>  
+  &nbsp;&nbsp;如果您觉得这篇文章对您的学习很有帮助, 请您也分享它, 让它能再次帮助到更多的需要学习的人.
+您的<a href="/support/"><strong>支持</strong></a>将鼓励我继续创作 !
+  <br>  
+
+</span>
+<!--
+<h3 id="bottom-donation-title">支持 让文章变得更优质</h3>
+<div>
+<a id="bottom-donation-button" href="/support">点我 赞助 作者</a>
+</div>
+-->
+</div>
+<div class="well">
+  <!--
+  原创文章，转载请注明： 转载自<a target="_blank" rel="noopener" href="http://52binge.github.io"> Blair Chan's Blog</a>，作者：
+  <a href="/about">Blair Chan</a> <br>
+  -->
+  本文基于<a target="_blank" title="Creative Commons Attribution 4.0 international License" href="https://creativecommons.org/licenses/by-nc/4.0/">署名4.0国际许可协议</a>发布，转载请保留本文署名和文章链接。 如您有任何授权方面的协商，请邮件联系我。
+</div>
+ <!-- by blair add 160724-->
+    
+    </div>
+    
+      <div class="article-toc">
+        <h3>Contents</h3>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95"><span class="toc-text">过程记录</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#A-%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0"><span class="toc-text">A) 移除元素:</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#B-%E6%90%9C%E7%B4%A2%E6%8F%92%E5%85%A5%E4%BD%8D%E7%BD%AE"><span class="toc-text">B) 搜索插入位置</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#C-%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5-II"><span class="toc-text">C) 螺旋矩阵 II</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol>
+      </div>
+    
+    
+      <footer class="article-footer">
+        <!-- <div class="well" style="width:100px; height:30px;"></div>  by blair-->
+        
+ <!-- by blair add 160724-->
+        <!--
+        <div style="width:100px; height:30px;"></div> by blair add 160724
+        -->
+        
+  <div class="article-tag">
+    <a class="article-tag-none-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a>
+  </div>
+
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/20220108/flutter-%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E7%B3%BB%E5%88%97%E4%B9%8B%E5%8D%81%E5%9B%9B/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">flutter-开发问题系列之十四&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022 wanlion&nbsp;
+    </div>
+  </div>
+</footer>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+      displayMath: [ ['$$','$$']],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
+</script>
+
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+  </div>
+</body>
+</html>
