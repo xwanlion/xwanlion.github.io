@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>leetCode 刷题经验总结三 - wanlion</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="这是刷 leetCode 的第三篇博文, 涉及到的题目:A) 字母异位词(编号:242): leetcode-cn.com&#x2F;problems&#x2F;valid-anagram&#x2F;A) 两个数组的交集(编号:349): leetcode-cn.com&#x2F;problems&#x2F;intersection-of-two-arrays&#x2F;A) 快乐数(编号:202):leetcode-cn.com&#x2F;problems&#x2F;hap">
+<meta property="og:type" content="article">
+<meta property="og:title" content="leetCode 刷题经验总结三">
+<meta property="og:url" content="https://xwanlion.github.io/20220203/leetCode-%E5%88%B7%E9%A2%98%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E4%B8%89/index.html">
+<meta property="og:site_name" content="wanlion">
+<meta property="og:description" content="这是刷 leetCode 的第三篇博文, 涉及到的题目:A) 字母异位词(编号:242): leetcode-cn.com&#x2F;problems&#x2F;valid-anagram&#x2F;A) 两个数组的交集(编号:349): leetcode-cn.com&#x2F;problems&#x2F;intersection-of-two-arrays&#x2F;A) 快乐数(编号:202):leetcode-cn.com&#x2F;problems&#x2F;hap">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-02-03T10:22:00.000Z">
+<meta property="article:modified_time" content="2022-02-03T10:23:00.235Z">
+<meta property="article:author" content="wanlion">
+<meta property="article:tag" content="算法">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <!-- blair add baidu tongji start... @2017.10.03 -->
+<!-- blair add baidu tongji end ! @2017.10.03 -->
+
+<header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo" href="/"></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://xwanlion.github.io"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+    <br>
+    <section id="main" class="outer"><article id="post-leetCode-刷题经验总结三" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      leetCode 刷题经验总结三
+      <small class=article-detail-date-index>&nbsp; 2022-02-03</small>
+    </h1>
+  
+
+
+        <div class=page-title></div>
+        <br>
+      </header>
+    
+    <div class="article-meta">
+      <!--<a href="/20220203/leetCode-%E5%88%B7%E9%A2%98%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E4%B8%89/" class="article-date">
+  <time datetime="2022-02-03T10:22:00.000Z" itemprop="datePublished">2022-02-03</time>
+</a>-->
+      <!-- 
+--><!-- by blair 160724 -->
+      <!-- by blair
+      
+      -->
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这是刷 leetCode 的第三篇博文, 涉及到的题目:<br>A) 字母异位词(编号:242): leetcode-cn.com/problems/valid-anagram/<br>A) 两个数组的交集(编号:349): leetcode-cn.com/problems/intersection-of-two-arrays/<br>A) 快乐数(编号:202):leetcode-cn.com/problems/happy-number/<br>A) 两数之和(编号:1): leetcode-cn.com/problems/two-sum/<br>A) 四数相加 II(编号:454): leetcode-cn.com/problems/4sum-ii/<br>A) 三数之和(编号:15): leetcode-cn.com/problems/3sum/<br>A) 四数之和(编号:18): leetcode-cn.com/problems/4sum/submissions/</p>
+<span id="more"></span>
+<h1 id="过程记录"><a href="#过程记录" class="headerlink" title="过程记录"></a>过程记录</h1><h6 id="A-字母异位词"><a href="#A-字母异位词" class="headerlink" title="A) 字母异位词:"></a>A) 字母异位词:</h6><p>什么是字母异位词?<br>就是 A 和 B 两个字符串, 组成字符串 A 的字符, 也正好可以组成字符串 B, 并且每个字符出现的次数全都相同， 他们仅仅是出现的顺序不一样而已。</p>
+<p>解这道题的方法很简单, 就是双重循环, 比较组成两个字符串每个字符出现的次数, 如果一样, 那就是字母异位词, 否则不是, 我的判断方法是， 如果相同字符的数量跟字符串长度一样， 那就 OK 了。</p>
+<p>之前有听说过哈希表, 但仅仅是了解他的原理, 自己并没有真正使用过, 在解这道题目之前， 自己也想到应该使用哈希表来处理, 可是一直稀里糊涂, 心里面没有个数, 直到查看其他人的解法, 才有一种豁然开朗的感觉。</p>
+<p>其实组成英文单词的字符, 仅仅是 26 个字母而已, 我们只需要使用一个数组， 遍历统计每个字母在第一个字符串中出现的次数,  然后在遍历第二个字符串中的所有字符， 并从统计数据中扣除, 最后在查看下26个字母剩余的统计次数, 如果出现统计数字为负数或者大于零， 那就说明该字母只是在其中一个字符串出现过。</p>
+<h6 id="B-两个数组的交集"><a href="#B-两个数组的交集" class="headerlink" title="B) 两个数组的交集:"></a>B) 两个数组的交集:</h6><p>寻找两个数组中共同出现的元素集, 需要确保元素集中的元素是唯一的, 不可重复.</p>
+<p>这道题目的解法也很简单, 我的做法是先把第一个数组放到 HashSet 中, 再遍历第二个数组, 再跟 HashSet 的元素比较, 如果有相同, 把它放到第二个 HashSet 中, 最后再把第二个 HashSet 转换成数组就可以了。</p>
+<p>但这个办法性能不高, 最好的做法是什么? 先对数组排序, 排序后的数组是从小到大排序, 这样的话我们只需要从左到右比较就可以了, 如果相同的话, 就把它拿出来.</p>
+<p>我的做法是, 使用两个指针, i1 用来定位数组1,  i2 用来定位数组2, 使用 while 循环从左到右比较, 如果:</p>
+<ol>
+<li>i1 和 i2 位置上的数值一样， 就把它拿出来， 两个指针同时向右移动。</li>
+<li>i1 大于 i2， i2 向右移动</li>
+<li>i1 小于 i2,   i1 向右移动</li>
+</ol>
+<p>这里遇到一个问题, 我们需要定义一个数组来存放相同的元素, 但是数组的大小无法确定, 怎么办？</p>
+<p>我们对两个输入参数的数组进行比较, 获取数组长度最小的, 来作为新数组的长度， 循环比较完成后, 我们再使用 Arrays.copyOfRange 来截取数组。</p>
+<p>通过这道题目我得出这样的结论:<br>排序能够减少循环次数, 而且不是减少一点点而已, 我们可以使用降维运算形容量级别的减少.</p>
+<h6 id="C-快乐数"><a href="#C-快乐数" class="headerlink" title="C) 快乐数:"></a>C) 快乐数:</h6><p>什么是快乐数?</p>
+<p>给定一个正整数, 这个正整数有多少位数呢? 对每一位数上的数值取平方值, 然后再把所有平方值加起来, 最后得到一个数字, 一直重复上面的过程, 直到出现下面两种情况:</p>
+<ol>
+<li>数值为 1</li>
+<li>无限循环</li>
+</ol>
+<p>如果重复上面的过程, 最后的结果如果为 1, 就是快乐数。</p>
+<p>这道题目我最大的疑点是, 如何判断他是不是无限循环? 刚开始的时候, 我统计循环次数, 如果超过 1 万次或者 10 万次, 那就是无限循环了,  你是不是觉得我很傻? </p>
+<p>之所以这样想, 是因为我没有想到哈希表, 我觉得哈希表在这道题目中没有什么用处, 后来才意识到, 把每一次的平方和放到哈希表中, 不就可以判断他是不是循环了吗?</p>
+<p>你还真别说, 采用循环次数确实可以通过测试, 但是太消耗性能了, 我一直试探循环次数最小多少可以确保通过测试? 我现在记得的数字是 25 次。</p>
+<p>这里我得出这样的结论:</p>
+<ol>
+<li>如果运算一直重复同一步骤, 最好是采用递归, 但是这个结论下的太仓促, 其实我们也可以抽出这个步骤, 变成独立的方法, 然后再循环调用。</li>
+<li>把循环步骤抽出来变成独立的方法可以让编码思路变得很清晰, 代码也容易变得更简洁。</li>
+</ol>
+<h6 id="D-两数之和"><a href="#D-两数之和" class="headerlink" title="D) 两数之和:"></a>D) 两数之和:</h6><p>给定一个数组和一个 tartget 值 , 这些数据都是整数, 找出数组中的两个元素, 其值相加起来等于给定的值， 并返回这两个值的下标。</p>
+<p>暴力解法就是双重循环, 但是耗性能, 采用哈希表可以降低运算维度, 也就是说我们可以通过哈希表将双重循环减少到一重循环.</p>
+<p>哈希表的做法是, 把数组先放到 HashMap 中， 元素值作为 key 值, 下标作为 val 值, 然后在遍历数组, 获取当前指针的元素值, 从 HashMap 中查找 (tartget - 当前值) 的 map 值, 查到就返回。</p>
+<p>在上面的叙述中, 我们需要循环两遍, 一遍用于将数组元素存放到 HashMap 中, 另一遍需要遍历查找两数之和等于 tartget 值. </p>
+<p>这里需要注意：<br>返回的两个下标, 不能相同。</p>
+<p>这里得出这样的结论:</p>
+<ol>
+<li>采用哈希表的时候, 如果需要将两个数据同时保存下来, 就用 HashMap, 否则只有一个数据需要保存, 就使用 HashSet. </li>
+<li>当我们循环两遍的时候, 应该想想是不是只需要循环一遍就可以了？</li>
+</ol>
+<h6 id="E-四数相加"><a href="#E-四数相加" class="headerlink" title="E) 四数相加 :"></a>E) 四数相加 :</h6><p>给定四个数组, 数组的元素个数都相同, 设计一个算法, 从四个数组中各自取出一个元素, 共四个元素， 要求他们相加起来等于 0, 算法设计要求返回一个数字, 用于表示有多少个符合条件的元素组。</p>
+<p>这道题暴力解法需要四重循环, 但如果我们采用哈希表, 可以降低到两重循环, 具体做法是, 先双重循环遍历其中的两个数组, 把他们的元素分别相加起来存放到 HashMap 中， 他的值就是 1， 然后再双重循环遍历另外两个数组, 把每个数组的元素相加起来得到值 A, 然后在用 0 - A, 得到 HashMap 的 key 值, 接着检查下 HashMap 中是否存在对应的值, 如果存在则表示这四个元素的值加起来等于零。</p>
+<p>注意:<br>当采用哈希表时, 不可避免的问题就是 key 值重复, 这道题目中我们需要处理的就是多组元素的值加起来后等于相同的数, 该数作为 key 值保存到 HashMap 中时， value 值应该做特殊处理,  其值加 1。</p>
+<h6 id="F-三数之和"><a href="#F-三数之和" class="headerlink" title="F) 三数之和:"></a>F) 三数之和:</h6><p>给定一个数组和一个 tartget 值 , 这些数据都是整数, 找出数组中的三个元素, 其值相加起来等于 0， 算法设计要求返回所有符合条件的元素组,  元素组中的三个元素, 要求不能重复。</p>
+<p>这道题目跟两数之和相似, 但难度比两之和大得多, 主要有两方面:</p>
+<ol>
+<li>两数之和只是要求返回其中的一个元素组, 三数之和要求返回所有元素组。</li>
+<li>两数之和不用考虑 key 值重复的问题, 但是三数之和需要考虑 key 值重复。</li>
+</ol>
+<p>由于有两数之和的经验, 所以一开始我就使用哈希表, 但哈希表不可避免的问题就是 key 值重复, 所以我们需要做特殊判断, 折腾了一天的时间, 依然超出时间限制。</p>
+<p>第二天继续折腾, 依然超出时间限制， 最后我翻看了题解。</p>
+<p>解法:</p>
+<ol>
+<li>先对数组的元素排序, 排序后从左到右是从小到大排序的。</li>
+<li>使用左中右三个指针, 左边的指针是从左到右遍历, 右边的指针是从右到左遍历，中间的指针是在左右两个指针间遍历。</li>
+<li>为了加快速度, 左边的指针, 获取到的值如果大于零, 应该中止所有循环, 因为数据是从小到大排序, 左边的指针获取的数据在三个指针中永远都是最小的, 如果最小的数都已经大于零, 那就不用循环了。</li>
+<li>如果当前指针获取的数值跟前面的位置相同, 应该略过, 避免重复。</li>
+</ol>
+<h6 id="G-四数之和"><a href="#G-四数之和" class="headerlink" title="G) 四数之和:"></a>G) 四数之和:</h6><p>四数之和跟三数之和相似, 有两点不同:</p>
+<ol>
+<li>返回的元素组从三个数据增加到四个数据</li>
+<li>加总的数值从0变更为指定的数据。</li>
+</ol>
+<p>这道题一开始我以为使用双重循环就可以解决问题, 但很遗憾, 双重循环解决不了问题.浪费了我一天的时间, 之后看题解, 才知道官方的解法都不是双重循环, 才意识到我的想法可能行不通, 所以就使用三重循环来解题。</p>
+<p>解法跟三数之和相似, 有2点不同:</p>
+<ol>
+<li> 多个一层嵌套循环</li>
+<li> 三数之和如果左边的指针大于零就得中止, 但四数之和不能因为大于给定的值就中止循环， 因为有可能出现负数抵消正数的情况。</li>
+</ol>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ol>
+<li>如何才能降维? 提高运行速度? 排序和哈希表是思考问题的方向。</li>
+<li>哈希表可以用数组来实现, 但需要考虑下标范围, 如果范围比较小, 可以使用数组, 如果范围比较大, 应该使用 HashSet, 范围大使用数组的话会造成内存空间浪费。</li>
+<li>在使用哈希表的时候, 如果需要同时保存两个数据, 那就应该使用 HashMap, 不应该使用 HashSet</li>
+<li>如果代码需要循环两遍来实现, 应该进一步思考下是否可以使用一遍循环也能实现。</li>
+<li>重复步骤应该抽离出来, 变成一个方法, 重复动作可以考虑使用递归, 但也可以考虑使用循环调用方面来实现, 但循环的效率比递归低下。</li>
+</ol>
+
+      
+     <!-- by blair add this if sentence at 20160725 -->
+      <br>
+      
+<div id="bottom-donation-section">
+<span style="font-size: 1.0em; padding:0em 1em 0.5em 1em; margin: 0 auto;">
+  <strong style="vertical-align: top;">分享到:</strong>
+    <div class="j_handlclick"  style="background: url(/images/logos/share_facebook_icon.jpg);background-size: contain;display: inline-block; width:50px; height:50px" href="https://www.facebook.com/sharer/sharer.php?u=" target="_blank">
+    </div>
+    <div class="j_handlclick"  style="background: url(/images/logos/share_twitter_icon.jpg);background-size: contain;display: inline-block; width:50px; height:50px" href="https://twitter.com/intent/tweet?url=" target="_blank">
+    </div>
+    <div class="j_handlclick"  style="background: url(/images/logos/share_line_icon.jpg);background-size: contain;display: inline-block; width:50px; height:50px" href="https://www.addtoany.com/add_to/line?linkurl=" target="_blank">
+    </div>
+    <div class="j_handlclick"  style="background: url(/images/logos/share_wechat_icon.jpg);background-size: contain;display: inline-block; width:50px; height:50px" href="https://api.addthis.com/oexchange/0.8/forward/wechat/offer?url=" target="_blank">
+    </div>
+  <br>  
+  <br>  
+  &nbsp;&nbsp;如果您觉得这篇文章对您的学习很有帮助, 请您也分享它, 让它能再次帮助到更多的需要学习的人.
+您的<a href="/support/"><strong>支持</strong></a>将鼓励我继续创作 !
+  <br>  
+
+</span>
+<!--
+<h3 id="bottom-donation-title">支持 让文章变得更优质</h3>
+<div>
+<a id="bottom-donation-button" href="/support">点我 赞助 作者</a>
+</div>
+-->
+</div>
+<div class="well">
+  <!--
+  原创文章，转载请注明： 转载自<a target="_blank" rel="noopener" href="http://52binge.github.io"> Blair Chan's Blog</a>，作者：
+  <a href="/about">Blair Chan</a> <br>
+  -->
+  本文基于<a target="_blank" title="Creative Commons Attribution 4.0 international License" href="https://creativecommons.org/licenses/by-nc/4.0/">署名4.0国际许可协议</a>发布，转载请保留本文署名和文章链接。 如您有任何授权方面的协商，请邮件联系我。
+</div>
+ <!-- by blair add 160724-->
+    
+    </div>
+    
+      <div class="article-toc">
+        <h3>Contents</h3>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95"><span class="toc-text">过程记录</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#A-%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D"><span class="toc-text">A) 字母异位词:</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#B-%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9A%84%E4%BA%A4%E9%9B%86"><span class="toc-text">B) 两个数组的交集:</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#C-%E5%BF%AB%E4%B9%90%E6%95%B0"><span class="toc-text">C) 快乐数:</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#D-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C"><span class="toc-text">D) 两数之和:</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#E-%E5%9B%9B%E6%95%B0%E7%9B%B8%E5%8A%A0"><span class="toc-text">E) 四数相加 :</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#F-%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C"><span class="toc-text">F) 三数之和:</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#G-%E5%9B%9B%E6%95%B0%E4%B9%8B%E5%92%8C"><span class="toc-text">G) 四数之和:</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol>
+      </div>
+    
+    
+      <footer class="article-footer">
+        <!-- <div class="well" style="width:100px; height:30px;"></div>  by blair-->
+        
+ <!-- by blair add 160724-->
+        <!--
+        <div style="width:100px; height:30px;"></div> by blair add 160724
+        -->
+        
+  <div class="article-tag">
+    <a class="article-tag-none-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a>
+  </div>
+
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/20220122/leetCode-%E5%88%B7%E9%A2%98%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E4%BA%8C/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">leetCode 刷题经验总结二&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022 wanlion&nbsp;
+    </div>
+  </div>
+</footer>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+      displayMath: [ ['$$','$$']],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
+</script>
+
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+  </div>
+</body>
+</html>
