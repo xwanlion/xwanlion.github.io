@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>flutter Stack 组件的底层布局算法是怎么样的? - wanlion</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="flutter 组件中, Stack 组件的使用频率还是很高的, Stack 组件的作用是实现层叠布局, 配合 Positions 组件和 Align 组件, 将实现子组件绝对定位.那么, 它是如何决定子组件的摆放位置的呢? 这个算法是由 RenderStack 类来决定, 下面是布局算法的过程:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="flutter Stack 组件的底层布局算法是怎么样的?">
+<meta property="og:url" content="https://xwanlion.github.io/20220323/flutter-Stack-%E7%BB%84%E4%BB%B6%E7%9A%84%E5%BA%95%E5%B1%82%E5%B8%83%E5%B1%80%E7%AE%97%E6%B3%95%E6%98%AF%E6%80%8E%E4%B9%88%E6%A0%B7%E7%9A%84/index.html">
+<meta property="og:site_name" content="wanlion">
+<meta property="og:description" content="flutter 组件中, Stack 组件的使用频率还是很高的, Stack 组件的作用是实现层叠布局, 配合 Positions 组件和 Align 组件, 将实现子组件绝对定位.那么, 它是如何决定子组件的摆放位置的呢? 这个算法是由 RenderStack 类来决定, 下面是布局算法的过程:">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-03-23T03:04:55.000Z">
+<meta property="article:modified_time" content="2022-03-23T03:17:46.037Z">
+<meta property="article:author" content="wanlion">
+<meta property="article:tag" content="flutter">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <!-- blair add baidu tongji start... @2017.10.03 -->
+<!-- blair add baidu tongji end ! @2017.10.03 -->
+
+<header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo" href="/"></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://xwanlion.github.io"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+    <br>
+    <section id="main" class="outer"><article id="post-flutter-Stack-组件的底层布局算法是怎么样的" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      flutter Stack 组件的底层布局算法是怎么样的?
+      <small class=article-detail-date-index>&nbsp; 2022-03-23</small>
+    </h1>
+  
+
+
+        <div class=page-title></div>
+        <br>
+      </header>
+    
+    <div class="article-meta">
+      <!--<a href="/20220323/flutter-Stack-%E7%BB%84%E4%BB%B6%E7%9A%84%E5%BA%95%E5%B1%82%E5%B8%83%E5%B1%80%E7%AE%97%E6%B3%95%E6%98%AF%E6%80%8E%E4%B9%88%E6%A0%B7%E7%9A%84/" class="article-date">
+  <time datetime="2022-03-23T03:04:55.000Z" itemprop="datePublished">2022-03-23</time>
+</a>-->
+      <!-- 
+--><!-- by blair 160724 -->
+      <!-- by blair
+      
+      -->
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>flutter 组件中, Stack 组件的使用频率还是很高的, Stack 组件的作用是实现层叠布局, 配合 Positions 组件和 Align 组件, 将实现子组件绝对定位.<br>那么, 它是如何决定子组件的摆放位置的呢? 这个算法是由 RenderStack 类来决定, 下面是布局算法的过程:</p>
+<span id="more"></span>
+
+<h1 id="1-初始化"><a href="#1-初始化" class="headerlink" title="1) 初始化:"></a>1) 初始化:</h1><p>未定位的子组件, 会按照列表顺序放置在其他子组件的上面, 未定位的组件是指 top, left, right, bottom 为 null 的组件, 他们初始化时会被放置为 Stack 组件的左上角。</p>
+<h1 id="2-确定-Stack-组件的大小"><a href="#2-确定-Stack-组件的大小" class="headerlink" title="2) 确定 Stack 组件的大小"></a>2) 确定 Stack 组件的大小</h1><p>Stack 组件接着调整自身大小, 以包括所有未定位的子组件, 如果没有未定位的子组件, Stack 将会尽可能的大。</p>
+<h1 id="3-确定子组件的-left-值和-top-值"><a href="#3-确定子组件的-left-值和-top-值" class="headerlink" title="3) 确定子组件的 left 值和 top 值"></a>3) 确定子组件的 left 值和 top 值</h1><p>未定位子组件的最终位置将由 alignment 参数来决定。 每一个未定位子组件的 left 值将会不同, 它在子组件的 width 值和 Stack 的 width 值之间由 alignment.x 缩放来决定。 同样的, top 值也是由 alignment.y 值缩放来决定. 请注意: 0.0 是 x, y 值的默认值, 将位于左上角, 0.5 将会位于中间位置.</p>
+<h1 id="4-确定子组件的宽高"><a href="#4-确定子组件的宽高" class="headerlink" title="4) 确定子组件的宽高"></a>4) 确定子组件的宽高</h1><p>计算子组件的确切位置。 如果子组件的 top 值和 bottom 值不为 null, 它将获得固定的高度, 高度的计算方式是 Stack 的高度减去子组件的 top 值和 bottom 值, 同样的, 子组件的宽度也是有 Stack 的宽度, 以及自身的 left, right 值来决定. 如果子组件无法获得确切的宽高, 它将没有边界约束.</p>
+<h1 id="5-确定子组件的位置"><a href="#5-确定子组件的位置" class="headerlink" title="5) 确定子组件的位置"></a>5) 确定子组件的位置</h1><p>Stack 根据子组件的 StackParentData 的 top, right, bottom, left 的属性值来确定子组件的摆放位置。 举个例子， 如果 bottom 值是 10.0, 将会在 Stack 组件的底部和子组件的底部之间插入 10.0 像素。 如果子组件超出 Stack 的边界, 子组件将会被裁剪。</p>
+
+      
+     <!-- by blair add this if sentence at 20160725 -->
+      <br>
+      
+<div id="bottom-donation-section">
+<span style="font-size: 1.0em; padding:0em 1em 0.5em 1em; margin: 0 auto;">
+  <strong style="vertical-align: top;">分享到:</strong>
+    <div class="j_handlclick"  style="background: url(/images/logos/share_facebook_icon.jpg);background-size: contain;display: inline-block; width:50px; height:50px" href="https://www.facebook.com/sharer/sharer.php?u=" target="_blank">
+    </div>
+    <div class="j_handlclick"  style="background: url(/images/logos/share_twitter_icon.jpg);background-size: contain;display: inline-block; width:50px; height:50px" href="https://twitter.com/intent/tweet?url=" target="_blank">
+    </div>
+    <div class="j_handlclick"  style="background: url(/images/logos/share_line_icon.jpg);background-size: contain;display: inline-block; width:50px; height:50px" href="https://www.addtoany.com/add_to/line?linkurl=" target="_blank">
+    </div>
+    <div class="j_handlclick"  style="background: url(/images/logos/share_wechat_icon.jpg);background-size: contain;display: inline-block; width:50px; height:50px" href="https://api.addthis.com/oexchange/0.8/forward/wechat/offer?url=" target="_blank">
+    </div>
+  <br>  
+  <br>  
+  &nbsp;&nbsp;如果您觉得这篇文章对您的学习很有帮助, 请您也分享它, 让它能再次帮助到更多的需要学习的人.
+您的<a href="/support/"><strong>支持</strong></a>将鼓励我继续创作 !
+  <br>  
+
+</span>
+<!--
+<h3 id="bottom-donation-title">支持 让文章变得更优质</h3>
+<div>
+<a id="bottom-donation-button" href="/support">点我 赞助 作者</a>
+</div>
+-->
+</div>
+<div class="well">
+  <!--
+  原创文章，转载请注明： 转载自<a target="_blank" rel="noopener" href="http://52binge.github.io"> Blair Chan's Blog</a>，作者：
+  <a href="/about">Blair Chan</a> <br>
+  -->
+  本文基于<a target="_blank" title="Creative Commons Attribution 4.0 international License" href="https://creativecommons.org/licenses/by-nc/4.0/">署名4.0国际许可协议</a>发布，转载请保留本文署名和文章链接。 如您有任何授权方面的协商，请邮件联系我。
+</div>
+ <!-- by blair add 160724-->
+    
+    </div>
+    
+      <div class="article-toc">
+        <h3>Contents</h3>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-text">1) 初始化:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E7%A1%AE%E5%AE%9A-Stack-%E7%BB%84%E4%BB%B6%E7%9A%84%E5%A4%A7%E5%B0%8F"><span class="toc-text">2) 确定 Stack 组件的大小</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E7%A1%AE%E5%AE%9A%E5%AD%90%E7%BB%84%E4%BB%B6%E7%9A%84-left-%E5%80%BC%E5%92%8C-top-%E5%80%BC"><span class="toc-text">3) 确定子组件的 left 值和 top 值</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E7%A1%AE%E5%AE%9A%E5%AD%90%E7%BB%84%E4%BB%B6%E7%9A%84%E5%AE%BD%E9%AB%98"><span class="toc-text">4) 确定子组件的宽高</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E7%A1%AE%E5%AE%9A%E5%AD%90%E7%BB%84%E4%BB%B6%E7%9A%84%E4%BD%8D%E7%BD%AE"><span class="toc-text">5) 确定子组件的位置</span></a></li></ol>
+      </div>
+    
+    
+      <footer class="article-footer">
+        <!-- <div class="well" style="width:100px; height:30px;"></div>  by blair-->
+        
+ <!-- by blair add 160724-->
+        <!--
+        <div style="width:100px; height:30px;"></div> by blair add 160724
+        -->
+        
+  <div class="article-tag">
+    <a class="article-tag-none-link" href="/tags/flutter/" rel="tag">flutter</a>
+  </div>
+
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/20220220/lleetCode-%E5%88%B7%E9%A2%98%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E5%9B%9B/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">lleetCode-刷题经验总结四&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022 wanlion&nbsp;
+    </div>
+  </div>
+</footer>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+      displayMath: [ ['$$','$$']],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
+</script>
+
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+  </div>
+</body>
+</html>
